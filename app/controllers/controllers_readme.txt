@@ -15,7 +15,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ 
  *
  * The ScalaBlog is a fully functioning Blog.
  * It was originally written as a training tool for Scala and the TypeSafe
@@ -46,21 +46,26 @@
  * 
  *****************************************************************************@
  
+ The controllers folder is used to contain all the application-flow logic for
+ the application.
 
-@main("ScalaBlog - Administration") {
-
-    <!--  This isn't strictly a Blog-post but we'll use the same styling!  -->
-    <div class="blog-header">
-        <h1 class="blog-title">ScalaBlog</h1>
-        <p class="lead blog-description">System Administration</p>
-    </div>
+ The controller dictates the steps requires to "action" the user's input.
+ You can also think of them as "script / batch files" for required steps.
+ 
+ Eg.
+ You press a "button" on a form.
+ You need to validate the form for appropriate correctness.
+ You may need to check for duplicates.
+ You may need to save or delete a database entry.
+ You may need to to update the contents of the screen to show to the user at the 
+     completion of the process.
       
-    <div class="blog-post">
-        <ul>
-			<li><a href="/userconfig">User Administration</a></li>
-			<li>Categories</li>
-			<li>Keywords</li>
-			<li><a href="/appconfig">Application Configuration</a></li>
-       </ul>
-    </div><!-- /.blog-post -->
-}
+ All these rules and the required steps to get from one state to another are 
+ contained within the controllers.  
+  
+ The controllers folder forms part of the Model View Controller (MVC) design pattern.
+ 
+ MVC has become a standard for building web applications and allows 
+ developers to cleanly separate different areas of concern in their applications.
+ Which allows for better collaboration, easier troubleshooting, simpler code maintenance.
+ 

@@ -46,21 +46,19 @@
  * 
  *****************************************************************************@
  
-
-@main("ScalaBlog - Administration") {
-
-    <!--  This isn't strictly a Blog-post but we'll use the same styling!  -->
-    <div class="blog-header">
-        <h1 class="blog-title">ScalaBlog</h1>
-        <p class="lead blog-description">System Administration</p>
-    </div>
-      
-    <div class="blog-post">
-        <ul>
-			<li><a href="/userconfig">User Administration</a></li>
-			<li>Categories</li>
-			<li>Keywords</li>
-			<li><a href="/appconfig">Application Configuration</a></li>
-       </ul>
-    </div><!-- /.blog-post -->
-}
+ The models folder is used to contain all the model segments of your application. 
+ The model is what is used to programmatically interface between the application
+ and the data storage for the application.
+ 
+ It contains all the code that maps object properties to database columns and also
+ contains all the required code for Creating / Reading / Updating Deleting (CRUD)
+ records to / from the database.
+ 
+ Typical items in here are "Service Layers / Managers", Data Access Objects (DAOs) 
+ 
+ The models folder forms part of the Model View Controller (MVC) design pattern.
+ 
+ MVC has become a standard for building web applications and allows 
+ developers to cleanly separate different areas of concern in their applications.
+ Which allows for better collaboration, easier troubleshooting, simpler code maintenance.
+ 
