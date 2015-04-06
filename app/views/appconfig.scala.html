@@ -53,16 +53,29 @@
     <div class="blog-header">
         <h1 class="blog-title">ScalaBlog</h1>
         <p class="lead blog-description">Application Configuration</p>
-    </div>
+    </div><!--  /.blog-header -->
       
     <div class="blog-post">
-        <ul>
-			<li><a href="##">Blog Title</li></a>
-			<li><a href="##">Blog Tagline</li></a>
-			<li><a href="##">Blog Image</li></a>
-			<li><a href="##">Blog URL</li></a>
-			<br />
-			<li><a href="@routes.Application.sysconfig()">System Admin</a></li>
-	   </ul>
+        <form name="AppSettings" action="/appconfig/submit" method="post">
+            <fieldset>
+	            <label for="blogtitle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Blog Title</label>
+	            <input id="blogtitle" name="blogtitle" lenth="50" Size="25"></input><br />
+	            <br />
+	            <label for="blogtagline">Blog Tagline</label>
+	            <input id="blogtagline" name="blogtagline" lenth="50" Size="25"></input><br />
+	            <br />
+	            <label for="blogtitleimage">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Blog Title</label>
+	            <input id="blogtitle" name="blogtitle" lenth="50" Size="25"></input><br />
+	            <br />
+	            <label for="blogurl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Blog URL</label>
+	            <input id="blogurl" name="blogurl" lenth="50" Size="25"></input>
+	            <br />
+	            <br />
+	            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	            <input type="submit" value="Submit"></input>
+	       </fieldset>
+	   </form>
     </div><!-- /.blog-post -->
 }

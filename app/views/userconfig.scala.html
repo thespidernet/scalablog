@@ -1,3 +1,4 @@
+@(userid: String)
 @*****************************************************************************
  * ScalaBlog. 
  * Copyright 2014-2015 Gavin Baumanis
@@ -53,14 +54,39 @@
     <div class="blog-header">
         <h1 class="blog-title">ScalaBlog</h1>
         <p class="lead blog-description">User Administration</p>
-    </div>
+    </div><!--  /.blog-header -->
       
     <div class="blog-post">
-	    <ul>
-	       <li>User Administration</li>
-	       <li>Categories</li>
-	       <li>Keywords</li>
-	       <li><a href="/appconfig">Application Configuration</a></li>
-	    </ul>
+        <form name="AppSettings" action="/userconfig/submit" method="post">
+            <fieldset>
+                <label for="Username">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Username</label>
+                <input id="Username" name="Username" length="50" Size="25"></input><br />
+                <br />
+                <label for="userrole">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;User Role</label>
+                <select id="userrole" name="userrole">
+                    <option value="0">Read Only</option>
+                    <option value="10">Commenter</option>
+                    <option value="90">Moderator</option>
+                    <option value="100">Administrator</option>
+                </select><br />
+                <br />
+                <label for="Firstname">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;First Name</label>
+                <input id="FirstName" name="FirstName" length="50" Size="25"></input><br />
+                <br />
+                <label for="lastname">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Last Name</label>
+                <input id="lastname" name="lastname" length="50" Size="25"></input><br />
+                <br />
+                <label for="Email">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email</label>
+                <input id="Email" name="Email" lenth="50" Size="25"></input><br />
+                <br />
+                <label for="password">Reset Password</label>
+                <input id="password" name="password" type="password" length="50" Size="25"></input><br />
+                <br />
+                <label for="password">Reset Password</label>
+                <input id="password" type="password" name="password" length="50" Size="25"></input><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Submit"></input>
+           </fieldset>
+       </form>
     </div><!-- /.blog-post -->
 }

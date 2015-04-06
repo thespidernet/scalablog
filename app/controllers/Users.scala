@@ -44,6 +44,9 @@
   * Hadoop File System
   * Hadoop
   *
+  * This is the Users Controller.
+  * It contains all Controllers actions for Users.
+  *
   * ***************************************************************************
   */
 
@@ -52,29 +55,25 @@ package controllers
 import play.api._
 import play.api.mvc._
 
-object Application extends Controller {
+object Users extends Controller {
 
-    // Default / Home Page
-    def index = Action {
-        Ok(views.html.index())
+    //User Search page
+    def usersearch = Action {
+        Ok(views.html.usersearch())
     }
 
-    // System Administration menu
-    def sysconfig = Action {
-        Ok(views.html.sysconfig())
+    // Individual User Administration main page
+    def userconfig(userid : String) = Action {
+        Ok(views.html.userconfig(userid : String))
     }
 
-    // Configure THIS installation of the ScalaBlog application
-    def appconfig = Action {
-        Ok(views.html.appconfig())
-    }
-
-    //SAVE the contents of the AppConfig Form.
-    def appconfigsubmit = Action {
+    //Save the contents of a User Record
+    def userconfigsubmit = Action {
         //TODO: verify the contents of the form are valid
         //TODO: save the form
 
         //Return the SYS config Menu
         Ok(views.html.sysconfig())
     }
+
 }

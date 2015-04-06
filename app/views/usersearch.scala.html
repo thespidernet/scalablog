@@ -47,20 +47,21 @@
  *****************************************************************************@
  
 
-@main("ScalaBlog - Administration") {
+@main("ScalaBlog - User Search") {
 
     <!--  This isn't strictly a Blog-post but we'll use the same styling!  -->
     <div class="blog-header">
         <h1 class="blog-title">ScalaBlog</h1>
-        <p class="lead blog-description">System Administration</p>
-    </div>
+        <p class="lead blog-description">User Search</p>
+    </div><!--  /.blog-header -->
       
     <div class="blog-post">
-        <ul>
-			<li><a href="/usersearch">User Administration</a></li>
-			<li>Categories</li>
-			<li>Keywords</li>
-			<li><a href="/appconfig">Application Configuration</a></li>
-       </ul>
+        <ol>
+            <li><a href="@routes.Users.userconfig("Username")">Username</a> | Firstname Lastname</li>
+            <li><a href="@routes.Users.userconfig(userid="gavinb")">gavinb</a> | Gavin Baumanis</li>
+            <li><a href="@routes.Users.userconfig("Username")">Username</a> | Firstname Lastname</li>
+            <li><a href="@routes.Users.userconfig("Username")">Username</a> | Firstname Lastname</li>
+        </ol>
+        
     </div><!-- /.blog-post -->
 }
