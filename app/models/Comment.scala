@@ -44,64 +44,19 @@
   * Hadoop File System
   * Hadoop
   *
-  * This is the Users Controller.
-  * It contains all Controller actions for Users.
+  * This is the Comment Class
   *
   * ***************************************************************************
   */
+package models
 
-package controllers
+case class Comment(
+    id : Int,
+    postId : Int,
+    comment : String,
+    dateTime : String,
 
-import play.api._
-import play.api.mvc._
-import java.util.Date._
-
-object Users extends Controller {
-
-    //User Search page
-    def usersearch = Action {
-        Ok(views.html.usersearch())
-    }
-
-    // Individual User Administration main page
-    def userconfig(userid : String) = Action {
-        var selectedUser = models.User(id = 1,
-            username = "GavinB",
-            active = true,
-            password = "myPassword",
-            emailAddress = "gavinb@thespiderbnet.com",
-            twitter = "@thespidernet",
-            gitHub = "thespidernet",
-            websiteURL = "www.thespidernet.com",
-
-            firstName = "Gavin",
-            lastName = "Baumanis",
-            displayName = "Beau",
-            address1 = "The Spidernet",
-            address2 = "",
-            suburb = "",
-            city = "Melbourne",
-            state = "Victoria",
-            postCode = "3000",
-            country = "Australia",
-
-            phone = "555-555-5555",
-            mobilePhone = "555-666-6666",
-            pager = "123-123-1234",
-
-            modifiedBy = 1,
-            modifiedDateTime = new java.util.Date()
-        );
-        Ok(views.html.userconfig(selectedUser))
-    }
-
-    //Save the contents of a User Record
-    def userconfigsubmit = Action {
-        //TODO: verify the contents of the form are valid
-        //TODO: save the form
-
-        //Return the SYS config Menu
-        Ok(views.html.sysconfig())
-    }
-
-}
+    sortOrder : Int,
+    active : Boolean,
+    modifiedBy : User,
+    modifiedDateTime : String)

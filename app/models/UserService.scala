@@ -44,64 +44,32 @@
   * Hadoop File System
   * Hadoop
   *
-  * This is the Users Controller.
-  * It contains all Controller actions for Users.
+  * This is the UserService Object (Singleton)
+  *
+  * It is the "Factory" for the User class and;
+  *
+  * It is used as the API for the application to code "to".
+  * It will then speak natively to the Data Access Objects (DAO).
+  *
+  * This gives a consistent API for the code in the application to be
+  *     written against.
+  *
+  * Your application code (E.g. User class) shouldn't know or care about caching. it just needs
+  * to ask for data / save data changes etc.
+  *
+  * And the actual task of retrieving the data from and writing the data to persistent storage
+  * (hard disk) is the domain of the "Gateway" objects or Data Access Objects (DAOs)
+  *
+  * From a process flow perspective the Service classes sit between these two end-points.
+  * This makes them the perfect the place to include (for example) code that relates to Caching.
+  *
+  * Or code that does mapping between consistent API and the DAOs.
+  * E.g. you might need to alter data types before they go into the DB.
   *
   * ***************************************************************************
   */
+package models
 
-package controllers
-
-import play.api._
-import play.api.mvc._
-import java.util.Date._
-
-object Users extends Controller {
-
-    //User Search page
-    def usersearch = Action {
-        Ok(views.html.usersearch())
-    }
-
-    // Individual User Administration main page
-    def userconfig(userid : String) = Action {
-        var selectedUser = models.User(id = 1,
-            username = "GavinB",
-            active = true,
-            password = "myPassword",
-            emailAddress = "gavinb@thespiderbnet.com",
-            twitter = "@thespidernet",
-            gitHub = "thespidernet",
-            websiteURL = "www.thespidernet.com",
-
-            firstName = "Gavin",
-            lastName = "Baumanis",
-            displayName = "Beau",
-            address1 = "The Spidernet",
-            address2 = "",
-            suburb = "",
-            city = "Melbourne",
-            state = "Victoria",
-            postCode = "3000",
-            country = "Australia",
-
-            phone = "555-555-5555",
-            mobilePhone = "555-666-6666",
-            pager = "123-123-1234",
-
-            modifiedBy = 1,
-            modifiedDateTime = new java.util.Date()
-        );
-        Ok(views.html.userconfig(selectedUser))
-    }
-
-    //Save the contents of a User Record
-    def userconfigsubmit = Action {
-        //TODO: verify the contents of the form are valid
-        //TODO: save the form
-
-        //Return the SYS config Menu
-        Ok(views.html.sysconfig())
-    }
+object UserService {
 
 }

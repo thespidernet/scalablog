@@ -1,4 +1,6 @@
-@(userid: String)
+@(User: User)
+@import java.text.DateFormat
+
 @*****************************************************************************
  * ScalaBlog. 
  * Copyright 2014-2015 Gavin Baumanis
@@ -47,7 +49,11 @@
  * 
  *****************************************************************************@
  
-
+ @* 
+   * main() is a function used to "hold" the MAIN content of the page requested.
+   * It is passed into /views/main.scala.html which is a Layout template.
+   *@
+  
 @main("ScalaBlog - User Administration") {
 
     <!--  This isn't strictly a Blog-post but we'll use the same styling!  -->
@@ -59,34 +65,61 @@
     <div class="blog-post">
         <form name="AppSettings" action="/userconfig/submit" method="post">
             <fieldset>
-                <label for="Username">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Username</label>
-                <input id="Username" name="Username" length="50" Size="25"></input><br />
-                <br />
-                <label for="userrole">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;User Role</label>
-                <select id="userrole" name="userrole">
-                    <option value="0">Read Only</option>
-                    <option value="10">Commenter</option>
-                    <option value="90">Moderator</option>
-                    <option value="100">Administrator</option>
-                </select><br />
-                <br />
-                <label for="Firstname">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;First Name</label>
-                <input id="FirstName" name="FirstName" length="50" Size="25"></input><br />
-                <br />
-                <label for="lastname">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Last Name</label>
-                <input id="lastname" name="lastname" length="50" Size="25"></input><br />
-                <br />
-                <label for="Email">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email</label>
-                <input id="Email" name="Email" lenth="50" Size="25"></input><br />
-                <br />
-                <label for="password">Reset Password</label>
-                <input id="password" name="password" type="password" length="50" Size="25"></input><br />
-                <br />
-                <label for="password">Reset Password</label>
-                <input id="password" type="password" name="password" length="50" Size="25"></input><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Submit"></input>
+				<label for="username">User Name : </label>
+				<input id="username" name="username" length="50" size="25" value="@User.username"></input><br />
+				<!-- TODO: Correct this with a working "de"  -->
+				<label for="active">Active : </label>
+                <input id="active" name="active" type="checkbox" checked="@User.active"></input><br />
+				<br />  
+				<label for="password1">Reset Password : </label>
+				<input id="password1" name="password1" type="password" length="50" size="25"></input><br />
+				<label for="password2">Repeat Password : </label>
+                <input id="password2" name="password2" type="password" length="50" size="25"></input><br />
+				<hr />
+				<label for="emailAddress">Email Address : </label>
+				<input id="emailAddress" name="emailAddress" length="50" size="25" value="@User.emailAddress"></input><br />
+				<label for="twitter">Twitter : </label>
+				<input id="twitter" name="twitter" length="50" size="25" value="@User.twitter"></input><br />
+				<label for="gitHub">GitHub  : </label>
+				<input id="gitHub" name="gitHub" length="50" size="25" value="@User.gitHub"></input><br />
+				<label for="websiteURL">Website : </label>
+				<input id="websiteURL" name="websiteURL" length="50" size="25" value="@User.websiteURL"></input><br />
+				<hr />
+				<label for="Firstname">First Name : </label>
+				<input id="FirstName" name="FirstName" length="50" size="25" value="@User.firstName"></input><br />
+				<label for="lastname">Last Name : </label>
+				<input id="lastname" name="lastname" length="50" size="25" value="@User.lastName"></input><br />
+				<label for="displayname">Display Name : </label>
+				<input id="displayname" name="displayname" length="50" size="25" value="@User.displayName"></input><br />
+				<hr />
+				<label for="address1">Address : </label>
+				<input id="address1" name="address1" length="50" size="25" value="@User.address1"></input><br />
+				<label for="address2">Address 2 : </label>
+				<input id="address2" name="address2" length="50" size="25" value="@User.address2"></input><br />
+				<label for="suburb">Suburb : </label>
+				<input id="suburb" name="suburb" length="50" size="25" value="@User.suburb"></input><br />
+				<label for="city">City : </label>
+				<input id="city" name="city" length="50" size="25" value="@User.city"></input><br />
+				<label for="state">State : </label>
+				<input id="state" name="state" length="50" size="25" value="@User.state"></input><br />
+				<label for="postCode">Post Code : </label>
+				<input id="postCode" name="postCode" length="50" size="25" value="@User.postCode"></input><br />
+				<label for="country">country : </label>
+				<input id="country" name="country" length="50" size="25" value="@User.country"></input><br />
+				<hr />
+				<label for="phone">Phone : </label>
+				<input id="phone" name="phone" length="50" size="25" value="@User.phone"></input><br />
+				<label for="mobilePhone">Mobile     : </label>
+				<input id="mobilePhone" name="mobilePhone" length="50" size="25" value="@User.mobilePhone"></input><br />
+				<label for="pager">Pager : </label>
+				<input id="pager" name="pager" length="50" size="25" value="@User.pager"></input><br />
+				<hr />
+				@*  Because MODIFIED BY is a user id - Use the helper method; getFullnameByID() *@
+				<label for="modifiedBy">Last Modified By : </label>@models.User.getFullnameById(User.modifiedBy)<br />
+				<label for="modifiedDateTime">Last Modified DateTime : </label>@User.modifiedDateTime
+				<hr />
+				<input type="submit" value="Submit"></input>
            </fieldset>
        </form>
-    </div><!-- /.blog-post -->
+    </div><!--End form -->    
 }

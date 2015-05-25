@@ -44,31 +44,48 @@
   * Hadoop File System
   * Hadoop
   *
-  * This is the Users Controller.
-  * It contains all Controller actions for Users.
+  * This is the User Class.
   *
   * ***************************************************************************
   */
 
-package controllers
+package models
 
-import play.api._
-import play.api.mvc._
-import java.util.Date._
+case class User(
+    id : Int,
+    username : String,
+    password : String,
+    emailAddress : String,
+    twitter : String,
+    gitHub : String,
+    websiteURL : String,
 
-object Users extends Controller {
+    firstName : String,
+    lastName : String,
+    displayName : String,
+    address1 : String,
+    address2 : String,
+    suburb : String,
+    city : String,
+    state : String,
+    postCode : String,
+    country : String,
 
-    //User Search page
-    def usersearch = Action {
-        Ok(views.html.usersearch())
-    }
+    phone : String,
+    mobilePhone : String,
+    pager : String,
 
-    // Individual User Administration main page
-    def userconfig(userid : String) = Action {
-        var selectedUser = models.User(id = 1,
+    active : Boolean,
+    modifiedBy : Int,
+    modifiedDateTime : java.util.Date) //User case class
+
+object User {
+    def getUserById(id : Integer) = {
+
+        // Synthetically produce a User Object
+        this(id = 1,
             username = "GavinB",
-            active = true,
-            password = "myPassword",
+            password = "True",
             emailAddress = "gavinb@thespiderbnet.com",
             twitter = "@thespidernet",
             gitHub = "thespidernet",
@@ -87,21 +104,15 @@ object Users extends Controller {
 
             phone = "555-555-5555",
             mobilePhone = "555-666-6666",
-            pager = "123-123-1234",
+            pager = "1234-1234-1243",
 
+            active = true,
             modifiedBy = 1,
             modifiedDateTime = new java.util.Date()
-        );
-        Ok(views.html.userconfig(selectedUser))
-    }
+        ); //theUser
+    } // getUserById
 
-    //Save the contents of a User Record
-    def userconfigsubmit = Action {
-        //TODO: verify the contents of the form are valid
-        //TODO: save the form
-
-        //Return the SYS config Menu
-        Ok(views.html.sysconfig())
-    }
-
+    def getFullnameById(id : Integer) = {
+        this.getUserById(id).firstName + ' ' + this.getUserById(id).lastName
+    } //getFullnameById
 }
