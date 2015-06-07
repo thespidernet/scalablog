@@ -1,0 +1,125 @@
+@(title: String)(content: Html)
+
+<!DOCTYPE html>
+
+@*****************************************************************************
+ * ScalaBlog. 
+ * Copyright 2014-2015 Gavin Baumanis
+ * gavinb@thespidernet.com 
+ * http://www.thespidernet.com/scalablog
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * 
+ *
+ * The ScalaBlog is a fully functioning Blog.
+ * It was originally written as a training tool for Scala and the TypeSafe
+ * technology stack; http://typesafe.com/products/typesafe-reactive-platform
+ * 
+ * It is subsequently written with verbose comments and with readability
+ * always in focus. Thus we have not always used the most concise / terse
+ * code that we could have. Which is a real strength of Scala.
+ * 
+ * The ScalaBlog also became the training ground for our efforts to 
+ * better understand "BIG DATA". Subsequently it uses Hadoop and some related
+ * technologies that simply just aren't a requirement for a blog application.
+ * Nonetheless - they are used here!
+ *
+ * The ScalaBlog application is free to use.
+ *
+ * 
+ * The blog utilises the following technology;
+ * 
+ * Scala 2.11.3
+ * Play 2.3.8 - MVC Framework
+ * Akka 
+ * Spray
+ * Cassandra Database
+ * Hadoop File System
+ * Hadoop
+ * Bootstrap / jQuery
+ * 
+ *****************************************************************************@
+ 
+  @* 
+   * This is the layout template for the application.
+   *@
+   
+ <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="ScalaBlog, Blog Application written in Scala">
+    <meta name="keywords" content="ScalaBlog, Scala, Play, Akka, Spray, Big Data, Gavin Baumanis, Cassandra, Hadoop, HFS, Hadoop File System">
+    <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+    <meta name="author" content="Gavin Baumanis">
+    <meta name="author-email" content="gavinb@@thespidernet.com">
+    <meta name="website" content="http://thespidernet.com/scalablog">
+    <meta name="facebook" content="http://facebook.com/scalablog">
+    <meta name="twitter" content="@@thespidernet">
+    <meta name="github" content="https://github.com/thespidernet/scalablog">
+    
+    <title>@title</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="@routes.Assets.at("stylesheets/bootstrap.min.css")" rel="stylesheet">
+
+    <!-- Custom styles for this Blog / Add your changes within here! -->
+    <link href="@routes.Assets.at("stylesheets/blog.css")" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="@routes.Assets.at("javascripts/html5shiv.min.js")"></script>
+      <script src="@routes.Assets.at("javascripts/respond.min.js")"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <!-- This is the header / Navigation -->
+    <div class="blog-masthead">
+      <div class="container">
+        <nav class="blog-nav">
+          <a class="blog-nav-item active" href="@routes.Application.index()">Home</a>
+          <a class="blog-nav-item" href="#">About</a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- 
+        This is the CSS container for the main content of the page 
+            It is inserted dynamcially.
+            This is just the "layout" page! 
+    -->
+    <div class="container">
+        
+        @content
+          
+    </div><!-- /.container -->
+
+    <!--- This is the footer -->
+    <footer class="blog-footer">
+       <p><a href="@routes.Application.index()">Home</a> | <a href="@routes.Application.sysconfig()">System Admin</a> | <a href="#">Site Map</a></p>
+       <p>ScalaBlog. &copy;2014-@(new java.util.Date().format("yyyy")) by <a href="http://www.thespidernet.com">www.thespidernet.com</a></p>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="@routes.Assets.at("javascripts/jquery-1.11.2.min.js")"></script>
+    <script src="@routes.Assets.at("javascripts/bootstrap.min.js")"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="@routes.Assets.at("javascripts/ie10-viewport-bug-workaround.js")"></script>
+  </body>
+</html>
