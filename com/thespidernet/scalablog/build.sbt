@@ -1,4 +1,4 @@
-name := """scalablog"""
+name := """bob"""
 
 version := "1.0-SNAPSHOT"
 

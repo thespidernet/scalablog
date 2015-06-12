@@ -58,50 +58,54 @@ import java.util.Date._
 
 object Users extends Controller {
 
-    //User Search page
-    def usersearch = Action {
-        Ok(views.html.usersearch())
-    }
+	//User Search page Action.
+	def usersearch = Action {
+		// Show the usersearch view page.
+		// NO parameters are passed into this view.
+		Ok(views.html.usersearch())
+	}
 
-    // Individual User Administration main page
-    def userconfig(userid : String) = Action {
-        var selectedUser = models.User(id = 1,
-            username = "GavinB",
-            active = true,
-            password = "myPassword",
-            emailAddress = "gavinb@thespiderbnet.com",
-            twitter = "@thespidernet",
-            gitHub = "thespidernet",
-            websiteURL = "www.thespidernet.com",
+	// Individual User Administration main page
+	def userconfig(userid: String) = Action {
+		var selectedUser = models.User(id = 1,
+			username = "GavinB",
+			active = true,
+			password = "myPassword",
+			emailAddress = "gavinb@thespidernet.com",
+			twitter = "@thespidernet",
+			gitHub = "thespidernet",
+			websiteURL = "www.thespidernet.com",
 
-            firstName = "Gavin",
-            lastName = "Baumanis",
-            displayName = "Beau",
-            address1 = "The Spidernet",
-            address2 = "",
-            suburb = "",
-            city = "Melbourne",
-            state = "Victoria",
-            postCode = "3000",
-            country = "Australia",
+			firstName = "Gavin",
+			lastName = "Baumanis",
+			displayName = "Beau",
+			address1 = "The Spidernet",
+			address2 = "",
+			suburb = "",
+			city = "Melbourne",
+			state = "Victoria",
+			postCode = "3000",
+			country = "Australia",
 
-            phone = "555-555-5555",
-            mobilePhone = "555-666-6666",
-            pager = "123-123-1234",
+			phone = "555-555-5555",
+			mobilePhone = "555-666-6666",
+			pager = "123-123-1234",
 
-            modifiedBy = 1,
-            modifiedDateTime = new java.util.Date()
-        );
-        Ok(views.html.userconfig(selectedUser))
-    }
+			modifiedBy = 1,
+			modifiedDateTime = new java.util.Date()
+		);
+		// Display the EDIT USER form, passing into the view the "selected" user object,
+		// 	with their filled-in properties.
+		Ok(views.html.userconfig(selectedUser))
+	}
 
-    //Save the contents of a User Record
-    def userconfigsubmit = Action {
-        //TODO: verify the contents of the form are valid
-        //TODO: save the form
+	//Save the contents of a User Record
+	def userconfigsubmit = Action {
+		//TODO: verify the contents of the form are valid
+		//TODO: save the form
 
-        //Return the SYS config Menu
-        Ok(views.html.sysconfig())
-    }
+		//Return the SYS config Menu
+		Ok(views.html.sysconfig())
+	}
 
 }

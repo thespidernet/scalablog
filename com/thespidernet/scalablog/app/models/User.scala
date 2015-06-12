@@ -86,7 +86,7 @@ object User {
         this(id = 1,
             username = "GavinB",
             password = "True",
-            emailAddress = "gavinb@thespiderbnet.com",
+            emailAddress = "gavinb@thespidernet.com",
             twitter = "@thespidernet",
             gitHub = "thespidernet",
             websiteURL = "www.thespidernet.com",

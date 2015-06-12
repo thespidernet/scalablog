@@ -53,18 +53,24 @@
    
 @main("ScalaBlog - User Search") {
 
-    <!--  This isn't strictly a Blog-post but we'll use the same styling!  -->
+    @*  This isn't strictly a Blog-post but we'll use the same styling! *@
     <div class="blog-header">
         <h1 class="blog-title">ScalaBlog</h1>
         <p class="lead blog-description">User Search</p>
-    </div><!--  /.blog-header -->
-      
+    </div>
+    
+    @*
+     * 1. Iterate through the collection and display the contents.
+     * 2. Use the username (it is unique) as the hyperlink and "key" to pass to the userconfig action.
+     * 		
+     *@
+    
     <div class="blog-post">
         <ol>
-            <li><a href="@routes.Users.userconfig("Username")">Username</a> | Firstname Lastname</li>
+            <li><a href="@routes.Users.userconfig(userid="Username")">Username</a> | Firstname Lastname</li>
             <li><a href="@routes.Users.userconfig(userid="gavinb")">gavinb</a> | Gavin Baumanis</li>
-            <li><a href="@routes.Users.userconfig("Username")">Username</a> | Firstname Lastname</li>
-            <li><a href="@routes.Users.userconfig("Username")">Username</a> | Firstname Lastname</li>
+            <li><a href="@routes.Users.userconfig(userid="Username")">Username</a> | Firstname Lastname</li>
+            <li><a href="@routes.Users.userconfig(userid="Username")">Username</a> | Firstname Lastname</li>
         </ol>
         
     </div><!-- /.blog-post -->
