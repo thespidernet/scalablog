@@ -59,7 +59,7 @@ package com.thespidernet.scalablog
 import org.scalatest._
 
 //Inherit from the "base" IntegrationSpec.
-class CommentIntegrationSuite extends IntegrationSpec {
+class CommentIntegrationSuite extends IntegrationSpec with Matchers{
 
 	//Define All the INTEGRATION tests you want to run for the Comment class.
 	

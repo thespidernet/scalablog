@@ -45,7 +45,7 @@
   * Hadoop File System
   * Hadoop
   *
-  * This is the Post Integration Testing Object
+  * This is the Tag Integration Testing Object
   * It inherits from a base INTEGRATION testing class "IntegrationSpec"
   * 	Which is specifically setup for Integration Testing 
   * 	using the FunSuite Testing Style.
@@ -59,24 +59,24 @@ package com.thespidernet.scalablog
 import org.scalatest._
 
 //Inherit from the "base" IntegrationSpec.
-class PostIntegrationSuite extends IntegrationSpec with Matchers{
+class TagIntegrationSuite extends IntegrationSpec with Matchers{
 
-	//Define All the INTEGRATION tests you want to run for the Post class.
+	//Define All the INTEGRATION tests you want to run for the Tag class.
 	
 	//Test XXXXXXXX
-  test("PostIntegration : ") {
+  test("TagIntegration : ") {
     assert(Set.empty.size == 0)
   }
 
   //Test XXXXXXXX
-  test("PostIntegration : Invoking head on an empty Set should produce NoSuchElementException") {
+  test("TagIntegration : Invoking head on an empty Set should produce NoSuchElementException") {
     intercept[NoSuchElementException] {
       Set.empty.head
     }
   }
   
   //Test XXXXXXXX
-  test("PostIntegration : True Is True") {
+  test("TagIntegration : True Is True") {
   	assert(true == true)
   }
 }

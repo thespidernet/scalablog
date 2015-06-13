@@ -45,10 +45,9 @@
   * Hadoop File System
   * Hadoop
   *
-  * This is the Post Integration Testing Object
-  * It inherits from a base INTEGRATION testing class "IntegrationSpec"
-  * 	Which is specifically setup for Integration Testing 
-  * 	using the FunSuite Testing Style.
+  * This is the Tag Unit Testing Object
+  * It inherits from a base UNIT testing class "UnitSpec"
+  * 	Which is specifically setup for Unit Testing using the FunSuite Testing Style.
   *     FunSuite is MOST like xUnit testing - with extra Scala goodies! 
   *
   * ***************************************************************************
@@ -58,25 +57,28 @@ package com.thespidernet.scalablog
 
 import org.scalatest._
 
-//Inherit from the "base" IntegrationSpec.
-class PostIntegrationSuite extends IntegrationSpec with Matchers{
+/** Inherit from the "base" UnitSpec and Mixin the Matchers trait.
+  * The Matchers trait allows for more expresvice tests beyond asserts;
+  *      theUser shouldBe a [models.User]
+  */
+class TagUnitSuite extends UnitSpec with Matchers{
 
-	//Define All the INTEGRATION tests you want to run for the Post class.
+	//Define All the UNIT tests you want to run for the Tag class.
 	
 	//Test XXXXXXXX
-  test("PostIntegration : ") {
+  test("Tag Unit : ") {
     assert(Set.empty.size == 0)
   }
 
   //Test XXXXXXXX
-  test("PostIntegration : Invoking head on an empty Set should produce NoSuchElementException") {
+  test("Tag Unit : Invoking head on an empty Set should produce NoSuchElementException") {
     intercept[NoSuchElementException] {
       Set.empty.head
     }
   }
   
   //Test XXXXXXXX
-  test("PostIntegration : True Is True") {
+  test("Tag Unit : True Is True") {
   	assert(true == true)
   }
 }

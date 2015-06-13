@@ -59,7 +59,7 @@ package com.thespidernet.scalablog
 import org.scalatest._
 
 //Inherit from the "base" IntegrationSpec.
-class CategoryIntegrationSuite extends IntegrationSpec {
+class CategoryIntegrationSuite extends IntegrationSpec with Matchers{
 
 	//Define All the INTEGRATION tests you want to run for the Category class.
 	

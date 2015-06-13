@@ -80,10 +80,10 @@ case class User(
     modifiedBy : Int,
     modifiedDateTime : java.util.Date) //User case class
 
-object User {
+object User {	
     def getUserById(id : Integer) = {
 
-        // Synthetically produce a User Object
+        // Synthetically produce a User Object while testing
         this(id = 1,
             username = "GavinB",
             password = "True",
@@ -110,7 +110,9 @@ object User {
             active = true,
             modifiedBy = 1,
             modifiedDateTime = new java.util.Date()
-        ); //theUser
+        ) //theUser
+        // There is no need for a RETURN in Scala
+        // The last value is what is returned
     } // getUserById
 
     def getFullnameById(id : Integer) = {
