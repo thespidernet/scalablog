@@ -58,13 +58,19 @@ package com.thespidernet.scalablog
 import org.scalatest._
 
 /** Inherit from the "base" UnitSpec and Mixin the Matchers trait.
-  * The Matchers trait allows for more expresvice tests beyond asserts;
+  * The Matchers trait allows for more expressive tests beyond asserts;
   *      theUser shouldBe a [models.User]
   */
 class CategoryUnitSuite extends UnitSpec with Matchers{
 
 	//Define All the UNIT tests you want to run for the Category class.
 	
+	//Test a Category retrieved via the CategoryService is of type Category
+  test("Retrieve Category via CategoryService : returns models.Category") {
+  	models.CategoryService.getNewCategory() shouldBe a [models.Category]
+  }
+  
+  
 	//Test XXXXXXXX
   test("CategoryUnit : ") {
     assert(Set.empty.size == 0)

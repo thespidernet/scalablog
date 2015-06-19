@@ -92,7 +92,7 @@ object Users extends Controller {
 			mobilePhone = "555-666-6666",
 			pager = "123-123-1234",
 
-			modifiedBy = 1,
+			modifiedBy =  models.UserService.getFullnameById(1),
 			modifiedDateTime = new java.util.Date()
 		);
 		// Display the EDIT USER form, passing into the view the "selected" user object,

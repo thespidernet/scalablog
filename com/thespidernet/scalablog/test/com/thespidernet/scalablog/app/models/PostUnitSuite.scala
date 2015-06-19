@@ -58,7 +58,7 @@ package com.thespidernet.scalablog
 import org.scalatest._
 
 /** Inherit from the "base" UnitSpec and Mixin the Matchers trait.
-  * The Matchers trait allows for more expresvice tests beyond asserts;
+  * The Matchers trait allows for more expressive tests beyond asserts;
   *      theUser shouldBe a [models.User]
   */
 class PostUnitSuite extends UnitSpec with Matchers{

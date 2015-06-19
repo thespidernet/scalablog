@@ -36,7 +36,7 @@
   *
   * The blog utilises the following technology;
   *
-  * Scala 2.11.3     
+  * Scala 2.11.3
   * Scala Test 2.2.4 - Testing Framework
   * Play 2.3.8 - MVC Framework
   * Akka
@@ -73,4 +73,41 @@ package models
 
 object UserService {
 
+	def getNewUser()= {
+		models.User(id = 1,
+			username = "GavinB",
+			active = true,
+			password = "myPassword",
+			emailAddress = "gavinb@thespidernet.com",
+			twitter = "@thespidernet",
+			gitHub = "thespidernet",
+			websiteURL = "www.thespidernet.com",
+
+			firstName = "Gavin",
+			lastName = "Baumanis",
+			displayName = "Beau",
+			address1 = "The Spidernet",
+			address2 = "",
+			suburb = "",
+			city = "Melbourne",
+			state = "Victoria",
+			postCode = "3000",
+			country = "Australia",
+
+			phone = "555-555-5555",
+			mobilePhone = "555-666-6666",
+			pager = "123-123-1234",
+
+			modifiedBy =  models.UserService.getFullnameById(1),
+			modifiedDateTime = new java.util.Date()
+		)
+	}
+
+	def getUserById(id: Int) = {
+		models.User.getUserById(id)
+	}
+
+	def getFullnameById(id: Int) = {
+		models.User.getFullnameById(id)
+	}
 }

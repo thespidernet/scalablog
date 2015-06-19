@@ -58,13 +58,19 @@ package com.thespidernet.scalablog
 import org.scalatest._
 
 /** Inherit from the "base" UnitSpec and Mixin the Matchers trait.
-  * The Matchers trait allows for more expresvice tests beyond asserts;
+  * The Matchers trait allows for more expressive tests beyond asserts;
   *      theUser shouldBe a [models.User]
   */
 class CommentUnitSuite extends UnitSpec with Matchers{
 
 	//Define All the UNIT tests you want to run for the Comment class.
-	
+
+	//Test a Comment retrieved via the CommentService is of type Comment
+  test("Retrieve Comment via CommentService : returns models.Comment") {
+  	models.CommentService.getNewComment() shouldBe a [models.Comment]
+  }
+  
+  
 	//Test XXXXXXXX
   test("Comment Unit : ") {
     assert(Set.empty.size == 0)

@@ -36,7 +36,7 @@
   *
   * The blog utilises the following technology;
   *
-  * Scala 2.11.3     
+  * Scala 2.11.3
   * Scala Test 2.2.4 - Testing Framework
   * Play 2.3.8 - MVC Framework
   * Akka
@@ -73,4 +73,16 @@ package models
 
 object CategoryService {
 
+	def getNewCategory() = {
+		new models.Category(
+			id = 0,
+			category = "New Category",
+
+			sortOrder = 10,
+			active = true,
+			modifiedBy = models.UserService.getFullnameById(1),
+			modifiedDateTime = new java.util.Date()
+		)
+	}
 }
+

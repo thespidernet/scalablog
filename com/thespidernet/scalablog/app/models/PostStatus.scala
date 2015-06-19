@@ -58,5 +58,5 @@ case class PostStatus(
 
     sortOrder : Int,
     active : Boolean,
-    modifiedBy : User,
-    modifiedDateTime : String)
+    modifiedBy : String,
+    modifiedDateTime : java.util.Date)

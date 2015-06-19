@@ -116,7 +116,7 @@
 				<input id="pager" name="pager" length="50" size="25" value="@User.pager"></input><br />
 				<hr />
 				@*  Because MODIFIED BY is a user id - Use the helper method; getFullnameByID() *@
-				<label for="modifiedBy">Last Modified By : </label>@models.User.getFullnameById(User.modifiedBy)<br />
+				<label for="modifiedBy">Last Modified By : </label>@User.modifiedBy<br />
 				<label for="modifiedDateTime">Last Modified DateTime : </label>@User.modifiedDateTime
 				<hr />
 				<input type="submit" value="Submit"></input>

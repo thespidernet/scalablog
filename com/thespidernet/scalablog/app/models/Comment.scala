@@ -36,7 +36,7 @@
   *
   * The blog utilises the following technology;
   *
-  * Scala 2.11.3     
+  * Scala 2.11.3
   * Scala Test 2.2.4 - Testing Framework
   * Play 2.3.8 - MVC Framework
   * Akka
@@ -52,12 +52,14 @@
 package models
 
 case class Comment(
-    id : Int,
-    postId : Int,
-    comment : String,
-    dateTime : String,
+	id: Int,
+	postId: Int,
+	comment: String,
+	dateTime: java.util.Date,
+	author: String,
 
-    sortOrder : Int,
-    active : Boolean,
-    modifiedBy : User,
-    modifiedDateTime : String)
+	sortOrder: Int,
+	active: Boolean,
+	modifiedBy: String,
+	modifiedDateTime: java.util.Date
+)

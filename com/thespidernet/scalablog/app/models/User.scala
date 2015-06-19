@@ -77,13 +77,13 @@ case class User(
     pager : String,
 
     active : Boolean,
-    modifiedBy : Int,
+    modifiedBy : String,
     modifiedDateTime : java.util.Date) //User case class
 
 object User {	
     def getUserById(id : Integer) = {
 
-        // Synthetically produce a User Object while testing
+        // FIXME: Synthetically produce a User Object while testing
         this(id = 1,
             username = "GavinB",
             password = "True",
@@ -108,7 +108,7 @@ object User {
             pager = "1234-1234-1243",
 
             active = true,
-            modifiedBy = 1,
+            modifiedBy = "Gavin Baumanis",
             modifiedDateTime = new java.util.Date()
         ) //theUser
         // There is no need for a RETURN in Scala

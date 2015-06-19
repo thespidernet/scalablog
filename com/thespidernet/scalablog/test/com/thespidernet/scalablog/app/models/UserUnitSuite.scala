@@ -59,7 +59,7 @@ import org.scalatest._
 
 
 /** Inherit from the "base" UnitSpec and Mixin the Matchers trait.
-  * The Matchers trait allows for more expresvice tests beyond asserts;
+  * The Matchers trait allows for more expressive tests beyond asserts;
   *      theUser shouldBe a [models.User]
   */
 
@@ -67,37 +67,10 @@ class UserUnitSuite extends UnitSpec with Matchers{
 
 	//Define All the UNIT tests you want to run for the User class.
 	
-	//Test a user is of type user
-  test("User Unit : User Is of Type models.User") {
-  	val theUser = models.User(id = 1,
-			username = "GavinB",
-			active = true,
-			password = "myPassword",
-			emailAddress = "gavinb@thespidernet.com",
-			twitter = "@thespidernet",
-			gitHub = "thespidernet",
-			websiteURL = "www.thespidernet.com",
-
-			firstName = "Gavin",
-			lastName = "Baumanis",
-			displayName = "Beau",
-			address1 = "The Spidernet",
-			address2 = "",
-			suburb = "",
-			city = "Melbourne",
-			state = "Victoria",
-			postCode = "3000",
-			country = "Australia",
-
-			phone = "555-555-5555",
-			mobilePhone = "555-666-6666",
-			pager = "123-123-1234",
-
-			modifiedBy = 1,
-			modifiedDateTime = new java.util.Date()
-		);
-  	
-  	theUser shouldBe a [models.User]
+	
+	//Test a User retrieved via the UserService is of type user
+  test("Retrieve User via UserService : returns models.User") {
+  	models.UserService.getNewUser() shouldBe a [models.User]
   }
 
   //Test XXXXXXXX

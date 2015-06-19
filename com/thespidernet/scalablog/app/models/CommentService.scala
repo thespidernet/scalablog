@@ -73,4 +73,18 @@ package models
 
 object CommentService {
 
+	def getNewComment() = {
+		new models.Comment(
+				id = 0,
+    		postId = 0,
+    		comment = "New Comment",
+    		dateTime = new java.util.Date(),
+    		author = "Gavin Baumanis",
+
+    		sortOrder = 10,
+    		active = true,
+    		modifiedBy = models.UserService.getFullnameById(1),
+				modifiedDateTime = new java.util.Date()
+			)
+	}
 }
