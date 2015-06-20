@@ -52,11 +52,11 @@
 package models
 
 case class PostStatus(
-    id : Int,
-    status : String,
-    statusDescription : String,
+    var id : Int,
+    var status : String,
+    var statusDescription : String,
 
-    sortOrder : Int,
-    active : Boolean,
-    modifiedBy : String,
-    modifiedDateTime : java.util.Date)
+    var sortOrder : Int = 10,
+    var active : Boolean = true,
+    var modifiedBy : String,
+    var modifiedDateTime : java.util.Date)

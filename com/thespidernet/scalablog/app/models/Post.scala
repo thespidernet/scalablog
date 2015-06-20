@@ -52,14 +52,14 @@
 package models
 
 case class Post(
-	id: Int,
-	title: String,
-	post: String,
-	author: String,
-	dateTime: java.util.Date,
-	postStatus: String,
+	var id: Int,
+	var title: String,
+	var post: String,
+	var author: String,
+	var postDateTime: java.util.Date,
+	var postStatus: String,
 
-	sortOrder: Int,
-	active: Boolean,
-	modifiedBy: String,
-	modifiedDateTime: java.util.Date)
+	var sortOrder: Int = 10,
+	var active: Boolean = true,
+	var modifiedBy: String,
+	var modifiedDateTime: java.util.Date = new java.util.Date())

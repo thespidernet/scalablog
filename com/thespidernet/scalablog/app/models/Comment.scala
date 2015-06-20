@@ -52,14 +52,13 @@
 package models
 
 case class Comment(
-	id: Int,
-	postId: Int,
-	comment: String,
-	dateTime: java.util.Date,
-	author: String,
+	var id: Int,
+	var postId: Int,
+	var comment: String,
+	var dateTime: java.util.Date,
+	var author: String,
 
-	sortOrder: Int,
-	active: Boolean,
-	modifiedBy: String,
-	modifiedDateTime: java.util.Date
-)
+	var sortOrder: Int = 10,
+	var active: Boolean = true,
+	var modifiedBy: String,
+	var modifiedDateTime: java.util.Date = new java.util.Date())
