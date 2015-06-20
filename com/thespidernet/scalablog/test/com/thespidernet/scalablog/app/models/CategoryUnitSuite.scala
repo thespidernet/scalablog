@@ -65,12 +65,6 @@ class CategoryUnitSuite extends UnitSpec with Matchers{
 
 	//Define All the UNIT tests you want to run for the Category class.
 	
-	//Test a Category retrieved via the CategoryService is of type Category
-  test("Retrieve Category via CategoryService : returns models.Category") {
-  	models.CategoryService.getNewCategory() shouldBe a [models.Category]
-  }
-  
-  
 	//Test XXXXXXXX
   test("CategoryUnit : ") {
     assert(Set.empty.size == 0)
