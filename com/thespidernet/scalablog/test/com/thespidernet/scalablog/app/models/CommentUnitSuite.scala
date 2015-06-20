@@ -64,12 +64,6 @@ import org.scalatest._
 class CommentUnitSuite extends UnitSpec with Matchers{
 
 	//Define All the UNIT tests you want to run for the Comment class.
-
-	//Test a Comment retrieved via the CommentService is of type Comment
-  test("Retrieve Comment via CommentService : returns models.Comment") {
-  	models.CommentService.getNewComment() shouldBe a [models.Comment]
-  }
-  
   
 	//Test XXXXXXXX
   test("Comment Unit : ") {
