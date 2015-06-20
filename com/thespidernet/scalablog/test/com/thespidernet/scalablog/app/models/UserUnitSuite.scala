@@ -66,12 +66,6 @@ import org.scalatest._
 class UserUnitSuite extends UnitSpec with Matchers{
 
 	//Define All the UNIT tests you want to run for the User class.
-	
-	
-	//Test a User retrieved via the UserService is of type user
-  test("Retrieve User via UserService : returns models.User") {
-  	models.UserService.getNewUser() shouldBe a [models.User]
-  }
 
   //Test XXXXXXXX
   test("User Unit : Invoking head on an empty Set should produce NoSuchElementException") {
