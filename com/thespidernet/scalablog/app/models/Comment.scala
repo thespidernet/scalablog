@@ -55,10 +55,24 @@ case class Comment(
 	var id: Int,
 	var postId: Int,
 	var comment: String,
-	var dateTime: java.util.Date,
+	var dateTime: java.util.Date = new java.util.Date(),
 	var author: String,
 
 	var sortOrder: Int = 10,
 	var active: Boolean = true,
 	var modifiedBy: String,
 	var modifiedDateTime: java.util.Date = new java.util.Date())
+
+object Comment {
+	def newComment(id: Int, postId: Int, comment: String,
+		author: String, modifiedBy: String): Comment = {
+		new models.Comment(
+			id = 0,
+			postId = 0,
+			comment = "TestScalaComment",
+			author = "TestScala",
+			modifiedBy = "TestScala"
+		)
+
+	}
+}

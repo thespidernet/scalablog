@@ -36,7 +36,7 @@
   *
   * The blog utilises the following technology;
   *
-  * Scala 2.11.3     
+  * Scala 2.11.3
   * Scala Test 2.2.4 - Testing Framework
   * Play 2.3.8 - MVC Framework
   * Akka
@@ -48,7 +48,7 @@
   * This is the Post Unit Testing Object
   * It inherits from a base UNIT testing class "UnitSpec"
   * 	Which is specifically setup for Unit Testing using the FunSuite Testing Style.
-  *     FunSuite is MOST like xUnit testing - with extra Scala goodies! 
+  *     FunSuite is MOST like xUnit testing - with extra Scala goodies!
   *
   * ***************************************************************************
   */
@@ -57,28 +57,51 @@ package com.thespidernet.scalablog
 
 import org.scalatest._
 
-/** Inherit from the "base" UnitSpec and Mixin the Matchers trait.
+/**
+  * Inherit from the "base" UnitSpec and Mixin the Matchers trait.
   * The Matchers trait allows for more expressive tests beyond asserts;
   *      theUser shouldBe a [models.User]
   */
-class PostUnitSuite extends UnitSpec with Matchers{
+class PostUnitSuite extends UnitSpec with Matchers {
 
 	//Define All the UNIT tests you want to run for the Post class.
+
+	//Instantiate the models.Post Class
+	test("PostUnit : Instantiate the models.Post Class, directly") {
+		new models.Post(
+			id = 0,
+			title = "PostTitle",
+			post = "Test Post",
+			author = "ScalaTest",
+			postStatus = "Test Status",
+			modifiedBy = "ScalaTest") shouldBe a[models.Post]
+	}
+	
+	//Create a new Post via the Post Companion Object
+	test("PostUnit : Instantiate the models.Post Class, via the Companion Object") {
+		models.Post.newPost(
+			id = 0,
+			title = "Test Title",
+			post = "Test Posted message for this Unit Test",
+			author = "ScalaTest",
+			postStatus = "Awesome!",
+			modifiedBy = "ScalaTest") shouldBe a[models.Post]
+	}
 	
 	//Test XXXXXXXX
-  test("Post Unit : ") {
-    assert(Set.empty.size == 0)
-  }
+	test("Post Unit : ") {
+		assert(Set.empty.size == 0)
+	}
 
-  //Test XXXXXXXX
-  test("Post Unit : Invoking head on an empty Set should produce NoSuchElementException") {
-    intercept[NoSuchElementException] {
-      Set.empty.head
-    }
-  }
-  
-  //Test XXXXXXXX
-  test("Post Unit : True Is True") {
-  	assert(true == true)
-  }
+	//Test XXXXXXXX
+	test("Post Unit : Invoking head on an empty Set should produce NoSuchElementException") {
+		intercept[NoSuchElementException] {
+			Set.empty.head
+		}
+	}
+
+	//Test XXXXXXXX
+	test("Post Unit : True Is True") {
+		assert(true == true)
+	}
 }

@@ -36,7 +36,7 @@
   *
   * The blog utilises the following technology;
   *
-  * Scala 2.11.3     
+  * Scala 2.11.3
   * Scala Test 2.2.4 - Testing Framework
   * Play 2.3.8 - MVC Framework
   * Akka
@@ -48,7 +48,7 @@
   * This is the Category Unit Testing Object
   * It inherits from a base UNIT testing class "UnitSpec"
   * 	Which is specifically setup for Unit Testing using the FunSuite Testing Style.
-  *     FunSuite is MOST like xUnit testing - with extra Scala goodies! 
+  *     FunSuite is MOST like xUnit testing - with extra Scala goodies!
   *
   * ***************************************************************************
   */
@@ -57,28 +57,33 @@ package com.thespidernet.scalablog
 
 import org.scalatest._
 
-/** Inherit from the "base" UnitSpec and Mixin the Matchers trait.
+/**
+  * Inherit from the "base" UnitSpec and Mixin the Matchers trait.
   * The Matchers trait allows for more expressive tests beyond asserts;
   *      theUser shouldBe a [models.User]
   */
-class CategoryUnitSuite extends UnitSpec with Matchers{
+class CategoryUnitSuite extends UnitSpec with Matchers {
 
 	//Define All the UNIT tests you want to run for the Category class.
-	
-	//Test XXXXXXXX
-  test("CategoryUnit : ") {
-    assert(Set.empty.size == 0)
-  }
 
-  //Test XXXXXXXX
-  test("CategoryUnit : Invoking head on an empty Set should produce NoSuchElementException") {
-    intercept[NoSuchElementException] {
-      Set.empty.head
-    }
-  }
-  
-  //Test XXXXXXXX
-  test("CategoryUnit : True Is True") {
-  	assert(true == true)
-  }
+	//Instantiate the models.Category Class
+	test("CategoryUnit : Instantiate the models.Category Class, directly") {
+		new models.Category(
+			id = 0,
+			category = "Test Categpry",
+			modifiedBy = "ScalaTest") shouldBe a[models.Category]
+	}
+
+	//Create a new Category via the Category Companion Object
+	test("CategoryUnit : Instantiate the models.Category Class, via the Companion Object") {
+		models.Category.newCategory(
+			id = 0,
+			category = "Test Categpry",
+			modifiedBy = "ScalaTest") shouldBe a[models.Category]
+	}
+
+	//Test XXXXXXXX
+	test("CategoryUnit : True Is True") {
+		assert(true == true)
+	}
 }

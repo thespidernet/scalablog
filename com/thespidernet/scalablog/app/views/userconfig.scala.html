@@ -68,6 +68,7 @@
             <fieldset>
 				<label for="username">User Name : </label>
 				<input id="username" name="username" length="50" size="25" value="@User.username"></input><br />
+				<inout id="avatar" name="avatar" length = "50" size="25" value="@User.avatar"></input><br />
 				<!-- TODO: Correct this with a working "de"  -->
 				<label for="active">Active : </label>
                 <input id="active" name="active" type="checkbox" checked="@User.active"></input><br />
@@ -108,12 +109,12 @@
 				<label for="country">country : </label>
 				<input id="country" name="country" length="50" size="25" value="@User.country"></input><br />
 				<hr />
-				<label for="phone">Phone : </label>
-				<input id="phone" name="phone" length="50" size="25" value="@User.phone"></input><br />
+				<label for="homePhone">Home Phone : </label>
+				<input id="homePhone" name="homePhone" length="50" size="25" value="@User.homePhone"></input><br />
 				<label for="mobilePhone">Mobile     : </label>
 				<input id="mobilePhone" name="mobilePhone" length="50" size="25" value="@User.mobilePhone"></input><br />
-				<label for="pager">Pager : </label>
-				<input id="pager" name="pager" length="50" size="25" value="@User.pager"></input><br />
+				<label for="workPhone">Work Phone : </label>
+				<input id="workPhone" name="workPhone" length="50" size="25" value="@User.workPhone"></input><br />
 				<hr />
 				@*  Because MODIFIED BY is a user id - Use the helper method; getFullnameByID() *@
 				<label for="modifiedBy">Last Modified By : </label>@User.modifiedBy<br />

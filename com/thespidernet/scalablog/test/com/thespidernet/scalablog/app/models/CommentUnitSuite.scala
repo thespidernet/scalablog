@@ -65,6 +65,26 @@ class CommentUnitSuite extends UnitSpec with Matchers{
 
 	//Define All the UNIT tests you want to run for the Comment class.
   
+	//Instantiate the models.Category Class
+	test("CommentUnit : Instantiate the models.Comment Class, directly") {
+		new models.Comment(
+			id = 0,
+			postId = 0,
+			comment = "Test Comment",
+			author = "ScalaTest",
+			modifiedBy = "ScalaTest") shouldBe a[models.Comment]
+	}
+
+	//Create a new Comment via the Comment Companion Object
+	test("CommentUnit : Instantiate the models.Comment Class, via the Companion Object") {
+		models.Comment.newComment(
+			id = 0,
+			postId = 0,
+			comment = "Test Comment",
+			author = "ScalaTest",
+			modifiedBy = "ScalaTest") shouldBe a[models.Comment]
+	}
+	
 	//Test XXXXXXXX
   test("Comment Unit : ") {
     assert(Set.empty.size == 0)

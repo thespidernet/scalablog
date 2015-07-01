@@ -56,6 +56,7 @@ case class User(
 	var id: Int,
 	var username: String,
 	var password: String,
+	var avatar: String,
 	var emailAddress: String,
 	var twitter: String,
 	var gitHub: String,
@@ -72,9 +73,9 @@ case class User(
 	var postCode: String,
 	var country: String,
 
-	var phone: String,
+	var homePhone: String,
 	var mobilePhone: String,
-	var pager: String,
+	var workPhone: String,
 
 	var active: Boolean = true,
 	var modifiedBy: String,
@@ -87,6 +88,7 @@ object User {
 		this(id = 1,
 			username = "GavinB",
 			password = "True",
+			avatar = "AVATAR - BLUE Dudes",
 			emailAddress = "gavinb@thespidernet.com",
 			twitter = "@thespidernet",
 			gitHub = "thespidernet",
@@ -103,9 +105,9 @@ object User {
 			postCode = "3000",
 			country = "Australia",
 
-			phone = "555-555-5555",
+			homePhone = "555-555-5555",
 			mobilePhone = "555-666-6666",
-			pager = "1234-1234-1243",
+			workPhone = "1234-1234-1243",
 
 			active = true,
 			modifiedBy = "Gavin Baumanis",
