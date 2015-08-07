@@ -36,7 +36,7 @@
   *
   * The blog utilises the following technology;
   *
-  * Scala 2.11.3     
+  * Scala 2.11.3
   * Scala Test 2.2.4 - Testing Framework
   * Play 2.3.8 - MVC Framework
   * Akka
@@ -60,29 +60,30 @@ import models.User._
 
 object Users extends Controller {
 
-	//User Search page Action.
-	def usersearch = Action {
-		// Show the usersearch view page.
-		// NO parameters are passed into this view.
-		Ok(views.html.usersearch())
-	}
+    //User Search page Action.
+    def usersearch = Action {
+        // Show the usersearch view page.
+        // NO parameters are passed into this view.
+        Ok(views.html.usersearch())
+    }
 
-	// Individual User Administration main page
-	def userconfig(userid: String) = Action {
-		val selectedUser = getUserById(1)
-		
-		// Display the EDIT USER form, passing into the view the "selected" user object,
-		// 	with their filled-in properties.
-		Ok(views.html.userconfig(selectedUser))
-	}
+    // Individual User Administration main page
+    def userconfig(userid : String) = Action {
+        // FIXME : Ensure that we use the ID from the User.
+        val selectedUser = getUserById(1)
 
-	//Save the contents of a User Record
-	def userconfigsubmit = Action {
-		//TODO: verify the contents of the form are valid
-		//TODO: save the form
+        // Display the EDIT USER form, passing into the view the "selected" user object,
+        // 	with their filled-in properties.
+        Ok(views.html.userconfig(selectedUser))
+    }
 
-		//Return the SYS config Menu
-		Ok(views.html.sysconfig())
-	}
+    //Save the contents of a User Record
+    def userconfigsubmit = Action {
+        //TODO: verify the contents of the form are valid
+        //TODO: save the form
+
+        //Return the SYS config Menu
+        Ok(views.html.sysconfig())
+    }
 
 }
