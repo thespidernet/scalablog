@@ -52,28 +52,27 @@
 package models
 
 /*
- * This is the class delcaration.
+ * This is the class declaration.
  * It contains all the properties for the class.
  */
 case class Category(
-	var id: Int,
-	var category: String,
+    var id : Int,
+    var category : String,
 
-	var sortOrder: Int = 10,
-	var active: Boolean = true,
-	var modifiedBy: String,
-	var modifiedDateTime: java.util.Date = new java.util.Date())
+    var sortOrder : Int = 10,
+    var active : Boolean = true,
+    var modifiedBy : String,
+    var modifiedDateTime : java.util.Date = new java.util.Date())
 
-/* 
+/*
  * This is the Category Companion Object.
  * It is a singleton, "Service / Manager" object.
  */
 object Category {
-	def newCategory(id: Int, category: String, modifiedBy: String): Category = {
-		new models.Category(
-			id = 0,
-			category = "Test Category",
-			modifiedBy = "ScalaTest")
-	}
-
+    def newCategory(id : Int, category : String, modifiedBy : String) : Category = {
+        new models.Category(
+            id = 0,
+            category = "Test Category",
+            modifiedBy = "ScalaTest")
+    }
 }

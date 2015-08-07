@@ -36,7 +36,7 @@
   *
   * The blog utilises the following technology;
   *
-  * Scala 2.11.3     
+  * Scala 2.11.3
   * Scala Test 2.2.4 - Testing Framework
   * Play 2.3.8 - MVC Framework
   * Akka
@@ -47,9 +47,9 @@
   *
   * This is the Tag Integration Testing Object
   * It inherits from a base INTEGRATION testing class "IntegrationSpec"
-  * 	Which is specifically setup for Integration Testing 
+  * 	Which is specifically setup for Integration Testing
   * 	using the FunSuite Testing Style.
-  *     FunSuite is MOST like xUnit testing - with extra Scala goodies! 
+  *     FunSuite is MOST like xUnit testing - with extra Scala goodies!
   *
   * ***************************************************************************
   */
@@ -59,24 +59,24 @@ package com.thespidernet.scalablog
 import org.scalatest._
 
 //Inherit from the "base" IntegrationSpec.
-class TagIntegrationSuite extends IntegrationSpec with Matchers{
+class TagIntegrationSuite extends IntegrationSpec with Matchers {
 
-	//Define All the INTEGRATION tests you want to run for the Tag class.
-	
-	//Test XXXXXXXX
-  test("TagIntegration : ") {
-    assert(Set.empty.size == 0)
-  }
+    //Define All the INTEGRATION tests you want to run for the Tag class.
 
-  //Test XXXXXXXX
-  test("TagIntegration : Invoking head on an empty Set should produce NoSuchElementException") {
-    intercept[NoSuchElementException] {
-      Set.empty.head
+    //Test XXXXXXXX
+    test("Tag Integration : ") {
+        assert(Set.empty.size == 0)
     }
-  }
-  
-  //Test XXXXXXXX
-  test("TagIntegration : True Is True") {
-  	assert(true == true)
-  }
+
+    //Test XXXXXXXX
+    test("Tag Integration : Invoking head on an empty Set should produce NoSuchElementException") {
+        intercept[NoSuchElementException] {
+            Set.empty.head
+        }
+    }
+
+    //Test XXXXXXXX
+    test("Tag Integration : True Is True") {
+        assert(true == true)
+    }
 }

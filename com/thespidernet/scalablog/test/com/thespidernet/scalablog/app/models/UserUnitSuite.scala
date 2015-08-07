@@ -36,7 +36,7 @@
   *
   * The blog utilises the following technology;
   *
-  * Scala 2.11.3     
+  * Scala 2.11.3
   * Scala Test 2.2.4 - Testing Framework
   * Play 2.3.8 - MVC Framework
   * Akka
@@ -48,7 +48,7 @@
   * This is the User Unit Testing Object
   * It inherits from a base UNIT testing class "UnitSpec"
   * 	Which is specifically setup for Unit Testing using the FunSuite Testing Style.
-  *     FunSuite is MOST like xUnit testing - with extra Scala goodies! 
+  *     FunSuite is MOST like xUnit testing - with extra Scala goodies!
   *
   * ***************************************************************************
   */
@@ -57,25 +57,93 @@ package com.thespidernet.scalablog
 
 import org.scalatest._
 
-
-/** Inherit from the "base" UnitSpec and Mixin the Matchers trait.
+/**
+  * Inherit from the "base" UnitSpec and Mixin the Matchers trait.
   * The Matchers trait allows for more expressive tests beyond asserts;
   *      theUser shouldBe a [models.User]
   */
 
-class UserUnitSuite extends UnitSpec with Matchers{
+class UserUnitSuite extends UnitSpec with Matchers {
 
-	//Define All the UNIT tests you want to run for the User class.
+    //Define All the UNIT tests you want to run for the User class.
 
-  //Test XXXXXXXX
-  test("User Unit : Invoking head on an empty Set should produce NoSuchElementException") {
-    intercept[NoSuchElementException] {
-      Set.empty.head
+    //Instantiate the models.User Class
+    test("User Unit : Instantiate the models.Category Class, directly") {
+        new models.User(
+            id = 0,
+            username = "gavinb",
+            password = "thePassword",
+            avatar = "Avatar = I am blue",
+            emailAddress = "gavinb@thespidernet.com",
+            twitter = "@thespidernet",
+            gitHub = "https://github.com/thespidernet/scalablog",
+            websiteURL = "http://thespidernet.com/scalablog",
+
+            firstName = "Gavin",
+            lastName = "Baumanis",
+            displayName = "Gavin Baumanis",
+            address1 = "The Spidernet",
+            address2 = "",
+            suburb = "Melbourne",
+            state = "Victoria",
+            postCode = "3000",
+            country = "Australia",
+
+            homePhone = "",
+            mobilePhone = "",
+            workPhone = "",
+
+            modifiedBy = "ScalaTest") shouldBe a[models.User]
     }
-  }
-  
-  //Test XXXXXXXX
-  test("User Unit : True Is True") {
-  	assert(true == true)
-  }
+
+    //Create a new User via the User Companion Object
+    /*test("User Unit : Instantiate the models.User Class, via the Companion Object") {
+        models.User.newUser(
+            id = 0,
+            username = "gavinb",
+            password = "thePassword",
+            avatar = "Avatar = I am blue",
+            emailAddress = "gavinb@thespidernet.com",
+            twitter = "@thespidernet",
+            gitHub = "https://github.com/thespidernet/scalablog",
+            websiteURL = "http://thespidernet.com/scalablog",
+
+            firstName = "Gavin",
+            lastName = "Baumanis",
+            displayName = "Gavin Baumanis",
+            address1 = "The Spidernet",
+            address2 = "",
+            suburb = "Melbourne",
+            state = "Victoria",
+            postCode = "3000",
+            country = "Australia",
+
+            homePhone = "",
+            mobilePhone = "",
+            workPhone = "",
+            modifiedBy = "ScalaTest") shouldBe a[models.User]
+    } */
+
+    //Test the getUserById method
+    test("User Unit: Retrieve a user by Id: Is of of type User") {
+        models.User.getUserById(1) shouldBe a[models.User]
+    }
+
+    //Retrieve properties from a User object, created by the getUserById method.
+    test("User Unit : Get properties from User Object, via getUserByID()") {
+        val selectedUser = models.User.getUserById(1)
+        assert(selectedUser.firstName == "Gavin")
+    }
+
+    //Test XXXXXXXX
+    test("User Unit : Invoking head on an empty Set should produce NoSuchElementException") {
+        intercept[NoSuchElementException] {
+            Set.empty.head
+        }
+    }
+
+    //Test XXXXXXXX
+    test("User Unit : True Is True") {
+        assert(true == true)
+    }
 }

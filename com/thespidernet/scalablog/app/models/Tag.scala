@@ -52,10 +52,24 @@
 package models
 
 case class Tag(
-	var id: Int,
-	var tag: String,
+    var id : Int,
+    var tag : String,
 
-	var sortOrder: Int = 10,
-	var active: Boolean = true,
-	var modifiedBy: String,
-	var modifiedDateTime: java.util.Date = new java.util.Date())
+    var sortOrder : Int = 10,
+    var active : Boolean = true,
+
+    var modifiedBy : String,
+    var modifiedDateTime : java.util.Date = new java.util.Date())
+
+/*
+ * This is the Tag Companion Object.
+ * It is a singleton, "Service / Manager" object.
+ */
+object Tag {
+    def newTag(id : Int, tag : String, modifiedBy : String) : Tag = {
+        models.Tag(
+            id = 0,
+            tag = "Test Tag",
+            modifiedBy = "ScalaTest")
+    }
+}

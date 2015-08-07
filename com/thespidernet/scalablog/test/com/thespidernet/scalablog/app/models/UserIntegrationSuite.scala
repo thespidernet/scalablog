@@ -36,7 +36,7 @@
   *
   * The blog utilises the following technology;
   *
-  * Scala 2.11.3     
+  * Scala 2.11.3
   * Scala Test 2.2.4 - Testing Framework
   * Play 2.3.8 - MVC Framework
   * Akka
@@ -47,9 +47,9 @@
   *
   * This is the User Integration Testing Object
   * It inherits from a base INTEGRATION testing class "IntegrationSpec"
-  * 	Which is specifically setup for Integration Testing 
+  * 	Which is specifically setup for Integration Testing
   * 	using the FunSuite Testing Style.
-  *     FunSuite is MOST like xUnit testing - with extra Scala goodies! 
+  *     FunSuite is MOST like xUnit testing - with extra Scala goodies!
   *
   * ***************************************************************************
   */
@@ -59,24 +59,24 @@ package com.thespidernet.scalablog
 import org.scalatest._
 
 //Inherit from the "base" IntegrationSpec.
-class UserIntegrationSuite extends IntegrationSpec with Matchers{
+class UserIntegrationSuite extends IntegrationSpec with Matchers {
 
-	//Define All the INTEGRATION tests you want to run for the User class.
-	
-	//Test XXXXXXXX
-  test("UserIntegration : ") {
-    assert(Set.empty.size == 0)
-  }
+    //Define All the INTEGRATION tests you want to run for the User class.
 
-  //Test XXXXXXXX
-  test("UserIntegration : Invoking head on an empty Set should produce NoSuchElementException") {
-    intercept[NoSuchElementException] {
-      Set.empty.head
+    //Test XXXXXXXX
+    test("User Integration : ") {
+        assert(Set.empty.size == 0)
     }
-  }
-  
-  //Test XXXXXXXX
-  test("UserIntegration : True Is True") {
-  	assert(true == true)
-  }
+
+    //Test XXXXXXXX
+    test("User Integration : Invoking head on an empty Set should produce NoSuchElementException") {
+        intercept[NoSuchElementException] {
+            Set.empty.head
+        }
+    }
+
+    //Test XXXXXXXX
+    test("User Integration : True Is True") {
+        assert(true == true)
+    }
 }

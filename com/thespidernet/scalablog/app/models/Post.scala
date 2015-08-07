@@ -52,39 +52,39 @@
 package models
 
 case class Post(
-	var id: Int,
-	var title: String,
-	var post: String,
-	var author: String,
-	var postDateTime: java.util.Date = new java.util.Date(),
-	var postStatus: String,
+    var id : Int,
+    var title : String,
+    var post : String,
+    var author : String,
+    var postDateTime : java.util.Date = new java.util.Date(),
+    var postStatus : String,
 
-	var active: Boolean = true,
-	var modifiedBy: String,
-	var modifiedDateTime: java.util.Date = new java.util.Date())
-	
-/* 
+    var active : Boolean = true,
+
+    var modifiedBy : String,
+    var modifiedDateTime : java.util.Date = new java.util.Date())
+
+/*
  * This is the Post Companion Object.
  * It is a singleton, "Service / Manager" object.
  */
 object Post {
-	def newPost(id: Int, title: String, post:String, 
-									author:String, postStatus:String, modifiedBy: String): Post = {
-		models.Post(
-			id = 0,
-			title = "Test Title",
-			post = "Test Posted message for this Unit Test",
-			author = "ScalaTest",
-			postStatus = "Awesome!",
-			modifiedBy = "ScalaTest")
-	}
-	
-	
-	/*
+    def newPost(id : Int, title : String, post : String,
+                author : String, postStatus : String, modifiedBy : String) : Post = {
+        models.Post(
+            id = 0,
+            title = "Test Title",
+            post = "Test Posted message for this Unit Test",
+            author = "ScalaTest",
+            postStatus = "Awesome!",
+            modifiedBy = "ScalaTest")
+    }
+
+    /*
 	 * This should go to the mailing list!
-	 * 
+	 *
 	 * object Post {
-	def newPost(id: Int, title: String, post:String, 
+	def newPost(id: Int, title: String, post:String,
 									author:String, postStatus:String, modifiedBy: String): Post = {
 		models.Post.newPost(
 			id = 0,

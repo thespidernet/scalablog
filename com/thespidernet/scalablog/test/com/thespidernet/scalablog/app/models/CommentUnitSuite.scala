@@ -36,7 +36,7 @@
   *
   * The blog utilises the following technology;
   *
-  * Scala 2.11.3     
+  * Scala 2.11.3
   * Scala Test 2.2.4 - Testing Framework
   * Play 2.3.8 - MVC Framework
   * Akka
@@ -48,7 +48,7 @@
   * This is the Comment Unit Testing Object
   * It inherits from a base UNIT testing class "UnitSpec"
   * 	Which is specifically setup for Unit Testing using the FunSuite Testing Style.
-  *     FunSuite is MOST like xUnit testing - with extra Scala goodies! 
+  *     FunSuite is MOST like xUnit testing - with extra Scala goodies!
   *
   * ***************************************************************************
   */
@@ -57,48 +57,49 @@ package com.thespidernet.scalablog
 
 import org.scalatest._
 
-/** Inherit from the "base" UnitSpec and Mixin the Matchers trait.
+/**
+  * Inherit from the "base" UnitSpec and Mixin the Matchers trait.
   * The Matchers trait allows for more expressive tests beyond asserts;
   *      theUser shouldBe a [models.User]
   */
-class CommentUnitSuite extends UnitSpec with Matchers{
+class CommentUnitSuite extends UnitSpec with Matchers {
 
-	//Define All the UNIT tests you want to run for the Comment class.
-  
-	//Instantiate the models.Category Class
-	test("CommentUnit : Instantiate the models.Comment Class, directly") {
-		new models.Comment(
-			id = 0,
-			postId = 0,
-			comment = "Test Comment",
-			author = "ScalaTest",
-			modifiedBy = "ScalaTest") shouldBe a[models.Comment]
-	}
+    //Define All the UNIT tests you want to run for the Comment class.
 
-	//Create a new Comment via the Comment Companion Object
-	test("CommentUnit : Instantiate the models.Comment Class, via the Companion Object") {
-		models.Comment.newComment(
-			id = 0,
-			postId = 0,
-			comment = "Test Comment",
-			author = "ScalaTest",
-			modifiedBy = "ScalaTest") shouldBe a[models.Comment]
-	}
-	
-	//Test XXXXXXXX
-  test("Comment Unit : ") {
-    assert(Set.empty.size == 0)
-  }
-
-  //Test XXXXXXXX
-  test("CommentUnit : Invoking head on an empty Set should produce NoSuchElementException") {
-    intercept[NoSuchElementException] {
-      Set.empty.head
+    //Instantiate the models.Category Class
+    test("Comment Unit : Instantiate the models.Comment Class, directly") {
+        new models.Comment(
+            id = 0,
+            postId = 0,
+            comment = "Test Comment",
+            author = "ScalaTest",
+            modifiedBy = "ScalaTest") shouldBe a[models.Comment]
     }
-  }
-  
-  //Test XXXXXXXX
-  test("Comment Unit : True Is True") {
-  	assert(true == true)
-  }
+
+    //Create a new Comment via the Comment Companion Object
+    test("Comment Unit : Instantiate the models.Comment Class, via the Companion Object") {
+        models.Comment.newComment(
+            id = 0,
+            postId = 0,
+            comment = "Test Comment",
+            author = "ScalaTest",
+            modifiedBy = "ScalaTest") shouldBe a[models.Comment]
+    }
+
+    //Test XXXXXXXX
+    test("Comment Unit : ") {
+        assert(Set.empty.size == 0)
+    }
+
+    //Test XXXXXXXX
+    test("Comment Unit : Invoking head on an empty Set should produce NoSuchElementException") {
+        intercept[NoSuchElementException] {
+            Set.empty.head
+        }
+    }
+
+    //Test XXXXXXXX
+    test("Comment Unit : True Is True") {
+        assert(true == true)
+    }
 }

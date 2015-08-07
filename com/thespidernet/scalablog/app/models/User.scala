@@ -53,71 +53,70 @@
 package models
 
 case class User(
-	var id: Int,
-	var username: String,
-	var password: String,
-	var avatar: String,
-	var emailAddress: String,
-	var twitter: String,
-	var gitHub: String,
-	var websiteURL: String,
+    var id : Int,
+    var username : String,
+    var password : String,
+    var avatar : String,
+    var emailAddress : String,
+    var twitter : String,
+    var gitHub : String,
+    var websiteURL : String,
 
-	var firstName: String,
-	var lastName: String,
-	var displayName: String,
-	var address1: String,
-	var address2: String,
-	var suburb: String,
-	var city: String,
-	var state: String,
-	var postCode: String,
-	var country: String,
+    var firstName : String,
+    var lastName : String,
+    var displayName : String,
+    var address1 : String,
+    var address2 : String,
+    var suburb : String,
+    var state : String,
+    var postCode : String,
+    var country : String,
 
-	var homePhone: String,
-	var mobilePhone: String,
-	var workPhone: String,
+    var homePhone : String,
+    var mobilePhone : String,
+    var workPhone : String,
 
-	var active: Boolean = true,
-	var modifiedBy: String,
-	var modifiedDateTime: java.util.Date = new java.util.Date()) //User case class
+    var active : Boolean = true,
+
+    var modifiedBy : String,
+    var modifiedDateTime : java.util.Date = new java.util.Date()) //User case class
 
 object User {
-	def getUserById(id: Integer) = {
+    def getUserById(id : Integer) = {
 
-		// FIXME: Synthetically produce a User Object while testing
-		this(id = 1,
-			username = "GavinB",
-			password = "True",
-			avatar = "AVATAR - BLUE Dudes",
-			emailAddress = "gavinb@thespidernet.com",
-			twitter = "@thespidernet",
-			gitHub = "thespidernet",
-			websiteURL = "www.thespidernet.com",
+        // FIXME: Synthetically produce a User Object while testing
+        this(id = 1,
+            username = "GavinB",
+            password = "True",
+            avatar = "AVATAR - BLUE Dudes",
+            emailAddress = "gavinb@thespidernet.com",
+            twitter = "@thespidernet",
+            gitHub = "thespidernet",
+            websiteURL = "www.thespidernet.com",
 
-			firstName = "Gavin",
-			lastName = "Baumanis",
-			displayName = "Beau",
-			address1 = "The Spidernet",
-			address2 = "",
-			suburb = "",
-			city = "Melbourne",
-			state = "Victoria",
-			postCode = "3000",
-			country = "Australia",
+            firstName = "Gavin",
+            lastName = "Baumanis",
+            displayName = "Beau",
+            address1 = "The Spidernet",
+            address2 = "",
+            suburb = "Melbourne",
+            state = "Victoria",
+            postCode = "3000",
+            country = "Australia",
 
-			homePhone = "555-555-5555",
-			mobilePhone = "555-666-6666",
-			workPhone = "1234-1234-1243",
+            homePhone = "555-555-5555",
+            mobilePhone = "555-666-6666",
+            workPhone = "1234-1234-1243",
 
-			active = true,
-			modifiedBy = "Gavin Baumanis",
-			modifiedDateTime = new java.util.Date()
-		) //theUser
-		// There is no need for a RETURN in Scala if there is only one expression.
-		// The last value is what is returned
-	} // getUserById
+            active = true,
+            modifiedBy = "Gavin Baumanis",
+            modifiedDateTime = new java.util.Date()
+        ) //theUser
+        // There is no need for a RETURN in Scala if there is only one expression.
+        // The last value is what is returned
+    } // getUserById
 
-	def getFullnameById(id: Integer) = {
-		this.getUserById(id).firstName + ' ' + this.getUserById(id).lastName
-	} //getFullnameById
+    def getFullnameById(id : Integer) = {
+        this.getUserById(id).firstName + ' ' + this.getUserById(id).lastName
+    } //getFullnameById
 }

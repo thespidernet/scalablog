@@ -64,26 +64,26 @@ import org.scalatest._
   */
 class CategoryUnitSuite extends UnitSpec with Matchers {
 
-	//Define All the UNIT tests you want to run for the Category class.
+    //Define All the UNIT tests you want to run for the Category class.
 
-	//Instantiate the models.Category Class
-	test("CategoryUnit : Instantiate the models.Category Class, directly") {
-		new models.Category(
-			id = 0,
-			category = "Test Categpry",
-			modifiedBy = "ScalaTest") shouldBe a[models.Category]
-	}
+    //Instantiate the models.Category Class
+    test("Category Unit : Instantiate the models.Category Class, directly") {
+        new models.Category(
+            id = 0,
+            category = "Test Categpry",
+            modifiedBy = "ScalaTest") shouldBe a[models.Category]
+    }
 
-	//Create a new Category via the Category Companion Object
-	test("CategoryUnit : Instantiate the models.Category Class, via the Companion Object") {
-		models.Category.newCategory(
-			id = 0,
-			category = "Test Categpry",
-			modifiedBy = "ScalaTest") shouldBe a[models.Category]
-	}
+    //Create a new Category via the Category Companion Object
+    test("Category Unit : Instantiate the models.Category Class, via the Companion Object") {
+        models.Category.newCategory(
+            id = 0,
+            category = "Test Category",
+            modifiedBy = "ScalaTest") shouldBe a[models.Category]
+    }
 
-	//Test XXXXXXXX
-	test("CategoryUnit : True Is True") {
-		assert(true == true)
-	}
+    //Test XXXXXXXX
+    test("Category Unit : True Is True") {
+        assert(true == true)
+    }
 }
