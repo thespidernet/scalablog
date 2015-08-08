@@ -1,10 +1,12 @@
-name := """scalaBlog"""
+name := "scalaBlog"
 
 version := "0.1"
 
+organization := "com.thespidernet"
+
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
-scalaVersion := "2.11.6"
+scalaVersion := "2.11.7"
 
 libraryDependencies ++= Seq(
   jdbc,
