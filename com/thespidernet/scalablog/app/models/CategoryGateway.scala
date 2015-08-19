@@ -45,6 +45,7 @@
  * Hadoop File System
  * Hadoop
  * jQuery
+ * Bootstrap
  *
  * This is the CategoryGateway object (Singleton).
  * It contains all "native" code for getting data into and out of physical storage.

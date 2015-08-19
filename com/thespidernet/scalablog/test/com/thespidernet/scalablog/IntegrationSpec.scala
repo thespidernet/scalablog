@@ -45,6 +45,7 @@
  * Hadoop File System
  * Hadoop
  * jQuery
+ * Bootstrap
  *
  * This is the "base" Integration Testing abstract class.
  *
