@@ -43,7 +43,7 @@
  * Cassandra Database
  * Hadoop File System
  * Hadoop
- * Bootstrap / jQuery
+ * jQuery
  * 
  *****************************************************************************@
  
