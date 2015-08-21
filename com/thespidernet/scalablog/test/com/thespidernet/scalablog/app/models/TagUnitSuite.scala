@@ -73,7 +73,7 @@ class TagUnitSuite extends UnitSpec with Matchers {
 		new models.Tag(
 			id = 0,
 			tag = "TagTitle",
-			modifiedBy = "ScalaTest") shouldBe a[models.Tag]
+			modifiedBy = models.User.getUserById(1)) shouldBe a[models.Tag]
 	}
 
 	//Create a new Tag via the Tag Companion Object
@@ -81,7 +81,7 @@ class TagUnitSuite extends UnitSpec with Matchers {
 		models.Tag.newTag(
 			id = 0,
 			tag = "TagTitle",
-			modifiedBy = "ScalaTest") shouldBe a[models.Tag]
+			modifiedBy = models.User.getUserById(1)) shouldBe a[models.Tag]
 	}
 
 	//Test XXXXXXXX

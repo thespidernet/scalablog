@@ -74,8 +74,8 @@ class CommentUnitSuite extends UnitSpec with Matchers {
 			id = 0,
 			postId = 0,
 			comment = "Test Comment",
-			author = "ScalaTest",
-			modifiedBy = "ScalaTest") shouldBe a[models.Comment]
+			author = models.User.getUserById(1),
+			modifiedBy = models.User.getUserById(1)) shouldBe a[models.Comment]
 	}
 
 	//Create a new Comment via the Comment Companion Object
@@ -84,8 +84,8 @@ class CommentUnitSuite extends UnitSpec with Matchers {
 			id = 0,
 			postId = 0,
 			comment = "Test Comment",
-			author = "ScalaTest",
-			modifiedBy = "ScalaTest") shouldBe a[models.Comment]
+			author = models.User.getUserById(1),
+			modifiedBy = models.User.getUserById(1)) shouldBe a[models.Comment]
 	}
 
 	//Test XXXXXXXX

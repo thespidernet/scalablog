@@ -73,7 +73,7 @@ class CategoryUnitSuite extends UnitSpec with Matchers {
 		new models.Category(
 			id = 0,
 			category = "Test Categpry",
-			modifiedBy = "ScalaTest") shouldBe a[models.Category]
+			modifiedBy = models.User.getUserById(1)) shouldBe a[models.Category]
 	}
 
 	//Create a new Category via the Category Companion Object
@@ -81,7 +81,7 @@ class CategoryUnitSuite extends UnitSpec with Matchers {
 		models.Category.newCategory(
 			id = 0,
 			category = "Test Category",
-			modifiedBy = "ScalaTest") shouldBe a[models.Category]
+			modifiedBy = models.User.getUserById(1)) shouldBe a[models.Category]
 	}
 
 	//Test XXXXXXXX

@@ -74,9 +74,9 @@ class PostUnitSuite extends UnitSpec with Matchers {
 			id = 0,
 			title = "PostTitle",
 			post = "Test Post",
-			author = "ScalaTest",
+			author = models.User.getUserById(1),
 			postStatus = "Test Status",
-			modifiedBy = "ScalaTest") shouldBe a[models.Post]
+			modifiedBy = models.User.getUserById(1)) shouldBe a[models.Post]
 	}
 
 	//Create a new Post via the Post Companion Object
@@ -85,9 +85,9 @@ class PostUnitSuite extends UnitSpec with Matchers {
 			id = 0,
 			title = "Test Title",
 			post = "Test Posted message for this Unit Test",
-			author = "ScalaTest",
+			author = models.User.getUserById(1),
 			postStatus = "Awesome!",
-			modifiedBy = "ScalaTest") shouldBe a[models.Post]
+			modifiedBy = models.User.getUserById(1)) shouldBe a[models.Post]
 	}
 
 	//Test XXXXXXXX

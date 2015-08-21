@@ -48,7 +48,10 @@
  * 
  *****************************************************************************@
  
- The "test" folder is identically structured as the Application source code.
- It contains unit and integration tests for the ScalBlog.
- 
- It uses the Scala Tests Framework, v 2.2.4
+ The "test" folder is identically structured to match the Application source code.
+ It contains tests for the ScalBlog.
+ Eg.
+  * Unit tests.
+  * Integration tests.
+   
+ It uses the ScalaTest Tests Framework, v 2.2.4

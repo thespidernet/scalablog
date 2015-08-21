@@ -93,9 +93,9 @@ class UserUnitSuite extends UnitSpec with Matchers {
 
 			homePhone = "",
 			mobilePhone = "",
-			workPhone = "",
+			workPhone = "") shouldBe a[models.User]
 
-			modifiedBy = "ScalaTest") shouldBe a[models.User]
+		// modifiedBy = models.User.getUserById(1)) shouldBe a[models.User]
 	}
 
 	//Create a new User via the User Companion Object
