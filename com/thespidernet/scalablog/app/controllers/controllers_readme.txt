@@ -51,8 +51,8 @@
  The controllers folder is used to contain all the application-flow logic for
  the application.
 
- The controller dictates the steps requires to "action" the user's input.
- You can also think of them as "script / batch files" for required steps.
+ The controller dictates the steps required to "action" a user's input or application event.
+ You can also think of them as "script / batch files".
  
  Eg.
  You press a "button" on a form.
