@@ -60,5 +60,5 @@ case class PostStatus(
 
 	var sortOrder: Int = 10,
 	var active: Boolean = true,
-	var modifiedBy: String,
+	var modifiedBy: User,
 	var modifiedDateTime: java.util.Date)

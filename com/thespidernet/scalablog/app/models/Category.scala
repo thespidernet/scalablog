@@ -63,7 +63,7 @@ case class Category(
 
 	var sortOrder: Int = 10,
 	var active: Boolean = true,
-	var modifiedBy: String,
+	var modifiedBy: User,
 	var modifiedDateTime: java.util.Date = new java.util.Date())
 
 /*
@@ -71,10 +71,10 @@ case class Category(
  * It is a singleton, "Service / Manager" object.
  */
 object Category {
-	def newCategory(id: Int, category: String, modifiedBy: String): Category = {
+	def newCategory(id: Int, category: String, modifiedBy: User): Category = {
 		new models.Category(
 			id = 0,
 			category = "Test Category",
-			modifiedBy = "ScalaTest")
+			modifiedBy = User.getUserById(1))
 	}
 }

@@ -80,11 +80,11 @@ case class User(
 
 	var active: Boolean = true,
 
-	var modifiedBy: String,
+	// var modifiedBy: User,
 	var modifiedDateTime: java.util.Date = new java.util.Date()) //User case class
 
 object User {
-	def getUserById(id: Integer) = {
+	def getUserById(id: Integer): User = {
 
 		// FIXME: Synthetically produce a User Object while testing
 		this(id = 1,
@@ -111,7 +111,7 @@ object User {
 			workPhone = "1234-1234-1243",
 
 			active = true,
-			modifiedBy = "Gavin Baumanis",
+			// modifiedBy = new models.User(),
 			modifiedDateTime = new java.util.Date()) //theUser
 		// There is no need for a RETURN in Scala if there is only one expression.
 		// The last value is what is returned

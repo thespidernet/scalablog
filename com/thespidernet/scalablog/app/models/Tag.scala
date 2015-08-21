@@ -60,7 +60,7 @@ case class Tag(
 	var sortOrder: Int = 10,
 	var active: Boolean = true,
 
-	var modifiedBy: String,
+	var modifiedBy: User,
 	var modifiedDateTime: java.util.Date = new java.util.Date())
 
 /*
@@ -68,10 +68,10 @@ case class Tag(
  * It is a singleton, "Service / Manager" object.
  */
 object Tag {
-	def newTag(id: Int, tag: String, modifiedBy: String): Tag = {
+	def newTag(id: Int, tag: String, modifiedBy: User): Tag = {
 		models.Tag(
 			id = 0,
 			tag = "Test Tag",
-			modifiedBy = "ScalaTest")
+			modifiedBy = User.getUserById(1))
 	}
 }

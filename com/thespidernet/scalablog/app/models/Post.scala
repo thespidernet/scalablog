@@ -57,13 +57,14 @@ case class Post(
 	var id: Int,
 	var title: String,
 	var post: String,
-	var author: String,
+	var author: User,
 	var postDateTime: java.util.Date = new java.util.Date(),
 	var postStatus: String,
 
+	// var tags: Array[Tag],
 	var active: Boolean = true,
 
-	var modifiedBy: String,
+	var modifiedBy: User,
 	var modifiedDateTime: java.util.Date = new java.util.Date())
 
 /*
@@ -72,14 +73,14 @@ case class Post(
  */
 object Post {
 	def newPost(id: Int, title: String, post: String,
-		author: String, postStatus: String, modifiedBy: String): Post = {
+		author: User, postStatus: String, modifiedBy: User): Post = {
 		models.Post(
-			id = 0,
+			id = 1,
 			title = "Test Title",
 			post = "Test Posted message for this Unit Test",
-			author = "ScalaTest",
+			author = User.getUserById(1),
 			postStatus = "Awesome!",
-			modifiedBy = "ScalaTest")
+			modifiedBy = User.getUserById(1))
 	}
 
 	/*
