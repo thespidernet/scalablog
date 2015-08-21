@@ -116,7 +116,8 @@
 				<input id="workPhone" name="workPhone" length="50" size="25" value="@User.workPhone"></input><br />
 				<hr />
 				@*  Because MODIFIED BY is a user id - Use the helper method; getFullnameByID() *@
-				<label for="modifiedBy">Last Modified By : </label>@User.modifiedBy<br />
+				@* TODO: Work out how to use this property. it is causing a circular reference issue. *@
+                @* <label for="modifiedBy">Last Modified By : </label>@User.modifiedBy<br /> *@
 				<label for="modifiedDateTime">Last Modified DateTime : </label>@User.modifiedDateTime
 				<hr />
 				<input type="submit" value="Submit"></input>
