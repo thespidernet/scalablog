@@ -15,4 +15,12 @@ libraryDependencies ++= Seq(
   ws
 )
 
-libraryDependencies += "org.scalatest" % "scalatest_2.11" % "2.2.4" % "test"
+libraryDependencies ++= {
+  val akkaVersion       = "2.3.12"
+  Seq(
+    "com.typesafe.akka"       %%  "akka-actor"   % akkaVersion,
+    "com.typesafe.akka"       %%  "akka-slf4j"   % akkaVersion,
+    "com.typesafe.akka"       %%  "akka-testkit" % akkaVersion   % "test",
+    "org.scalatest"           %%  "scalatest"    % "2.2.5"       % "test"
+  )
+}
