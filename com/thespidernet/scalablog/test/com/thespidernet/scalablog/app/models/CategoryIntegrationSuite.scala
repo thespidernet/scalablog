@@ -36,16 +36,15 @@
  *
  * The blog utilises the following technology;
  *
- * Scala 2.11.7
- * Scala Test 2.2.4 - Testing Framework
+ * Scala 2.11.6
+ * Scala Test 2.2.5 - Testing Framework
  * Play 2.3.10 - MVC Framework
- * Akka
- * Spray
- * Cassandra Database
- * Hadoop File System
- * Hadoop
- * jQuery
- * Bootstrap
+ * Akka 2.3.9 - Messaging
+ * spray 2.3.3 - http
+ * Cassandra Database 2.1.8
+ * Hadoop / Hadoop File System 2.7.1
+ * jQuery 2.1.4 - JavaScript Library
+ * Bootstrap 3.3.4 - JavaScript Library
  *
  * This is the Category Integration Testing Object
  * It inherits from a base INTEGRATION testing class "IntegrationSpec"
