@@ -6,7 +6,7 @@ organization := "com.thespidernet"
 
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
-scalaVersion := "2.11.7"
+scalaVersion := "2.11.6"
 
 libraryDependencies ++= Seq(
   jdbc,
@@ -16,7 +16,7 @@ libraryDependencies ++= Seq(
 )
 
 libraryDependencies ++= {
-  val akkaVersion       = "2.3.12"
+  val akkaVersion       = "2.3.9"
   Seq(
     "com.typesafe.akka"       %%  "akka-actor"   % akkaVersion,
     "com.typesafe.akka"       %%  "akka-slf4j"   % akkaVersion,
