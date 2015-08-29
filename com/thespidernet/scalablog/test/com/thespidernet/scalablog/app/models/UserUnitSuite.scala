@@ -92,9 +92,9 @@ class UserUnitSuite extends UnitSpec with Matchers {
 
 			homePhone = "",
 			mobilePhone = "",
-			workPhone = "") shouldBe a[models.User]
+			workPhone = "") shouldBe a[models.User] //shouldBe tests for type equality
 
-		// modifiedBy = models.User.getUserById(1)) shouldBe a[models.User]
+		// modifiedBy = models.User.getUserById(1)) shouldBe a[models.User] //shouldBe tests for type equality
 	}
 
 	//Create a new User via the User Companion Object

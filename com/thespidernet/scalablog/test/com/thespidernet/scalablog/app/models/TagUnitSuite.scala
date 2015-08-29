@@ -72,7 +72,7 @@ class TagUnitSuite extends UnitSpec with Matchers {
 		new models.Tag(
 			id = 0,
 			tag = "TagTitle",
-			modifiedBy = models.User.getUserById(1)) shouldBe a[models.Tag]
+			modifiedBy = models.User.getUserById(1)) shouldBe a[models.Tag] //shouldBe tests for type equality
 	}
 
 	//Create a new Tag via the Tag Companion Object
@@ -80,7 +80,7 @@ class TagUnitSuite extends UnitSpec with Matchers {
 		models.Tag.newTag(
 			id = 0,
 			tag = "TagTitle",
-			modifiedBy = models.User.getUserById(1)) shouldBe a[models.Tag]
+			modifiedBy = models.User.getUserById(1)) shouldBe a[models.Tag] //shouldBe tests for type equality
 	}
 
 	test("Tag Unit : Set Tag property with dynamic setter.") {
