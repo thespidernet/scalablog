@@ -83,6 +83,26 @@ class TagUnitSuite extends UnitSpec with Matchers {
 			modifiedBy = models.User.getUserById(1)) shouldBe a[models.Tag]
 	}
 
+	test("Tag Unit : Set Tag property with dynamic setter.") {
+		var tagObj: models.Tag = models.Tag.newTag(
+			id = 0,
+			tag = "TagTitle",
+			modifiedBy = models.User.getUserById(1))
+
+		/* This test is seemingly useless. It is standard Scala syntax.
+		 * But... since this is a tutorial as much as is it is a working application;
+		 * The tests can be used as a "how to", as well.
+		 *
+		 * Notice that - Scala classes have implicit setters and getters.
+		 * No need for a handwritten function either..
+		 * 		No: tagObj.setid(1)
+		 * 		Yes: tagObj.id =1
+		 */
+		tagObj.id = 1
+
+		assert(tagObj.id == 1)
+	}
+
 	//Test XXXXXXXX
 	test("Tag Unit : ") {
 		assert(Set.empty.size == 0)

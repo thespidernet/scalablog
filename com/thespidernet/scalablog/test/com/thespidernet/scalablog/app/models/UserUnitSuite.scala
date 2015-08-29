@@ -136,6 +136,23 @@ class UserUnitSuite extends UnitSpec with Matchers {
 		assert(selectedUser.firstName == "Gavin")
 	}
 
+	test("User Unit : Set User property with dynamic setter.") {
+		var selectedUser = models.User.getUserById(1)
+
+		/* This test is seemingly useless. It is standard Scala syntax.
+		 * But... since this is a tutorial as much as is it is a working application;
+		 * The tests can be used as a "how to", as well.
+		 *
+		 * Notice that - scala classes have implicit setters and getters.
+		 * No need for a handwritten function either..
+		 * 		No: selectedUser.setid(1)
+		 * 		Yes: selectedUser.id =1
+		 */
+		selectedUser.id = 1
+
+		assert(selectedUser.id == 1)
+	}
+
 	//Test XXXXXXXX
 	test("User Unit : Invoking head on an empty Set should produce NoSuchElementException") {
 		intercept[NoSuchElementException] {
