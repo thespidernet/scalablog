@@ -75,7 +75,7 @@ class PostUnitSuite extends UnitSpec with Matchers {
 			post = "Test Post",
 			author = models.User.getUserById(1),
 			postStatus = "Test Status",
-			modifiedBy = models.User.getUserById(1)) shouldBe a[models.Post]
+			modifiedBy = models.User.getUserById(1)) shouldBe a[models.Post] //shouldBe tests for type equality
 	}
 
 	//Create a new Post via the Post Companion Object
@@ -86,7 +86,30 @@ class PostUnitSuite extends UnitSpec with Matchers {
 			post = "Test Posted message for this Unit Test",
 			author = models.User.getUserById(1),
 			postStatus = "Awesome!",
-			modifiedBy = models.User.getUserById(1)) shouldBe a[models.Post]
+			modifiedBy = models.User.getUserById(1)) shouldBe a[models.Post] //shouldBe tests for type equality
+	}
+
+	test("Post Unit : Set Post property with dynamic setter.") {
+		var postObj = models.Post.newPost(
+			id = 0,
+			title = "Test Title",
+			post = "Test Posted message for this Unit Test",
+			author = models.User.getUserById(1),
+			postStatus = "Awesome!",
+			modifiedBy = models.User.getUserById(1))
+
+		/* This test is seemingly useless. It is standard Scala syntax.
+		 * But... since this is a tutorial as much as is it is a working application;
+		 * The tests can be used as a "how to", as well.
+		 *
+		 * Notice that - Scala classes have implicit setters and getters.
+		 * No need for a handwritten function either..
+		 * 		No: postObj.setid(1)
+		 * 		Yes: postObj.id =1
+		 */
+		postObj.id = 1
+
+		assert(postObj.id == 1)
 	}
 
 	//Test XXXXXXXX
