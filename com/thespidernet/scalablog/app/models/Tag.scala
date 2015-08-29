@@ -74,3 +74,34 @@ object Tag {
 			modifiedBy = modifiedBy)
 	}
 }
+
+/*
+ * The following code shows how to create Java beans from Scala.
+ * It also creates (dynamically) setter and getter methods in the Javabean style;
+ *  getXXX() / setXXX()
+
+package models
+import scala.beans.BeanProperty
+
+case class Tag(
+	@BeanProperty var id: Int,
+	@BeanProperty var tag: String,
+
+	@BeanProperty var sortOrder: Int = 10,
+	@BeanProperty var active: Boolean = true,
+
+	@BeanProperty var modifiedBy: User,
+	@BeanProperty var modifiedDateTime: java.util.Date = new java.util.Date())
+
+
+// This is the Tag Companion Object.
+// It is a singleton, "Service / Manager" object.
+object Tag {
+	def newTag(id: Int, tag: String, modifiedBy: User): Tag = {
+		models.Tag(
+			id = 0,
+			tag = tag,
+			modifiedBy = modifiedBy)
+	}
+}
+*/
