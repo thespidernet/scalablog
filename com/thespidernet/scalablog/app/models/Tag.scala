@@ -70,7 +70,7 @@ object Tag {
 	def newTag(id: Int, tag: String, modifiedBy: User): Tag = {
 		models.Tag(
 			id = 0,
-			tag = "Test Tag",
-			modifiedBy = User.getUserById(1))
+			tag = tag,
+			modifiedBy = modifiedBy)
 	}
 }

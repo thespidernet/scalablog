@@ -74,12 +74,12 @@ object Post {
 	def newPost(id: Int, title: String, post: String,
 		author: User, postStatus: String, modifiedBy: User): Post = {
 		models.Post(
-			id = 1,
-			title = "Test Title",
-			post = "Test Posted message for this Unit Test",
-			author = User.getUserById(1),
-			postStatus = "Awesome!",
-			modifiedBy = User.getUserById(1))
+			id = 0,
+			title = title,
+			post = post,
+			author = author,
+			postStatus = postStatus,
+			modifiedBy = modifiedBy)
 	}
 
 	/*

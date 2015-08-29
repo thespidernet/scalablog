@@ -69,10 +69,10 @@ object Comment {
 		author: User, modifiedBy: User): Comment = {
 		new models.Comment(
 			id = 0,
-			postId = 0,
-			comment = "TestScalaComment",
-			author = User.getUserById(1),
-			modifiedBy = User.getUserById(1))
+			postId = postId,
+			comment = comment,
+			author = author,
+			modifiedBy = modifiedBy)
 
 	}
 }

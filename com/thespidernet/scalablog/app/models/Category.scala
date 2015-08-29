@@ -73,7 +73,7 @@ object Category {
 	def newCategory(id: Int, category: String, modifiedBy: User): Category = {
 		new models.Category(
 			id = 0,
-			category = "Test Category",
-			modifiedBy = User.getUserById(1))
+			category = category,
+			modifiedBy = modifiedBy)
 	}
 }
