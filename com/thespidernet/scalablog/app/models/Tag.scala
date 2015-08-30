@@ -77,7 +77,7 @@ object Tag {
 
 /*
  * The following code shows how to create Java beans from Scala.
- * It also creates (dynamically) setter and getter methods in the Javabean style;
+ * It also creates (dynamically) setter and getter methods in the Java Bean style;
  *  getXXX() / setXXX()
 
 package models
