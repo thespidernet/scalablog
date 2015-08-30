@@ -48,41 +48,140 @@
  *
  * This is the User Class.
  *
+ * There is an issue with modelling our Users.
+ * if you have a recursive property, how can you possible create a User?
+ *
+ * The modifiedBy property is a User object.
+ * So you load up the properties for THIS user.
+ * get to the modifiedBy property and have to load another User.
+ * The ModifiedBy User ALSO has a modifiedBy property that is a User.
+ * So now you have to load another User, that has a modifiedBy property.
+ *
+ * In and of itself it isn't a big problem - but for - what happens when you get to the very first user?
+ * It doesn't have a value for the modifiedBy property.
+ *
+ * There are two options.
+ * Have the first User created by None or have the first User created by itself.
+ *
+ * I'd actually recommend the second case, and I'd recommend modelling the modifiedBy as a function for lazy
+ * evaluation rather than a property that is evaluated at construction time.
+ *
+ * To accomplish this we will use a TRAIT.
+ *
+ * A trait is a Scala costruct that is much like a Java interface.
+ * But in Scala - a trait can be partially completed and provide default implementations of some methods
+ * to the classes that extend it.
+ *
  * ***************************************************************************
  */
 
 package models
 
+trait User {
+	def id: Int
+	def modifiedBy: User
+}
+
+case class SystemUser(id: Int,
+		username: String = "ScalaBlog System",
+		password: String = "",
+		avatar: String = "",
+		emailAddress: String = "gavinb@thespidernet.com",
+		twitter: String = "@thespidernet",
+		gitHub: String = "thespidernet",
+		websiteURL: String = "http://www.thespidernet.com",
+
+		firstName: String = "ScalaBlog",
+		lastName: String = "System",
+		displayName: String = "ScalaBlog System",
+		address1: String = "The Spidernet",
+		address2: String = "",
+		suburb: String = "Melbourne",
+		state: String = "Victoria",
+		postCode: String = "3000",
+		country: String = "Australia",
+
+		homePhone: String = "",
+		mobilePhone: String = "",
+		workPhone: String = "",
+
+		active: Boolean = true,
+
+		modifiedDateTime: java.util.Date = new java.util.Date()) extends User {
+
+	def modifiedBy = this
+}
+
+case class NormalUser(id: Int,
+	username: String,
+	password: String,
+	avatar: String,
+	emailAddress: String,
+	twitter: String,
+	gitHub: String,
+	websiteURL: String,
+
+	firstName: String,
+	lastName: String,
+	displayName: String,
+	address1: String,
+	address2: String,
+	suburb: String,
+	state: String,
+	postCode: String,
+	country: String,
+
+	homePhone: String,
+	mobilePhone: String,
+	workPhone: String,
+
+	active: Boolean = true,
+
+	modifiedBy: User,
+	modifiedDateTime: java.util.Date = new java.util.Date()) extends User
+
+//Singleton for the System Account
+object SystemUser {
+
+}
+
+//Singleton for NormaL Users - real people!
+object NormalUser {
+
+}
+
+/*
 case class User(
-	var id: Int,
-	var username: String,
-	var password: String,
-	var avatar: String,
-	var emailAddress: String,
-	var twitter: String,
-	var gitHub: String,
-	var websiteURL: String,
+	id: Int,
+	username: String,
+	password: String,
+	avatar: String,
+	emailAddress: String,
+	twitter: String,
+	gitHub: String,
+	websiteURL: String,
 
-	var firstName: String,
-	var lastName: String,
-	var displayName: String,
-	var address1: String,
-	var address2: String,
-	var suburb: String,
-	var state: String,
-	var postCode: String,
-	var country: String,
+	firstName: String,
+	lastName: String,
+	displayName: String,
+	address1: String,
+	address2: String,
+	suburb: String,
+	state: String,
+	postCode: String,
+	country: String,
 
-	var homePhone: String,
-	var mobilePhone: String,
-	var workPhone: String,
+	homePhone: String,
+	mobilePhone: String,
+	workPhone: String,
 
-	var active: Boolean = true,
+	active: Boolean = true,
 
-	// var modifiedBy: User,
-	var modifiedDateTime: java.util.Date = new java.util.Date()) //User case class
+	modifiedBy: Option[User],
+	modifiedDateTime: java.util.Date = new java.util.Date()) //User case class
 
-object User {
+
+
 	def getUserById(id: Integer): User = {
 
 		// FIXME: Synthetically produce a User Object while testing
@@ -93,7 +192,7 @@ object User {
 			emailAddress = "gavinb@thespidernet.com",
 			twitter = "@thespidernet",
 			gitHub = "thespidernet",
-			websiteURL = "www.thespidernet.com",
+			websiteURL = "http://www.thespidernet.com",
 
 			firstName = "Gavin",
 			lastName = "Baumanis",
@@ -110,13 +209,9 @@ object User {
 			workPhone = "1234-1234-1243",
 
 			active = true,
-			// modifiedBy = new models.User(),
+			//modifiedBy =
 			modifiedDateTime = new java.util.Date()) //theUser
 		// There is no need for a RETURN in Scala if there is only one expression.
 		// The last value is what is returned
 	} // getUserById
-
-	def getFullnameById(id: Integer) = {
-		this.getUserById(id).firstName + ' ' + this.getUserById(id).lastName
-	} //getFullnameById
-}
+*/
