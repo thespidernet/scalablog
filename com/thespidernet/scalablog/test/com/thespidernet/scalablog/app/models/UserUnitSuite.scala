@@ -70,7 +70,7 @@ class UserUnitSuite extends UnitSpec with Matchers {
 
 	//Instantiate the models.User Class
 	test("User Unit : Instantiate the models.Category Class, directly") {
-		new models.User(
+		new models.NormalUser(
 			id = 0,
 			username = "gavinb",
 			password = "thePassword",
@@ -92,11 +92,12 @@ class UserUnitSuite extends UnitSpec with Matchers {
 
 			homePhone = "",
 			mobilePhone = "",
-			workPhone = "") shouldBe a[models.User] //shouldBe tests for type equality
-
-		// modifiedBy = models.User.getUserById(1)) shouldBe a[models.User] //shouldBe tests for type equality
+      workPhone = "",
+      modifiedDateTime = new java.util.Date(),
+      modifiedBy = models.SystemUser(1)) shouldBe a[models.User] //shouldBe tests for type equality
 	}
 
+  
 	//Create a new User via the User Companion Object
 	/*test("User Unit : Instantiate the models.User Class, via the Companion Object") {
         models.User.newUser(
@@ -125,33 +126,13 @@ class UserUnitSuite extends UnitSpec with Matchers {
             modifiedBy = "ScalaTest") shouldBe a[models.User]
     } */
 
-	//Test the getUserById method
-	test("User Unit: Retrieve a user by Id: Is of of type User") {
-		models.User.getUserById(1) shouldBe a[models.User]
-	}
-
+  
 	//Retrieve properties from a User object, created by the getUserById method.
 	test("User Unit : Get properties from User Object, via getUserByID()") {
-		val selectedUser = models.User.getUserById(1)
+		val selectedUser = models.SystemUser(1)
 		assert(selectedUser.firstName == "Gavin")
 	}
 
-	test("User Unit : Set User property with dynamic setter.") {
-		var selectedUser = models.User.getUserById(1)
-
-		/* This test is seemingly useless. It is standard Scala syntax.
-		 * But... since this is a tutorial as much as is it is a working application;
-		 * The tests can be used as a "how to", as well.
-		 *
-		 * Notice that - scala classes have implicit setters and getters.
-		 * No need for a handwritten function either..
-		 * 		No: selectedUser.setid(1)
-		 * 		Yes: selectedUser.id =1
-		 */
-		selectedUser.id = 1
-
-		assert(selectedUser.id == 1)
-	}
 
 	//Test XXXXXXXX
 	test("User Unit : Invoking head on an empty Set should produce NoSuchElementException") {
@@ -160,6 +141,7 @@ class UserUnitSuite extends UnitSpec with Matchers {
 		}
 	}
 
+  
 	//Test XXXXXXXX
 	test("User Unit : True Is True") {
 		assert(true == true)

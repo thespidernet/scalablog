@@ -72,22 +72,24 @@ class TagUnitSuite extends UnitSpec with Matchers {
 		new models.Tag(
 			id = 0,
 			tag = "TagTitle",
-			modifiedBy = models.User.getUserById(1)) shouldBe a[models.Tag] //shouldBe tests for type equality
+			modifiedBy = models.SystemUser(1)) shouldBe a[models.Tag] //shouldBe tests for type equality
 	}
 
+  
 	//Create a new Tag via the Tag Companion Object
 	test("Tag Unit : Instantiate the models.Tag Class, via the Companion Object") {
 		models.Tag.newTag(
 			id = 0,
 			tag = "TagTitle",
-			modifiedBy = models.User.getUserById(1)) shouldBe a[models.Tag] //shouldBe tests for type equality
+			modifiedBy = models.SystemUser(1)) shouldBe a[models.Tag] //shouldBe tests for type equality
 	}
 
+  
 	test("Tag Unit : Set Tag property with dynamic setter.") {
 		var tagObj: models.Tag = models.Tag.newTag(
 			id = 0,
 			tag = "TagTitle",
-			modifiedBy = models.User.getUserById(1))
+			modifiedBy = models.SystemUser(1))
 
 		/* This test is seemingly useless. It is standard Scala syntax.
 		 * But... since this is a tutorial as much as is it is a working application;
@@ -103,11 +105,13 @@ class TagUnitSuite extends UnitSpec with Matchers {
 		assert(tagObj.id == 1)
 	}
 
+  
 	//Test XXXXXXXX
 	test("Tag Unit : ") {
 		assert(Set.empty.size == 0)
 	}
 
+  
 	//Test XXXXXXXX
 	test("Tag Unit : Invoking head on an empty Set should produce NoSuchElementException") {
 		intercept[NoSuchElementException] {
@@ -115,6 +119,7 @@ class TagUnitSuite extends UnitSpec with Matchers {
 		}
 	}
 
+  
 	//Test XXXXXXXX
 	test("Tag Unit : True Is True") {
 		assert(true == true)

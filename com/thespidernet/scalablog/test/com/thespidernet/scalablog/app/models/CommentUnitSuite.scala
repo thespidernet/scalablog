@@ -73,25 +73,28 @@ class CommentUnitSuite extends UnitSpec with Matchers {
 			id = 0,
 			postId = 0,
 			comment = "Test Comment",
-			author = models.User.getUserById(1),
-			modifiedBy = models.User.getUserById(1)) shouldBe a[models.Comment] //shouldBe tests for type equality
+			author = models.SystemUser(1),
+			modifiedBy = models.SystemUser(1)) shouldBe a[models.Comment] //shouldBe tests for type equality
 	}
 
+  
 	//Create a new Comment via the Comment Companion Object
 	test("Comment Unit : Instantiate the models.Comment Class, via the Companion Object") {
 		models.Comment.newComment(
 			id = 0,
 			postId = 0,
 			comment = "Test Comment",
-			author = models.User.getUserById(1),
-			modifiedBy = models.User.getUserById(1)) shouldBe a[models.Comment] //shouldBe tests for type equality
+			author = models.SystemUser(1),
+			modifiedBy = models.SystemUser(1)) shouldBe a[models.Comment] //shouldBe tests for type equality
 	}
 
+  
 	//Test XXXXXXXX
 	test("Comment Unit : ") {
 		assert(Set.empty.size == 0)
 	}
 
+  
 	//Test XXXXXXXX
 	test("Comment Unit : Invoking head on an empty Set should produce NoSuchElementException") {
 		intercept[NoSuchElementException] {
@@ -99,6 +102,7 @@ class CommentUnitSuite extends UnitSpec with Matchers {
 		}
 	}
 
+  
 	//Test XXXXXXXX
 	test("Comment Unit : True Is True") {
 		assert(true == true)

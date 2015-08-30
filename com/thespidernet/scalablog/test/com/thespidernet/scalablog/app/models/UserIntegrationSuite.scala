@@ -69,6 +69,7 @@ class UserIntegrationSuite extends IntegrationSpec with Matchers {
 		assert(Set.empty.size == 0)
 	}
 
+  
 	//Test XXXXXXXX
 	test("User Integration : Invoking head on an empty Set should produce NoSuchElementException") {
 		intercept[NoSuchElementException] {
@@ -76,6 +77,7 @@ class UserIntegrationSuite extends IntegrationSpec with Matchers {
 		}
 	}
 
+  
 	//Test XXXXXXXX
 	test("User Integration : True Is True") {
 		assert(true == true)

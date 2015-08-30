@@ -73,30 +73,32 @@ class PostUnitSuite extends UnitSpec with Matchers {
 			id = 0,
 			title = "PostTitle",
 			post = "Test Post",
-			author = models.User.getUserById(1),
+			author = models.SystemUser(1),
 			postStatus = "Test Status",
-			modifiedBy = models.User.getUserById(1)) shouldBe a[models.Post] //shouldBe tests for type equality
+			modifiedBy = models.SystemUser(1)) shouldBe a[models.Post] //shouldBe tests for type equality
 	}
 
+  
 	//Create a new Post via the Post Companion Object
 	test("Post Unit : Instantiate the models.Post Class, via the Companion Object") {
 		models.Post.newPost(
 			id = 0,
 			title = "Test Title",
 			post = "Test Posted message for this Unit Test",
-			author = models.User.getUserById(1),
+			author = models.SystemUser(1),
 			postStatus = "Awesome!",
-			modifiedBy = models.User.getUserById(1)) shouldBe a[models.Post] //shouldBe tests for type equality
+			modifiedBy = models.SystemUser(1)) shouldBe a[models.Post] //shouldBe tests for type equality
 	}
 
+  
 	test("Post Unit : Set Post property with dynamic setter.") {
 		var postObj = models.Post.newPost(
 			id = 0,
 			title = "Test Title",
 			post = "Test Posted message for this Unit Test",
-			author = models.User.getUserById(1),
+			author = models.SystemUser(1),
 			postStatus = "Awesome!",
-			modifiedBy = models.User.getUserById(1))
+			modifiedBy = models.SystemUser(1))
 
 		/* This test is seemingly useless. It is standard Scala syntax.
 		 * But... since this is a tutorial as much as is it is a working application;
@@ -112,11 +114,13 @@ class PostUnitSuite extends UnitSpec with Matchers {
 		assert(postObj.id == 1)
 	}
 
+  
 	//Test XXXXXXXX
 	test("Post Unit : ") {
 		assert(Set.empty.size == 0)
 	}
 
+  
 	//Test XXXXXXXX
 	test("Post Unit : Invoking head on an empty Set should produce NoSuchElementException") {
 		intercept[NoSuchElementException] {
@@ -124,6 +128,7 @@ class PostUnitSuite extends UnitSpec with Matchers {
 		}
 	}
 
+  
 	//Test XXXXXXXX
 	test("Post Unit : True Is True") {
 		assert(true == true)

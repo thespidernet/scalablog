@@ -82,6 +82,7 @@ package silentactor02 {
 		}
 	}
 
+  
 	//<start id="ch02-silentactor-test02-imp"/>
 	object SilentActor { //<co id="ch02-silentactor-test02-protocol"/>
 		case class SilentMessage(data: String) //<co id="ch02-silentactor-test02-message"/>
@@ -101,6 +102,8 @@ package silentactor02 {
 	}
 }
 //<end id="ch02-silentactor-test02-imp"/>
+
+
 package silentactor03 {
 
 	class SilentActorTest extends TestKit(ActorSystem("testsystem"))
@@ -124,8 +127,8 @@ package silentactor03 {
 
 	}
 
+  
 	//<start id="ch02-silentactor-test03-imp"/>
-
 	object SilentActor {
 		case class SilentMessage(data: String)
 		case class GetState(receiver: ActorRef) //<co id="ch02-silentactor-test03-getstate-msg"/>

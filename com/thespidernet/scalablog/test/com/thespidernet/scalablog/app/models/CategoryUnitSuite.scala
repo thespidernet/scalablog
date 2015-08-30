@@ -72,17 +72,19 @@ class CategoryUnitSuite extends UnitSpec with Matchers {
 		new models.Category(
 			id = 0,
 			category = "Test Categpry",
-			modifiedBy = models.User.getUserById(1)) shouldBe a[models.Category] //shouldBe tests for type equality
+			modifiedBy = models.SystemUser(1)) shouldBe a[models.Category] //shouldBe tests for type equality
 	}
 
+  
 	//Create a new Category via the Category Companion Object
 	test("Category Unit : Instantiate the models.Category Class, via the Companion Object") {
 		models.Category.newCategory(
 			id = 0,
 			category = "Test Category",
-			modifiedBy = models.User.getUserById(1)) shouldBe a[models.Category] //shouldBe tests for type equality
+			modifiedBy = models.SystemUser(1)) shouldBe a[models.Category] //shouldBe tests for type equality
 	}
 
+  
 	//Test XXXXXXXX
 	test("Category Unit : True Is True") {
 		assert(true == true)
