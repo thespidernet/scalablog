@@ -66,7 +66,8 @@ package controllers
 import play.api._
 import play.api.mvc._
 import java.util.Date._
-import models.User._
+import models.SystemUser
+import models.NormalUser
 
 object Users extends Controller {
 
@@ -80,7 +81,33 @@ object Users extends Controller {
 	// Individual User Administration main page
 	def userconfig(userid: String) = Action {
 		// FIXME : Ensure that we use the ID from the User.
-		val selectedUser = getUserById(1)
+		val selectedUser: NormalUser = NormalUser(id = 1,
+      username = "GavinB",
+      password = "True",
+      avatar = "AVATAR - BLUE Dudes",
+      emailAddress = "gavinb@thespidernet.com",
+      twitter = "@thespidernet",
+      gitHub = "thespidernet",
+      websiteURL = "http://www.thespidernet.com",
+
+      firstName = "Gavin",
+      lastName = "Baumanis",
+      displayName = "Beau",
+      address1 = "The Spidernet",
+      address2 = "",
+      suburb = "Melbourne",
+      state = "Victoria",
+      postCode = "3000",
+      country = "Australia",
+
+      homePhone = "555-555-5555",
+      mobilePhone = "555-666-6666",
+      workPhone = "1234-1234-1243",
+
+      active = true,
+      
+      modifiedBy = new models.SystemUser(id=1),
+      modifiedDateTime = new java.util.Date()) 
 
 		// Display the EDIT USER form, passing into the view the "selected" user object,
 		// 	with their filled-in properties.
