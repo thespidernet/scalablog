@@ -61,15 +61,15 @@ import org.scalatest._
 /**
  * Inherit from the "base" UnitSpec and Mixin the Matchers trait.
  * The Matchers trait allows for more expressive tests beyond asserts;
- *      theUser shouldBe a [models.User]
+ *      theUser shouldBe a [models.SystemUser]
  */
 
 class UserUnitSuite extends UnitSpec with Matchers {
 
 	//Define All the UNIT tests you want to run for the User class.
 
-	//Instantiate the models.User Class
-	test("User Unit : Instantiate the models.Category Class, directly") {
+	//Instantiate the models.NormalUser Class
+	test("User Unit : Instantiate the models.NormalUser Class, directly") {
 		new models.NormalUser(
 			id = 0,
 			username = "gavinb",
@@ -94,13 +94,13 @@ class UserUnitSuite extends UnitSpec with Matchers {
 			mobilePhone = "",
       workPhone = "",
       modifiedDateTime = new java.util.Date(),
-      modifiedBy = models.SystemUser(1)) shouldBe a[models.User] //shouldBe tests for type equality
+      modifiedBy = models.SystemUser(1)) shouldBe a[models.NormalUser] //shouldBe tests for type equality
 	}
 
   
 	//Create a new User via the User Companion Object
-	/*test("User Unit : Instantiate the models.User Class, via the Companion Object") {
-        models.User.newUser(
+	/*test("User Unit : Instantiate the models.NormalUser Class, via the Companion Object") {
+        models.NormalUser.newUser(
             id = 0,
             username = "gavinb",
             password = "thePassword",
@@ -130,7 +130,7 @@ class UserUnitSuite extends UnitSpec with Matchers {
 	//Retrieve properties from a User object, created by the getUserById method.
 	test("User Unit : Get properties from User Object, via getUserByID()") {
 		val selectedUser = models.SystemUser(1)
-		assert(selectedUser.firstName == "Gavin")
+		assert(selectedUser.firstName == "ScalaBlog")
 	}
 
 
