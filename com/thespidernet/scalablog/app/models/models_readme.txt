@@ -56,7 +56,7 @@
  records to or from the database.
  
  Typical items in here are "Service Layers / Object Managers", Data Access Objects (DAOs) 
- and the obvjects themselves,too - reside here.
+ and the objects themselves,too - reside here.
  
  The models folder forms part of the Model View Controller (MVC) design pattern.
  
