@@ -61,7 +61,7 @@ import org.scalatest._
 /**
  * Inherit from the "base" UnitSpec and Mixin the Matchers trait.
  * The Matchers trait allows for more expressive tests beyond asserts;
- *      theUser shouldBe a [models.User]
+ *      theUser shouldBe a [models.SystemUser]
  */
 class CommentUnitSuite extends UnitSpec with Matchers {
 
