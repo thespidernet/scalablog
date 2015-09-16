@@ -38,7 +38,7 @@
  *
  * Scala 2.11.7
  * Scala Test 2.2.4 - Testing Framework
- * Play 2.3.10 - MVC Framework
+ * Play 2.4.3 - MVC Framework
  * Akka
  * Spray
  * Cassandra Database
