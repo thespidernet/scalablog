@@ -10,7 +10,6 @@ scalaVersion := "2.11.6"
 
 libraryDependencies ++= Seq(
   jdbc,
-  anorm,
   cache,
   ws
 )
