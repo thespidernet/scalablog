@@ -14,3 +14,7 @@ dist
 /RUNNING_PID
 /.settings
 /bin/
+.DS_Store
+.cache-main
+.cache-tests
+
