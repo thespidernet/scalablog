@@ -53,4 +53,4 @@
   * Unit tests.
   * Integration tests.
    
- It uses the ScalaTest Tests Framework, v 2.2.4
+ It uses the ScalaTest Tests Framework, v 2.2.5
