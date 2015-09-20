@@ -52,17 +52,16 @@
  */
 package models.com.thespidernet.scalablog
 
-case class Comment(
-	var id: Int,
-	var postId: Int,
-	var comment: String,
-	var dateTime: java.util.Date = new java.util.Date(),
-	var author: User,
+case class Comment(id: Int,
+	postId: Int,
+	comment: String,
+	dateTime: java.util.Date = new java.util.Date(),
+	author: User,
 
-	var sortOrder: Int = 10,
-	var active: Boolean = true,
-	var modifiedBy: User,
-	var modifiedDateTime: java.util.Date = new java.util.Date())
+	sortOrder: Int = 10,
+	active: Boolean = true,
+	modifiedBy: User,
+	modifiedDateTime: java.util.Date = new java.util.Date())
 
 object Comment {
 	def newComment(id: Int, postId: Int, comment: String,
