@@ -56,14 +56,13 @@ package models.com.thespidernet.scalablog
  * This is the class declaration.
  * It contains all the properties for the class.
  */
-case class Category(
-	var id: Int,
-	var category: String,
+case class Category(id: Int,
+	category: String,
 
-	var sortOrder: Int = 10,
-	var active: Boolean = true,
-	var modifiedBy: User,
-	var modifiedDateTime: java.util.Date = new java.util.Date())
+	sortOrder: Int = 10,
+	active: Boolean = true,
+	modifiedBy: User,
+	modifiedDateTime: java.util.Date = new java.util.Date())
 
 /*
  * This is the Category Companion Object.
