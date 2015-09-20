@@ -52,12 +52,11 @@
  */
 package models.com.thespidernet.scalablog
 
-case class PostStatus(
-	var id: Int,
-	var status: String,
-	var statusDescription: String,
+case class PostStatus(id: Int,
+	status: String,
+	statusDescription: String,
 
-	var sortOrder: Int = 10,
-	var active: Boolean = true,
-	var modifiedBy: User,
-	var modifiedDateTime: java.util.Date)
+	sortOrder: Int = 10,
+	active: Boolean = true,
+	modifiedBy: User,
+	modifiedDateTime: java.util.Date)
