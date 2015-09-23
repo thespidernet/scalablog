@@ -69,7 +69,7 @@ import java.util.Date._
 import models.com.thespidernet.scalablog.SystemUser
 import models.com.thespidernet.scalablog.NormalUser
 
-object Users extends Controller {
+class Users extends Controller {
 
 	//User Search page Action.
 	def usersearch = Action {

@@ -67,7 +67,7 @@ package controllers
 import play.api._
 import play.api.mvc._
 
-object Application extends Controller {
+class Application extends Controller {
 
 	// Default / Home Page
 	def index = Action {
