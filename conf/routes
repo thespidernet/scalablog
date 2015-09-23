@@ -53,14 +53,14 @@
 # ~~~~
 
 # Home page
-GET    /                    controllers.Application.index
+GET    /                    controllers.Application.index()
 
-GET    /sysconfig           controllers.Application.sysconfig
-GET    /appconfig           controllers.Application.appconfig
-POST   /appconfig/submit    controllers.Application.appconfigsubmit
-GET    /usersearch          controllers.Users.usersearch
+GET    /sysconfig           controllers.Application.sysconfig()
+GET    /appconfig           controllers.Application.appconfig()
+POST   /appconfig/submit    controllers.Application.appconfigsubmit()
+GET    /usersearch          controllers.Users.usersearch()
 GET    /userconfig:userid   controllers.Users.userconfig(userid: String)
-POST   /userconfig/submit   controllers.Users.userconfigsubmit
+POST   /userconfig/submit   controllers.Users.userconfigsubmit()
 
 
 # Map static resources from the /public folder to the /assets URL path
