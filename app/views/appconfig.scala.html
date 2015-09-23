@@ -1,4 +1,6 @@
-@*****************************************************************************
+ @(AppConfig: Form[CreateAppConfigForm])(implicit messages: Messages)
+ 
+ @*****************************************************************************
  * ScalaBlog. 
  * Copyright 2014-2015 Gavin Baumanis
  * gavinb@thespidernet.com 
@@ -47,6 +49,9 @@
  * 
  *****************************************************************************@
  
+ @import helper._
+ 
+ 
  @* 
    * main() is a function used to "hold" the MAIN content of the page requested.
    * It is passed into /views/main.scala.html which is a Layout template.
@@ -61,26 +66,19 @@
     </div><!--  /.blog-header -->
       
     <div class="blog-post">
-        <form name="AppSettings" action="/appconfig/submit" method="post">
-            <fieldset>
-	            <label for="blogtitle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Blog Title</label>
-	            <input id="blogtitle" name="blogtitle" lenth="50" Size="25"></input><br />
-	            <br />
-	            <label for="blogtagline">Blog Tagline</label>
-	            <input id="blogtagline" name="blogtagline" lenth="50" Size="25"></input><br />
-	            <br />
-	            <label for="blogtitleimage">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Blog Title</label>
-	            <input id="blogtitle" name="blogtitle" lenth="50" Size="25"></input><br />
-	            <br />
-	            <label for="blogurl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Blog URL</label>
-	            <input id="blogurl" name="blogurl" lenth="50" Size="25"></input>
-	            <br />
+          
+            @form(routes.Application.appconfigsubmit()) {
+            	@inputText(AppConfig("blogtitle"))
+				@inputText(AppConfig("blogtagline"))
+				@inputText(AppConfig("blogtitleimage"))
+				@inputText(AppConfig("blogurl"))
+				<br />
 	            <br />
 	            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 	            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	            <input type="submit" value="Submit"></input>
-	       </fieldset>
-	   </form>
+            }	
+
     </div><!-- /.blog-post -->
 }

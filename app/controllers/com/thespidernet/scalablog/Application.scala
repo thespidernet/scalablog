@@ -66,9 +66,28 @@ package controllers
 
 import play.api._
 import play.api.mvc._
+import java.util.Date._
+import play.api.i18n._
+import play.api.data.Form
+import play.api.data.Forms._
+import play.api.data.validation.Constraints._
+import play.api.libs.json.Json
 
-class Application extends Controller {
+import scala.concurrent.{ ExecutionContext, Future }
+import javax.inject._
 
+
+class Application @Inject() (val messagesApi: MessagesApi)
+  extends Controller with I18nSupport{
+
+  /* 
+   * 
+   * class Application @Inject() (val messagesApi: MessagesApi)
+                            (implicit ec: ExecutionContext) extends Controller with I18nSupport{
+   */
+  
+  
+  
 	// Default / Home Page
 	def index = Action {
 		Ok(views.html.index())
@@ -79,9 +98,23 @@ class Application extends Controller {
 		Ok(views.html.sysconfig())
 	}
 
+  //Application Configuration Actions
+   /**
+   * The mapping for the App Config form.
+   */
+  val AppConfigForm: Form[CreateAppConfigForm] = Form {
+    mapping(
+      "blogtitle" -> nonEmptyText,
+      "blogtagline" -> nonEmptyText,
+      "blogtitleimage" -> nonEmptyText,
+      "blogurl" -> nonEmptyText
+    )(CreateAppConfigForm.apply)(CreateAppConfigForm.unapply)
+  }
+ 
+ 
 	// Configure THIS installation of the ScalaBlog application
 	def appconfig = Action {
-		Ok(views.html.appconfig())
+		Ok(views.html.appconfig(AppConfigForm))
 	}
 
 	//SAVE the contents of the AppConfig Form.
@@ -93,3 +126,6 @@ class Application extends Controller {
 		Ok(views.html.sysconfig())
 	}
 }
+
+//Create the Application Config form, via a case class.
+case class CreateAppConfigForm(blogtitle: String, blogtagline: String, blogtitleimage: String, blogurl: String)
