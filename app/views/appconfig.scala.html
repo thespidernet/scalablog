@@ -69,9 +69,9 @@
           
             @form(routes.Application.appconfigsubmit()) {
             	@inputText(AppConfig("blogtitle"))
-				@inputText(AppConfig("blogtagline"), '_label -> "Blog Tag Line")
-				@inputText(AppConfig("blogtitleimage"), '_label -> "Blog Title Image")
-				@inputText(AppConfig("blogurl"), '_label -> "Blog URL")
+				@inputText(AppConfig("blogtagline"))
+				@inputText(AppConfig("blogtitleimage"))
+				@inputText(AppConfig("blogurl"))
 				<br />
 	            <input type="submit" value="Submit"></input>
             }	
