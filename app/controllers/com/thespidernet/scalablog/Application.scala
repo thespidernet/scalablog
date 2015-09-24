@@ -78,26 +78,20 @@ import javax.inject._
 
 
 class Application @Inject() (val messagesApi: MessagesApi)
-  extends Controller with I18nSupport{
-
-  /* 
-   * 
-   * class Application @Inject() (val messagesApi: MessagesApi)
-                            (implicit ec: ExecutionContext) extends Controller with I18nSupport{
-   */
-  
-  
-  
+  (implicit ec: ExecutionContext) extends Controller with I18nSupport{
+   
 	// Default / Home Page
 	def index = Action {
 		Ok(views.html.index())
-	}
+	}//End index
 
+  
 	// System Administration menu
 	def sysconfig = Action {
 		Ok(views.html.sysconfig())
-	}
+	}//End sysconfig
 
+  
   //Application Configuration Actions
    /**
    * The mapping for the App Config form.
@@ -109,23 +103,31 @@ class Application @Inject() (val messagesApi: MessagesApi)
       "blogtitleimage" -> nonEmptyText,
       "blogurl" -> nonEmptyText
     )(CreateAppConfigForm.apply)(CreateAppConfigForm.unapply)
-  }
+  }//End AppConfigForm
  
  
 	// Configure THIS installation of the ScalaBlog application
 	def appconfig = Action {
 		Ok(views.html.appconfig(AppConfigForm))
-	}
+	}//End appconfig
 
-	//SAVE the contents of the AppConfig Form.
+	
+  //SAVE the contents of the AppConfig Form.
 	def appconfigsubmit = Action {
 		//TODO: verify the contents of the form are valid
 		//TODO: save the form
 
 		//Return the SYS config Menu
 		Ok(views.html.sysconfig())
-	}
-}
+	}//End appconfigsubmit
+}//End Application controller class
 
-//Create the Application Config form, via a case class.
+
+/**
+ * Case classes 
+ * 
+ *The following case classes are used "here" within the controller only.
+ *It is quite often the case that the model representation and that which is needed within a view are different.
+ * So we can use the controller as an appropriate place to hold this interfacing code.
+ */
 case class CreateAppConfigForm(blogtitle: String, blogtagline: String, blogtitleimage: String, blogurl: String)
