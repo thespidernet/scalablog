@@ -35,7 +35,7 @@ The ScalaBlog application is free to use.
 The blog utilises the following technology;
 
 ****************** 
-** Scala 2.11.6 **
+** Scala 2.11.7 **
 ******************
  
 Scala is an acronym for “Scalable Language”. This means that Scala grows with you. 
@@ -78,9 +78,9 @@ above example uses FlatSpec, a good choice for teams wishing to move from XUnit 
 an informal specification of the software being tested:
 
 
-****************
-** Akka 2.3.9 **
-****************
+*****************
+** Akka 2.3.14 **
+*****************
  
 What is Akka?
 Scalable real-time transaction processing
