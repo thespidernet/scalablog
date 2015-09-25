@@ -37,10 +37,10 @@
  * 
  * The blog utilises the following technology;
  * 
- * Scala 2.11.6
+ * Scala 2.11.7
  * Scala Test 2.2.5 - Testing Framework
  * Play 2.4.3 - MVC Framework
- * Akka 2.3.9 - Messaging
+ * Akka 2.3.14 - Messaging
  * spray 2.3.3 - http
  * Cassandra Database 2.1.8
  * Hadoop / Hadoop File System 2.7.1
@@ -64,17 +64,33 @@
         <h1 class="blog-title">ScalaBlog</h1>
         <p class="lead blog-description">Application Configuration</p>
     </div><!--  /.blog-header -->
-      
-    <div class="blog-post">
-          
-            @form(routes.Application.appconfigsubmit()) {
-            	@inputText(AppConfig("blogtitle"))
-				@inputText(AppConfig("blogtagline"))
-				@inputText(AppConfig("blogtitleimage"))
-				@inputText(AppConfig("blogurl"))
-				<br />
-	            <input type="submit" value="Submit"></input>
-            }	
-
+    
+    @* 
+     * The following DIV element is used just for styling. It is not necessary. 
+     *	
+     * The noteworthy part of the DIV is the creation of the form and the form 
+     * input elements by use of the Play framework's "helpers"
+     * 
+     * @form() is passed the controller method that will act as the ACTION
+     * via "routes.Application.appconfigsubmit()"
+     *
+     * The form is passed in at the forst line of THIS template and is named AppConfig 
+     *	
+     * We can then pass in the form items by constructing form contents via the Play helpers
+     * (Eg. @inputText(AppConfig("blogtitle")))
+     * 
+     * The string provided is the field name and ID ("blogtitle").
+     * it is also used to map a field label, via the /conf/messages file.
+     * 
+    *@  
+    <div class="blog-post">  
+		@form(routes.Application.appconfigsubmit()) {
+			@inputText(AppConfig("blogtitle"))
+			@inputText(AppConfig("blogtagline"))
+			@inputText(AppConfig("blogtitleimage"))
+			@inputText(AppConfig("blogurl"))
+			<br />
+        	<input type="submit" value="Submit"></input>
+		} <!-- /.form -->	
     </div><!-- /.blog-post -->
 }
