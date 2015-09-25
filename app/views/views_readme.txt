@@ -35,10 +35,10 @@
  * 
  * The blog utilises the following technology;
  * 
- * Scala 2.11.6
+ * Scala 2.11.7
  * Scala Test 2.2.5 - Testing Framework
  * Play 2.4.3 - MVC Framework
- * Akka 2.3.9 - Messaging
+ * Akka 2.3.14 - Messaging
  * spray 2.3.3 - http
  * Cassandra Database 2.1.8
  * Hadoop / Hadoop File System 2.7.1
@@ -50,11 +50,15 @@
  The views folder is used to contain all the HTML / Scala (Play) template files 
  that are used by the application to show content to the end-user.
  
- The state of the individual views, anbd indeed which view to display is controlled by the controllers.
+ The state of the individual views, and indeed which view to display is controlled by the controllers.
  
  The views folder forms part of the Model View Controller (MVC) design pattern.
  
  MVC has become a standard for building web applications and allows 
  developers to cleanly separate different areas of concern in their applications.
  Which allows for better collaboration, easier troubleshooting, simpler code maintenance.
+ 
+ The Views make extensive use of the Scala Play framework.
+ We use the framework's "helper" methods for form / form field creation.
+ We also use framework's form validation.  
  
