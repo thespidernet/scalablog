@@ -183,3 +183,21 @@ h6, .h6 {
 .blog-footer p:last-child {
   margin-bottom: 0;
 }
+
+
+/* 
+ * The "REQUIRED" text of form fields.
+ */
+ 
+.info {
+	color: red;
+	font-size: 85%;
+}
+
+/* 
+ * Form validation error messages
+ */
+
+.error {
+    color: red;
+  } 
