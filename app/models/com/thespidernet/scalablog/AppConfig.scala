@@ -51,7 +51,7 @@
  * ***************************************************************************
  */
 
-package models
+package models.com.thespidernet.scalablog
 
 import play.api.libs.json._
 
