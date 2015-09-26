@@ -69,7 +69,8 @@ class CategoryUnitSuite extends UnitSpec with Matchers {
 
 	//Instantiate the models.Category Class
 	test("Category Unit : Instantiate the models.Category Class, directly") {
-		new Category(
+		//No need for a "new" when creating a case class.
+    val theCat = Category(
 			id = 0,
 			category = "Test Categpry",
 			modifiedBy = SystemUser(1)) shouldBe a[Category] //shouldBe tests for type equality
@@ -78,7 +79,8 @@ class CategoryUnitSuite extends UnitSpec with Matchers {
   
 	//Create a new Category via the Category Companion Object
 	test("Category Unit : Instantiate the models.Category Class, via the Companion Object") {
-		Category.newCategory(
+		//No need for a "new" when creating a case class.
+    Category.newCategory(
 			id = 0,
 			category = "Test Category",
 			modifiedBy = SystemUser(1)) shouldBe a[Category] //shouldBe tests for type equality

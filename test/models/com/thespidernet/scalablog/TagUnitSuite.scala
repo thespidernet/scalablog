@@ -70,7 +70,8 @@ class TagUnitSuite extends UnitSpec with Matchers {
 
 	//Instantiate the models.Tag Class
 	test("Tag Unit : Instantiate the models.Tag Class, directly") {
-		new Tag(
+		//No need for a "new" when creating a case class.
+    val theTag = Tag(
 			id = 0,
 			tag = "TagTitle",
 			modifiedBy = SystemUser(1)) shouldBe a[Tag] //shouldBe tests for type equality
@@ -79,7 +80,8 @@ class TagUnitSuite extends UnitSpec with Matchers {
   
 	//Create a new Tag via the Tag Companion Object
 	test("Tag Unit : Instantiate the models.Tag Class, via the Companion Object") {
-		Tag.newTag(
+		//No need for a "new" when creating a case class.
+    Tag.newTag(
 			id = 0,
 			tag = "TagTitle",
 			modifiedBy = SystemUser(1)) shouldBe a[Tag] //shouldBe tests for type equality
