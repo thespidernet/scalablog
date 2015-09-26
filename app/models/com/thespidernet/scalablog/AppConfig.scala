@@ -54,6 +54,7 @@
 package models.com.thespidernet.scalablog
 
 import play.api.libs.json._
+import models.com.thespidernet.scalablog
 
 case class AppConfig(blogtitle: String, blogtagline: String, blogtitleimage: String, blogurl: String)
 

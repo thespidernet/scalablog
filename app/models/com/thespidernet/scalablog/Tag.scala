@@ -52,6 +52,9 @@
  */
 package models.com.thespidernet.scalablog
 
+import models.com.thespidernet.scalablog
+
+
 case class Tag(
 	var id: Int,
 	var tag: String,
@@ -68,7 +71,7 @@ case class Tag(
  */
 object Tag {
 	def newTag(id: Int, tag: String, modifiedBy: User): Tag = {
-		models.com.thespidernet.scalablog.Tag(
+		Tag(
 			id = 0,
 			tag = tag,
 			modifiedBy = modifiedBy)

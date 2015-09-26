@@ -70,7 +70,7 @@ case class Category(id: Int,
  */
 object Category {
 	def newCategory(id: Int, category: String, modifiedBy: User): Category = {
-		new models.com.thespidernet.scalablog.Category(
+		Category(
 			id = 0,
 			category = category,
 			modifiedBy = modifiedBy)

@@ -52,6 +52,8 @@
  */
 package models.com.thespidernet.scalablog
 
+import models.com.thespidernet.scalablog
+
 case class Comment(id: Int,
 	postId: Int,
 	comment: String,
@@ -66,7 +68,8 @@ case class Comment(id: Int,
 object Comment {
 	def newComment(id: Int, postId: Int, comment: String,
 		author: User, modifiedBy: User): Comment = {
-		new models.com.thespidernet.scalablog.Comment(
+		//No need for a "new" when creating a case class.
+    Comment(
 			id = 0,
 			postId = postId,
 			comment = comment,
