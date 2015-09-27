@@ -52,8 +52,6 @@
  */
 package com.thespidernet.scalablog.models
 
-import com.thespidernet.scalablog.models
-
 case class Comment(id: Int,
 	postId: Int,
 	comment: String,

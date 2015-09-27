@@ -52,8 +52,6 @@
  */
 package com.thespidernet.scalablog.models
 
-import com.thespidernet.scalablog.models
-
 case class Post(
 	var id: Int,
 	var title: String,
