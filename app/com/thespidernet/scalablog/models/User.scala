@@ -75,7 +75,7 @@
  * ***************************************************************************
  */
 
-package models.com.thespidernet.scalablog
+package com.thespidernet.scalablog.models
 
 trait User {
 	def id: Int

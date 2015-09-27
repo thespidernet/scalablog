@@ -46,19 +46,18 @@
  * jQuery 2.1.4 - JavaScript Library
  * Bootstrap 3.3.4 - JavaScript Library
  *
- * This is the AppConfig Class
+ * This is the CommentGateway object (Singleton).
+ * It contains all "native" code for getting data into and out of physical storage.
+ * E.g. Actual SQL, ORM instructions.
+ * All in native dialects for the databases supported.
+ *
+ * If you support three different database platforms - you may
+ * well have 3 versions of each action, here.
  *
  * ***************************************************************************
  */
+package com.thespidernet.scalablog.models
 
-package models.com.thespidernet.scalablog
+object CommentGateway {
 
-import play.api.libs.json._
-import models.com.thespidernet.scalablog
-
-case class AppConfig(blogtitle: String, blogtagline: String, blogtitleimage: String, blogurl: String)
-
-object AppConfig {
-  
-  implicit val AppConfigFormat = Json.format[AppConfig]
 }

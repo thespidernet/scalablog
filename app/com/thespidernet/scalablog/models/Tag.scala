@@ -46,18 +46,65 @@
  * jQuery 2.1.4 - JavaScript Library
  * Bootstrap 3.3.4 - JavaScript Library
  *
- * This is the UserGateway object (Singleton).
- * It contains all "native" code for getting data into and out of physical storage.
- * E.g. Actual SQL, ORM instructions.
- * All in native dialects for the databases supported.
- *
- * If you support three different database platforms - you may
- * well have 3 versions of each action, here.
+ * This is the Tag Class
  *
  * ***************************************************************************
  */
-package models.com.thespidernet.scalablog
+package com.thespidernet.scalablog.models
 
-object UserGateway {
+import com.thespidernet.scalablog.models
 
+
+case class Tag(
+	var id: Int,
+	var tag: String,
+
+	var sortOrder: Int = 10,
+	var active: Boolean = true,
+
+	var modifiedBy: User,
+	var modifiedDateTime: java.util.Date = new java.util.Date())
+
+/*
+ * This is the Tag Companion Object.
+ * It is a singleton, "Service / Manager" object.
+ */
+object Tag {
+	def newTag(id: Int, tag: String, modifiedBy: User): Tag = {
+		Tag(
+			id = 0,
+			tag = tag,
+			modifiedBy = modifiedBy)
+	}
 }
+
+/*
+ * The following code shows how to create Java beans from Scala.
+ * It also creates (dynamically) setter and getter methods in the Java Bean style;
+ *  getXXX() / setXXX()
+
+package com.thespidernet.scalablog.models
+import scala.beans.BeanProperty
+
+case class Tag(
+	@BeanProperty var id: Int,
+	@BeanProperty var tag: String,
+
+	@BeanProperty var sortOrder: Int = 10,
+	@BeanProperty var active: Boolean = true,
+
+	@BeanProperty var modifiedBy: User,
+	@BeanProperty var modifiedDateTime: java.util.Date = new java.util.Date())
+
+
+// This is the Tag Companion Object.
+// It is a singleton, "Service / Manager" object.
+object Tag {
+	def newTag(id: Int, tag: String, modifiedBy: User): Tag = {
+		models.Tag(
+			id = 0,
+			tag = tag,
+			modifiedBy = modifiedBy)
+	}
+}
+*/

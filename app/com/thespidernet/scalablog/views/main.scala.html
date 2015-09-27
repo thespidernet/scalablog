@@ -91,7 +91,7 @@
     <div class="blog-masthead">
       <div class="container">
         <nav class="blog-nav">
-          <a class="blog-nav-item active" href="@routes.Application.index()">Home</a>
+          <a class="blog-nav-item active" href="@com.thespidernet.scalablog.controllers.routes.Application.index()">Home</a>
           <a class="blog-nav-item" href="#">About</a>
         </nav>
       </div>
@@ -99,7 +99,7 @@
 
     <!-- 
         This is the CSS container for the main content of the page 
-            It is inserted dynamcially.
+            It is inserted dynamically.
             This is just the "layout" page! 
     -->
     <div class="container">
@@ -110,7 +110,7 @@
 
     <!--- This is the footer -->
     <footer class="blog-footer">
-       <p><a href="@routes.Application.index()">Home</a> | <a href="@routes.Application.sysconfig()">System Admin</a> | <a href="#">Site Map</a></p>
+       <p><a href="@com.thespidernet.scalablog.controllers.routes.Application.index()">Home</a> | <a href="@com.thespidernet.scalablog.controllers.routes.Application.sysconfig()">System Admin</a> | <a href="#">Site Map</a></p>
        <p>ScalaBlog. &copy;2014-@(new java.util.Date().format("yyyy")) by <a href="http://www.thespidernet.com">www.thespidernet.com</a></p>
     </footer>
 

@@ -46,7 +46,7 @@
  * jQuery 2.1.4 - JavaScript Library
  * Bootstrap 3.3.4 - JavaScript Library
  *
- * This is the CommentGateway object (Singleton).
+ * This is the PostGateway object (Singleton).
  * It contains all "native" code for getting data into and out of physical storage.
  * E.g. Actual SQL, ORM instructions.
  * All in native dialects for the databases supported.
@@ -56,8 +56,8 @@
  *
  * ***************************************************************************
  */
-package models.com.thespidernet.scalablog
+package com.thespidernet.scalablog.models
 
-object CommentGateway {
+object PostGateway {
 
 }

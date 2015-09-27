@@ -37,41 +37,28 @@
  * The blog utilises the following technology;
  *
  * Scala 2.11.7
- * Scala Test 2.2.5 - Testing Framework
+ * Scala Test 2.2.4 - Testing Framework
  * Play 2.4.3 - MVC Framework
- * Akka 2.3.14 - Messaging
- * spray 2.3.3 - http
- * Cassandra Database 2.1.8
- * Hadoop / Hadoop File System 2.7.1
- * jQuery 2.1.4 - JavaScript Library
- * Bootstrap 3.3.4 - JavaScript Library
+ * Akka
+ * Spray
+ * Cassandra Database
+ * Hadoop File System
+ * Hadoop
+ * jQuery
+ * Bootstrap
  *
- * This is the TagService Object (Singleton)
+ * This is the TagGateway object (Singleton).
+ * It contains all "native" code for getting data into and out of physical storage.
+ * E.g. Actual SQL, ORM instructions.
+ * All in native dialects for the databases supported.
  *
- * It is the "Factory" for the Tag class and;
- *
- * It is used as the API for the application to code "to".
- * It will then speak natively to the Data Access Objects (DAO).
- *
- * This gives a consistent API for the code in the application to be
- *     written against.
- *
- * Your application code (E.g. Tag class) shouldn't know or care about caching. it just needs
- * to ask for data / save data changes etc.
- *
- * And the actual task of retrieving the data from and writing the data to persistent storage
- * (hard disk) is the domain of the "Gateway" objects or Data Access Objects (DAOs)
- *
- * From a process flow perspective the Service classes sit between these two end-points.
- * This makes them the perfect the place to include (for example) code that relates to Caching.
- *
- * Or code that does mapping between consistent API and the DAOs.
- * E.g. you might need to alter data types before they go into the DB.
+ * If you support three different database platforms - you may
+ * well have 3 versions of each action, here.
  *
  * ***************************************************************************
  */
-package models.com.thespidernet.scalablog
+package com.thespidernet.scalablog.models
 
-object TagService {
+object TagGateway {
 
 }

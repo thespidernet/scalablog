@@ -46,33 +46,35 @@
  * jQuery 2.1.4 - JavaScript Library
  * Bootstrap 3.3.4 - JavaScript Library
  *
- * This is the Category Class
+ * This is the Comment Class
  *
  * ***************************************************************************
  */
-package models.com.thespidernet.scalablog
+package com.thespidernet.scalablog.models
 
-/*
- * This is the class declaration.
- * It contains all the properties for the class.
- */
-case class Category(id: Int,
-	category: String,
+import com.thespidernet.scalablog.models
+
+case class Comment(id: Int,
+	postId: Int,
+	comment: String,
+	dateTime: java.util.Date = new java.util.Date(),
+	author: User,
 
 	sortOrder: Int = 10,
 	active: Boolean = true,
 	modifiedBy: User,
 	modifiedDateTime: java.util.Date = new java.util.Date())
 
-/*
- * This is the Category Companion Object.
- * It is a singleton, "Service / Manager" object.
- */
-object Category {
-	def newCategory(id: Int, category: String, modifiedBy: User): Category = {
-		Category(
+object Comment {
+	def newComment(id: Int, postId: Int, comment: String,
+		author: User, modifiedBy: User): Comment = {
+		//No need for a "new" when creating a case class.
+    Comment(
 			id = 0,
-			category = category,
+			postId = postId,
+			comment = comment,
+			author = author,
 			modifiedBy = modifiedBy)
+
 	}
 }

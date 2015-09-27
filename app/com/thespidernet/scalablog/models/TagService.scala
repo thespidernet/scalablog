@@ -46,65 +46,32 @@
  * jQuery 2.1.4 - JavaScript Library
  * Bootstrap 3.3.4 - JavaScript Library
  *
- * This is the Tag Class
+ * This is the TagService Object (Singleton)
+ *
+ * It is the "Factory" for the Tag class and;
+ *
+ * It is used as the API for the application to code "to".
+ * It will then speak natively to the Data Access Objects (DAO).
+ *
+ * This gives a consistent API for the code in the application to be
+ *     written against.
+ *
+ * Your application code (E.g. Tag class) shouldn't know or care about caching. it just needs
+ * to ask for data / save data changes etc.
+ *
+ * And the actual task of retrieving the data from and writing the data to persistent storage
+ * (hard disk) is the domain of the "Gateway" objects or Data Access Objects (DAOs)
+ *
+ * From a process flow perspective the Service classes sit between these two end-points.
+ * This makes them the perfect the place to include (for example) code that relates to Caching.
+ *
+ * Or code that does mapping between consistent API and the DAOs.
+ * E.g. you might need to alter data types before they go into the DB.
  *
  * ***************************************************************************
  */
-package models.com.thespidernet.scalablog
+package com.thespidernet.scalablog.models
 
-import models.com.thespidernet.scalablog
+object TagService {
 
-
-case class Tag(
-	var id: Int,
-	var tag: String,
-
-	var sortOrder: Int = 10,
-	var active: Boolean = true,
-
-	var modifiedBy: User,
-	var modifiedDateTime: java.util.Date = new java.util.Date())
-
-/*
- * This is the Tag Companion Object.
- * It is a singleton, "Service / Manager" object.
- */
-object Tag {
-	def newTag(id: Int, tag: String, modifiedBy: User): Tag = {
-		Tag(
-			id = 0,
-			tag = tag,
-			modifiedBy = modifiedBy)
-	}
 }
-
-/*
- * The following code shows how to create Java beans from Scala.
- * It also creates (dynamically) setter and getter methods in the Java Bean style;
- *  getXXX() / setXXX()
-
-package models.com.thespidernet.scalablog
-import scala.beans.BeanProperty
-
-case class Tag(
-	@BeanProperty var id: Int,
-	@BeanProperty var tag: String,
-
-	@BeanProperty var sortOrder: Int = 10,
-	@BeanProperty var active: Boolean = true,
-
-	@BeanProperty var modifiedBy: User,
-	@BeanProperty var modifiedDateTime: java.util.Date = new java.util.Date())
-
-
-// This is the Tag Companion Object.
-// It is a singleton, "Service / Manager" object.
-object Tag {
-	def newTag(id: Int, tag: String, modifiedBy: User): Tag = {
-		models.Tag(
-			id = 0,
-			tag = tag,
-			modifiedBy = modifiedBy)
-	}
-}
-*/

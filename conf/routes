@@ -53,14 +53,14 @@
 # ~~~~
 
 # Home page
-GET    /                    controllers.Application.index()
+GET    /                    com.thespidernet.scalablog.controllers.Application.index()
 
-GET    /sysconfig           controllers.Application.sysconfig()
-GET    /appconfig           controllers.Application.appconfig()
-POST   /appconfig/submit    controllers.Application.appconfigsubmit()
-GET    /usersearch          controllers.Users.usersearch()
-GET    /userconfig:userid   controllers.Users.userconfig(userid: String)
-POST   /userconfig/submit   controllers.Users.userconfigsubmit()
+GET    /sysconfig           com.thespidernet.scalablog.controllers.Application.sysconfig()
+GET    /appconfig           com.thespidernet.scalablog.controllers.Application.appconfig()
+POST   /appconfig/submit    com.thespidernet.scalablog.controllers.Application.appconfigsubmit()
+GET    /usersearch          com.thespidernet.scalablog.controllers.User.usersearch()
+GET    /userconfig:userid   com.thespidernet.scalablog.controllers.User.userconfig(userid: String)
+POST   /userconfig/submit   com.thespidernet.scalablog.controllers.User.userconfigsubmit()
 
 
 # Map static resources from the /public folder to the /assets URL path

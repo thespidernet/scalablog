@@ -1,4 +1,6 @@
-@*****************************************************************************
+ @(AppConfig: Form[com.thespidernet.scalablog.controllers.CreateAppConfigForm])(implicit messages: Messages)
+ 
+ @*****************************************************************************
  * ScalaBlog. 
  * Copyright 2014-2015 Gavin Baumanis
  * gavinb@thespidernet.com 
@@ -47,32 +49,48 @@
  * 
  *****************************************************************************@
  
+ @import helper._
+ 
+ 
  @* 
    * main() is a function used to "hold" the MAIN content of the page requested.
    * It is passed into /views/main.scala.html which is a Layout template.
    *@
    
-@main("ScalaBlog - User Search") {
+@main("ScalaBlog - Application Settings / Configuration") {
 
-    @*  This isn't strictly a Blog-post but we'll use the same styling! *@
+    <!--  This isn't strictly a Blog-post but we'll use the same styling!  -->
     <div class="blog-header">
         <h1 class="blog-title">ScalaBlog</h1>
-        <p class="lead blog-description">User Search</p>
-    </div>
+        <p class="lead blog-description">Application Configuration</p>
+    </div><!--  /.blog-header -->
     
-    @*
-     * 1. Iterate through the collection and display the contents.
-     * 2. Use the username (it is unique) as the hyperlink and "key" to pass to the userconfig action.
-     * 		
-     *@
-    
-    <div class="blog-post">
-        <ol>
-            <li><a href="@routes.Users.userconfig(userid="Username")">Username</a> | Firstname Lastname</li>
-            <li><a href="@routes.Users.userconfig(userid="gavinb")">gavinb</a> | Gavin Baumanis</li>
-            <li><a href="@routes.Users.userconfig(userid="Username")">Username</a> | Firstname Lastname</li>
-            <li><a href="@routes.Users.userconfig(userid="Username")">Username</a> | Firstname Lastname</li>
-        </ol>
-        
+    @* 
+     * The following DIV element is used just for styling. It is not necessary. 
+     *	
+     * The noteworthy part of the DIV is the creation of the form and the form 
+     * input elements by use of the Play framework's "helpers"
+     * 
+     * @form() is passed the controller method that will act as the ACTION
+     * via "routes.Application.appconfigsubmit()"
+     *
+     * The form is passed in at the forst line of THIS template and is named AppConfig 
+     *	
+     * We can then pass in the form items by constructing form contents via the Play helpers
+     * (Eg. @inputText(AppConfig("blogtitle")))
+     * 
+     * The string provided is the field name and ID ("blogtitle").
+     * it is also used to map a field label, via the /conf/messages file.
+     * 
+    *@  
+    <div class="blog-post">  
+		@form(com.thespidernet.scalablog.controllers.routes.Application.appconfigsubmit()) {
+			@inputText(AppConfig("blogtitle"))
+			@inputText(AppConfig("blogtagline"))
+			@inputText(AppConfig("blogtitleimage"))
+			@inputText(AppConfig("blogurl"))
+			<br />
+        	<input type="submit" value="Submit"></input>
+		} <!-- /.form -->	
     </div><!-- /.blog-post -->
 }

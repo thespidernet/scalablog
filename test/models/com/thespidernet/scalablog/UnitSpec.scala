@@ -56,7 +56,7 @@
 
 
 
-package models.com.thespidernet.scalablog
+package com.thespidernet.scalablog.models
 
 import org.scalatest._
 

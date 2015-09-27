@@ -1,7 +1,8 @@
-@*****************************************************************************
- * ScalaBlog. 
+/**
+ * ***************************************************************************
+ * ScalaBlog.
  * Copyright 2014-2015 Gavin Baumanis
- * gavinb@thespidernet.com 
+ * gavinb@thespidernet.com
  * http://www.thespidernet.com/scalablog
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,26 +16,26 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  *
  * The ScalaBlog is a fully functioning Blog.
  * It was originally written as a training tool for Scala and the TypeSafe
  * technology stack; http://typesafe.com/products/typesafe-reactive-platform
- * 
+ *
  * It is subsequently written with verbose comments and with readability
  * always in focus. Thus we have not always used the most concise / terse
  * code that we could have. Which is a real strength of Scala.
- * 
- * The ScalaBlog also became the training ground for our efforts to 
+ *
+ * The ScalaBlog also became the training ground for our efforts to
  * better understand "BIG DATA". Subsequently it uses Hadoop and some related
  * technologies that simply just aren't a requirement for a blog application.
  * Nonetheless - they are used here!
  *
  * The ScalaBlog application is free to use.
  *
- * 
+ *
  * The blog utilises the following technology;
- * 
+ *
  * Scala 2.11.7
  * Scala Test 2.2.5 - Testing Framework
  * Play 2.4.3 - MVC Framework
@@ -43,37 +44,20 @@
  * Cassandra Database 2.1.8
  * Hadoop / Hadoop File System 2.7.1
  * jQuery 2.1.4 - JavaScript Library
- * Bootstrap 3.3.4 - JavaScript Library* Scala 2.11.7
- * Scala Test 2.2.5 - Testing Framework
- * Play 2.4.3 - MVC Framework
- * Akka 2.3.14 - Messaging
- * spray 2.3.3 - http
- * Cassandra Database 2.1.8
- * Hadoop / Hadoop File System 2.7.1
- * jQuery 2.1.4 - JavaScript Library
  * Bootstrap 3.3.4 - JavaScript Library
- * 
- *****************************************************************************@
- 
- @* 
-   * main() is a function used to "hold" the MAIN content of the page requested.
-   * It is passed into /views/main.scala.html which is a Layout template.
-   *@
-   
-@main("ScalaBlog - Administration") {
+ *
+ * This is the UserGateway object (Singleton).
+ * It contains all "native" code for getting data into and out of physical storage.
+ * E.g. Actual SQL, ORM instructions.
+ * All in native dialects for the databases supported.
+ *
+ * If you support three different database platforms - you may
+ * well have 3 versions of each action, here.
+ *
+ * ***************************************************************************
+ */
+package com.thespidernet.scalablog.models
 
-    <!--  This isn't strictly a Blog-post but we'll use the same styling!  -->
-    <div class="blog-header">
-        <h1 class="blog-title">ScalaBlog</h1>
-        <p class="lead blog-description">System Administration</p>
-    </div>
-      
-    <div class="blog-post">
-        <ul>
-			<li><a href="@routes.Users.usersearch()">User Administration</a></li>
-			<li>Categories</li>
-			<li>Keywords</li>
-			<li><a href="@routes.Application.appconfig()">Application Configuration</a></li>
-       </ul>
-    </div><!-- /.blog-post -->
+object UserGateway {
+
 }

@@ -61,7 +61,7 @@
  * ***************************************************************************
  */
 
-package controllers
+package com.thespidernet.scalablog.controllers
 
 import play.api._
 import play.api.mvc._
@@ -72,16 +72,16 @@ import play.api.data.Forms._
 import play.api.data.validation.Constraints._
 import play.api.libs.json.Json
 
-import models.com.thespidernet.scalablog.SystemUser
-import models.com.thespidernet.scalablog.NormalUser
+import com.thespidernet.scalablog.models.SystemUser
+import com.thespidernet.scalablog.models.NormalUser
 
-class Users extends Controller {
+class User extends Controller {
 
 	//User Search page Action.
 	def usersearch = Action {
 		// Show the usersearch view page.
 		// NO parameters are passed into this view.
-		Ok(views.html.usersearch())
+		Ok(com.thespidernet.scalablog.views.html.usersearch())
 	}
 
 	// Individual User Administration main page
@@ -112,12 +112,12 @@ class Users extends Controller {
 
       active = true,
       
-      modifiedBy = new models.com.thespidernet.scalablog.SystemUser(id=1),
+      modifiedBy = SystemUser(id=1),
       modifiedDateTime = new java.util.Date()) 
 
 		// Display the EDIT USER form, passing into the view the "selected" user object,
 		// 	with their filled-in properties.
-		Ok(views.html.userconfig(selectedUser))
+		Ok(com.thespidernet.scalablog.views.html.userconfig(selectedUser))
 	}
 
 	//Save the contents of a User Record
@@ -126,7 +126,7 @@ class Users extends Controller {
 		//TODO: save the form
 
 		//Return the SYS config Menu
-		Ok(views.html.sysconfig())
+		Ok(com.thespidernet.scalablog.views.html.sysconfig())
 	}
 
 }

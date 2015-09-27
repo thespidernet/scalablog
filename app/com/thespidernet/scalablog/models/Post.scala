@@ -46,35 +46,41 @@
  * jQuery 2.1.4 - JavaScript Library
  * Bootstrap 3.3.4 - JavaScript Library
  *
- * This is the Comment Class
+ * This is the Post Class
  *
  * ***************************************************************************
  */
-package models.com.thespidernet.scalablog
+package com.thespidernet.scalablog.models
 
-import models.com.thespidernet.scalablog
+import com.thespidernet.scalablog.models
 
-case class Comment(id: Int,
-	postId: Int,
-	comment: String,
-	dateTime: java.util.Date = new java.util.Date(),
-	author: User,
+case class Post(
+	var id: Int,
+	var title: String,
+	var post: String,
+	var author: User,
+	var postDateTime: java.util.Date = new java.util.Date(),
+	var postStatus: String,
 
-	sortOrder: Int = 10,
-	active: Boolean = true,
-	modifiedBy: User,
-	modifiedDateTime: java.util.Date = new java.util.Date())
+	// var tags: Array[Tag],
+	var active: Boolean = true,
 
-object Comment {
-	def newComment(id: Int, postId: Int, comment: String,
-		author: User, modifiedBy: User): Comment = {
-		//No need for a "new" when creating a case class.
-    Comment(
+	var modifiedBy: User,
+	var modifiedDateTime: java.util.Date = new java.util.Date())
+
+/*
+ * This is the Post Companion Object.
+ * It is a singleton, "Service / Manager" object.
+ */
+object Post {
+	def newPost(id: Int, title: String, post: String,
+		author: User, postStatus: String, modifiedBy: User): Post = {
+		Post(
 			id = 0,
-			postId = postId,
-			comment = comment,
+			title = title,
+			post = post,
 			author = author,
+			postStatus = postStatus,
 			modifiedBy = modifiedBy)
-
 	}
 }

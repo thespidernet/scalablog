@@ -46,40 +46,18 @@
  * jQuery 2.1.4 - JavaScript Library
  * Bootstrap 3.3.4 - JavaScript Library
  *
- * This is the User Integration Testing Object
- * It inherits from a base INTEGRATION testing class "IntegrationSpec"
- * 	Which is specifically setup for Integration Testing
- * 	using the FunSuite Testing Style.
- *     FunSuite is MOST like xUnit testing - with extra Scala goodies!
+ * This is the AppConfig Class
  *
  * ***************************************************************************
  */
 
 package com.thespidernet.scalablog.models
 
-import org.scalatest._
+import play.api.libs.json._
 
-//Inherit from the "base" IntegrationSpec.
-class UserIntegrationSuite extends IntegrationSpec with Matchers {
+case class AppConfig(blogtitle: String, blogtagline: String, blogtitleimage: String, blogurl: String)
 
-	//Define All the INTEGRATION tests you want to run for the User class.
-
-	//Test XXXXXXXX
-	test("User Integration : ") {
-		assert(Set.empty.size == 0)
-	}
-
+object AppConfig {
   
-	//Test XXXXXXXX
-	test("User Integration : Invoking head on an empty Set should produce NoSuchElementException") {
-		intercept[NoSuchElementException] {
-			Set.empty.head
-		}
-	}
-
-  
-	//Test XXXXXXXX
-	test("User Integration : True Is True") {
-		assert(true == true)
-	}
+  implicit val AppConfigFormat = Json.format[AppConfig]
 }

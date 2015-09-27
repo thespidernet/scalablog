@@ -37,28 +37,42 @@
  * The blog utilises the following technology;
  *
  * Scala 2.11.7
- * Scala Test 2.2.4 - Testing Framework
+ * Scala Test 2.2.5 - Testing Framework
  * Play 2.4.3 - MVC Framework
- * Akka
- * Spray
- * Cassandra Database
- * Hadoop File System
- * Hadoop
- * jQuery
- * Bootstrap
+ * Akka 2.3.14 - Messaging
+ * spray 2.3.3 - http
+ * Cassandra Database 2.1.8
+ * Hadoop / Hadoop File System 2.7.1
+ * jQuery 2.1.4 - JavaScript Library
+ * Bootstrap 3.3.4 - JavaScript Library
  *
- * This is the TagGateway object (Singleton).
- * It contains all "native" code for getting data into and out of physical storage.
- * E.g. Actual SQL, ORM instructions.
- * All in native dialects for the databases supported.
- *
- * If you support three different database platforms - you may
- * well have 3 versions of each action, here.
+ * This is the Category Class
  *
  * ***************************************************************************
  */
-package models.com.thespidernet.scalablog
+package com.thespidernet.scalablog.models
 
-object TagGateway {
+/*
+ * This is the class declaration.
+ * It contains all the properties for the class.
+ */
+case class Category(id: Int,
+	category: String,
 
+	sortOrder: Int = 10,
+	active: Boolean = true,
+	modifiedBy: User,
+	modifiedDateTime: java.util.Date = new java.util.Date())
+
+/*
+ * This is the Category Companion Object.
+ * It is a singleton, "Service / Manager" object.
+ */
+object Category {
+	def newCategory(id: Int, category: String, modifiedBy: User): Category = {
+		Category(
+			id = 0,
+			category = category,
+			modifiedBy = modifiedBy)
+	}
 }

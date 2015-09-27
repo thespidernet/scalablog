@@ -62,7 +62,7 @@
  * ***************************************************************************
  */
 
-package controllers
+package com.thespidernet.scalablog.controllers
 
 import play.api._
 import play.api.mvc._
@@ -82,13 +82,13 @@ class Application @Inject() (val messagesApi: MessagesApi)
    
 	// Default / Home Page
 	def index = Action {
-		Ok(views.html.index())
+		Ok(com.thespidernet.scalablog.views.html.index())
 	}//End index
 
   
 	// System Administration menu
 	def sysconfig = Action {
-		Ok(views.html.sysconfig())
+		Ok(com.thespidernet.scalablog.views.html.sysconfig())
 	}//End sysconfig
 
   
@@ -108,7 +108,7 @@ class Application @Inject() (val messagesApi: MessagesApi)
  
 	// Configure THIS installation of the ScalaBlog application
 	def appconfig = Action {
-		Ok(views.html.appconfig(AppConfigForm))
+		Ok(com.thespidernet.scalablog.views.html.appconfig(AppConfigForm))
 	}//End appconfig
 
 	
@@ -118,7 +118,7 @@ class Application @Inject() (val messagesApi: MessagesApi)
 		//TODO: save the form
 
 		//Return the SYS config Menu
-		Ok(views.html.sysconfig())
+		Ok(com.thespidernet.scalablog.views.html.sysconfig())
 	}//End appconfigsubmit
 }//End Application controller class
 

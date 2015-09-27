@@ -46,18 +46,17 @@
  * jQuery 2.1.4 - JavaScript Library
  * Bootstrap 3.3.4 - JavaScript Library
  *
- * This is the CategoryGateway object (Singleton).
- * It contains all "native" code for getting data into and out of physical storage.
- * E.g. Actual SQL, ORM instructions.
- * All in native dialects for the databases supported.
- *
- * If you support three different database platforms - you may
- * well have 3 versions of each action, here.
+ * This is the Post Status Class
  *
  * ***************************************************************************
  */
-package models.com.thespidernet.scalablog
+package com.thespidernet.scalablog.models
 
-object CategoryGateway {
+case class PostStatus(id: Int,
+	status: String,
+	statusDescription: String,
 
-}
+	sortOrder: Int = 10,
+	active: Boolean = true,
+	modifiedBy: User,
+	modifiedDateTime: java.util.Date)
