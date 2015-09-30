@@ -22,7 +22,7 @@ libraryDependencies ++= Seq(
 //
 routesGenerator := InjectedRoutesGenerator
 
-
+// Dependencies required by THIS application.
 libraryDependencies ++= {
   val akkaVersion       = "2.3.14"
   Seq(
@@ -32,3 +32,13 @@ libraryDependencies ++= {
     "org.scalatest"           %%  "scalatest"    % "2.2.5"       % "test"
   )
 }
+
+// To speed up compilation you can disable documentation generation:
+// The first line will disable documentation generation and the second one will avoid to publish the documentation artifact.
+sources in (Compile, doc) := Seq.empty
+publishArtifact in (Compile, packageDoc) := false
+
+// By default parallel execution is disabled and fork is enabled. You can change this behavior by setting parallelExecution in Test and/or fork in Test:
+parallelExecution in Test := true
+fork in Test := false
+fork in run := true
