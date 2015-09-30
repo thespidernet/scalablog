@@ -69,7 +69,7 @@ class TagUnitSuite extends UnitSpec with Matchers {
 	//Define All the UNIT tests you want to run for the Tag class.
 
 	//Instantiate the models.Tag Class
-	test("Tag Unit : Instantiate the models.Tag Class, directly") {
+	test("Tag Unit : Instantiate the ...models.Tag Class, directly") {
 		//No need for a "new" when creating a case class.
     val theTag = Tag(
 			id = 0,
@@ -79,7 +79,7 @@ class TagUnitSuite extends UnitSpec with Matchers {
 
   
 	//Create a new Tag via the Tag Companion Object
-	test("Tag Unit : Instantiate the models.Tag Class, via the Companion Object") {
+	test("Tag Unit : Instantiate the ...models.Tag Class, via the Companion Object") {
 		//No need for a "new" when creating a case class.
     Tag.newTag(
 			id = 0,

@@ -68,7 +68,7 @@ class CommentUnitSuite extends UnitSpec with Matchers {
 	//Define All the UNIT tests you want to run for the Comment class.
 
 	//Instantiate the models.Category Class
-	test("Comment Unit : Instantiate the models.Comment Class, directly") {
+	test("Comment Unit : Instantiate the ...models.Comment Class, directly") {
 		//No need for a "new" when creating a case class. 
     val theComment = Comment(
 			id = 0,
@@ -80,7 +80,7 @@ class CommentUnitSuite extends UnitSpec with Matchers {
 
   
 	//Create a new Comment via the Comment Companion Object
-	test("Comment Unit : Instantiate the models.Comment Class, via the Companion Object") {
+	test("Comment Unit : Instantiate the ...models.Comment Class, via the Companion Object") {
 		//No need for a "new" when creating a case class.
     Comment.newComment(
 			id = 0,

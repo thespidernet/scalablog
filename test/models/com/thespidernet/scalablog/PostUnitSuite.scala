@@ -67,7 +67,7 @@ class PostUnitSuite extends UnitSpec with Matchers {
 
 	//Define All the UNIT tests you want to run for the Post class.
 
-	//Instantiate the models.Post Class
+	//Instantiate the ...models.Post Class
 	test("Post Unit : Instantiate the models.Post Class, directly") {
 		//No need for a "new" when creating a case class.
     val thePost = Post(
