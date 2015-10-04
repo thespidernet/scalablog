@@ -55,9 +55,10 @@ package com.thespidernet.scalablog.models
 
 import play.api.libs.json._
 
-case class AppConfig(blogtitle: String, blogtagline: String, blogtitleimage: String, blogurl: String)
+case class NormalUserData(firstName: String, lastName:String)
+case class AppConfigData(blogTitle: String, blogTagLine: String, blogTitleImage: String, blogUrl: String, modifiedBy: NormalUserData, accurateAt:java.util.Date)
 
 object AppConfig {
-  
-  implicit val AppConfigFormat = Json.format[AppConfig]
+  implicit val NormalUserFormat = Json.format[NormalUserData]
+  implicit val AppConfigFormat = Json.format[AppConfigData]
 }

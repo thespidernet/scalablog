@@ -101,7 +101,12 @@ class Application @Inject() (val messagesApi: MessagesApi)
       "blogtitle" -> nonEmptyText,
       "blogtagline" -> nonEmptyText,
       "blogtitleimage" -> nonEmptyText,
-      "blogurl" -> nonEmptyText
+      "blogurl" -> nonEmptyText,
+      "modifiedBy" -> mapping(
+          "firstName" -> text,
+          "lastName" -> text
+      )(ModifiedByForm.apply)(ModifiedByForm.unapply),
+      "accurateAt" -> date
     )(CreateAppConfigForm.apply)(CreateAppConfigForm.unapply)
   }//End AppConfigForm
  
@@ -130,4 +135,5 @@ class Application @Inject() (val messagesApi: MessagesApi)
  *It is quite often the case that the model representation and that which is needed within a view are different.
  * So we can use the controller as an appropriate place to hold this interfacing code.
  */
-case class CreateAppConfigForm(blogtitle: String, blogtagline: String, blogtitleimage: String, blogurl: String)
+case class ModifiedByForm(firstName: String, lastName: String)
+case class CreateAppConfigForm(blogtitle: String, blogtagline: String, blogtitleimage: String, blogurl: String, modifiedBy: ModifiedByForm, accurateAt: java.util.Date)

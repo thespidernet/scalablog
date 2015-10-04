@@ -1,4 +1,4 @@
- @(AppConfig: Form[com.thespidernet.scalablog.controllers.CreateAppConfigForm])(implicit messages: Messages)
+ @(AppConfigData: Form[com.thespidernet.scalablog.controllers.CreateAppConfigForm])(implicit messages: Messages)
  
  @*****************************************************************************
  * ScalaBlog. 
@@ -85,10 +85,13 @@
     *@  
     <div class="blog-post">  
 		@form(com.thespidernet.scalablog.controllers.routes.Application.appconfigsubmit()) {
-			@inputText(AppConfig("blogtitle"))
-			@inputText(AppConfig("blogtagline"))
-			@inputText(AppConfig("blogtitleimage"))
-			@inputText(AppConfig("blogurl"))
+			@inputText(AppConfigData("blogtitle"))
+			@inputText(AppConfigData("blogtagline"))
+			@inputText(AppConfigData("blogtitleimage"))
+			@inputText(AppConfigData("blogurl"))
+			@inputText(AppConfigData("modifiedBy.firstName"))
+			@inputText(AppConfigData("modifiedBy.lastName"))
+			@inputText(AppConfigData("accurateAt"))
 			<br />
         	<input type="submit" value="Submit"></input>
 		} <!-- /.form -->	
