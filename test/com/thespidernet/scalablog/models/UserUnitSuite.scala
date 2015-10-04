@@ -70,8 +70,7 @@ class UserUnitSuite extends UnitSpec with Matchers {
 
 	//Instantiate the models.NormalUser Class
 	test("User Unit : Instantiate the ...models.NormalUser Class, directly") {
-		//No need for a "new" when creating a case class.
-    val theNorm = NormalUser(
+    val theNorm = new NormalUser(
 			id = 0,
 			username = "gavinb",
 			password = "thePassword",

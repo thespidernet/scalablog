@@ -70,8 +70,7 @@ class TagUnitSuite extends UnitSpec with Matchers {
 
 	//Instantiate the models.Tag Class
 	test("Tag Unit : Instantiate the ...models.Tag Class, directly") {
-		//No need for a "new" when creating a case class.
-    val theTag = Tag(
+    val theTag = new Tag(
 			id = 0,
 			tag = "TagTitle",
 			modifiedBy = SystemUser(1)) shouldBe a[Tag] //shouldBe tests for type equality

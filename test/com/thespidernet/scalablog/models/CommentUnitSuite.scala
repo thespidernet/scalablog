@@ -68,9 +68,8 @@ class CommentUnitSuite extends UnitSpec with Matchers {
 	//Define All the UNIT tests you want to run for the Comment class.
 
 	//Instantiate the models.Category Class
-	test("Comment Unit : Instantiate the ...models.Comment Class, directly") {
-		//No need for a "new" when creating a case class. 
-    val theComment = Comment(
+	test("Comment Unit : Instantiate the ...models.Comment Class, directly") { 
+    val theComment = new Comment(
 			id = 0,
 			postId = 0,
 			comment = "Test Comment",

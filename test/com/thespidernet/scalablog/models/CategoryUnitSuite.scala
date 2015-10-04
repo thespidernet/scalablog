@@ -69,8 +69,7 @@ class CategoryUnitSuite extends UnitSpec with Matchers {
 
 	//Instantiate the models.Category Class
 	test("Category Unit : Instantiate the ...models.Category Class, directly") {
-		//No need for a "new" when creating a case class.
-    val theCat = Category(
+    val theCat = new Category(
 			id = 0,
 			category = "Test Categpry",
 			modifiedBy = SystemUser(1)) shouldBe a[Category] //shouldBe tests for type equality
