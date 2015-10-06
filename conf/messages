@@ -44,6 +44,14 @@
 # Hadoop / Hadoop File System 2.7.1
 # jQuery 2.1.4 - JavaScript Library
 # Bootstrap 3.3.4 - JavaScript Library
+#
+# This is the default MESSAGES file.
+# It is used for providing internationalisation of your application.
+#
+# THIS file is used when a key is not found in a message file for a specific language.
+#     Eg. If there is a missing key in messages.es (Spanish message file)
+# Or if indeed there is a missing locale's message file, entirely.
+#     Eg. There is no messages file for Japanese users (messages.jp)  
 # 
 ################################################################################
  
@@ -51,3 +59,7 @@ blogtitle = Blog Title
 blogtagline = Blog Tag Line
 blogtitleimage = Blog Title Image
 blogurl = Blog URL
+modifiedBy = Modified By
+modifiedBy.firstName = Modified By: First Name
+modifiedBy.lastName = Modified By: Last Name
+accurateAt = Last Modified
