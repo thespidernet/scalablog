@@ -97,7 +97,9 @@ class Application @Inject() (val messagesApi: MessagesApi)(implicit ec: Executio
   def appconfig = Action {
 
     /**
-      * The mapping for the App Config form.
+      * The Forms object defines the mapping method. This method takes the names
+      * and constraints of the form, and also takes two functions: an apply function
+      * and an unapply function.
       */
 
     val AppConfigForm: Form[CreateAppConfigForm] = Form {
@@ -109,26 +111,31 @@ class Application @Inject() (val messagesApi: MessagesApi)(implicit ec: Executio
         "modifiedBy" -> mapping(
           "firstName" -> text,
           "lastName" -> text
-        )(ModifiedByForm.apply)(ModifiedByForm.unapply),
-        "accurateAt" -> date
+        )(ModifiedByForm.apply)(ModifiedByForm.unapply)
       )(CreateAppConfigForm.apply)(CreateAppConfigForm.unapply)
     } //End AppConfigForm
 
-    // Get the current values
-    // Provide a struct for the above values
+    /**
+      * Get the current values stored in the database to display in the view via
+      * the above mapping.
+      */
+
+    //TODO: get data from data source Then replace handwritten values with those retrieved
     val AppConfigData = AppConfigForm.fill(CreateAppConfigForm("BlogTitle1",
       "BlogTagLine1",
       "BlogTitleImage1",
       "BlogUrl1",
       ModifiedByForm("Gavin",
-        "Baumanis"),
-      new java.util.Date()))
+        "Baumanis")))
 
-    // Get the current date time to pass into the template
+    /**
+      * This is temporary for us to create a NOW timestamp to show in the
+      * prototype. When we start retrieving real data this will go away.
+      */
     val utilities = new com.thespidernet.Utilities()
     val theDateTime = utilities.dtFormat_now
-    // Display the HTML form for System Configuration
 
+    // Display the HTML form for THIS Application's System Configuration
     Ok(com.thespidernet.scalablog.views.html.appconfig(AppConfigData, theDateTime.toString))
   } //End appconfig
 
@@ -151,4 +158,4 @@ class Application @Inject() (val messagesApi: MessagesApi)(implicit ec: Executio
   */
 
 case class ModifiedByForm(firstName: String, lastName: String)
-case class CreateAppConfigForm(blogtitle: String, blogtagline: String, blogtitleimage: String, blogurl: String, modifiedBy: ModifiedByForm, accurateAt: java.util.Date)
+case class CreateAppConfigForm(blogtitle: String, blogtagline: String, blogtitleimage: String, blogurl: String, modifiedBy: ModifiedByForm)

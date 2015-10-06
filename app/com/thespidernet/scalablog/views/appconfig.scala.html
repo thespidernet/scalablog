@@ -1,6 +1,5 @@
- @(AppConfigData: Form[com.thespidernet.scalablog.controllers.CreateAppConfigForm])(implicit messages: Messages)
- 
- @*****************************************************************************
+@(AppConfigData: Form[com.thespidernet.scalablog.controllers.CreateAppConfigForm], theDateTime: String)(implicit messages: Messages)
+@*****************************************************************************
  * ScalaBlog. 
  * Copyright 2014-2015 Gavin Baumanis
  * gavinb@thespidernet.com 
@@ -49,10 +48,11 @@
  * 
  *****************************************************************************@
  
- @import helper._
+@import helper._
+@import play.api.i18n.Messages 
+@import com.thespidernet.Utilities
  
- 
- @* 
+ @** 
    * main() is a function used to "hold" the MAIN content of the page requested.
    * It is passed into /views/main.scala.html which is a Layout template.
    *@
@@ -65,33 +65,39 @@
         <p class="lead blog-description">Application Configuration</p>
     </div><!--  /.blog-header -->
     
-    @* 
-     * The following DIV element is used just for styling. It is not necessary. 
-     *	
-     * The noteworthy part of the DIV is the creation of the form and the form 
-     * input elements by use of the Play framework's "helpers"
-     * 
-     * @form() is passed the controller method that will act as the ACTION
-     * via "routes.Application.appconfigsubmit()"
-     *
-     * The form is passed in at the forst line of THIS template and is named AppConfig 
-     *	
-     * We can then pass in the form items by constructing form contents via the Play helpers
-     * (Eg. @inputText(AppConfig("blogtitle")))
-     * 
-     * The string provided is the field name and ID ("blogtitle").
-     * it is also used to map a field label, via the /conf/messages file.
-     * 
-    *@  
+    @** 
+      * The following DIV element is used just for styling. It is not necessary. 
+      *	
+      * The noteworthy part of the DIV is the creation of the form and the form 
+      * input elements by use of the Play framework's "helpers"
+      * 
+      * @form() is passed the controller method that will act as the ACTION
+      * via "routes.Application.appconfigsubmit()"
+      *
+      * The form is passed in at the forst line of THIS template and is named AppConfig 
+      *	
+      * We can then pass in the form items by constructing form contents via the Play helpers
+      * (Eg. @inputText(AppConfig("blogtitle")))
+      * 
+      * The string provided is the field name and ID ("blogtitle").
+      * it is also used to map a field label, via the /conf/messages file.
+      * 
+     *@
+   
     <div class="blog-post">  
 		@form(com.thespidernet.scalablog.controllers.routes.Application.appconfigsubmit()) {
 			@inputText(AppConfigData("blogtitle"))
 			@inputText(AppConfigData("blogtagline"))
 			@inputText(AppConfigData("blogtitleimage"))
 			@inputText(AppConfigData("blogurl"))
-			@inputText(AppConfigData("modifiedBy.firstName"))
-			@inputText(AppConfigData("modifiedBy.lastName"))
-			@inputText(AppConfigData("accurateAt"))
+			@inputText(AppConfigData("modifiedBy.firstName"),'readonly -> "readonly")
+			@inputText(AppConfigData("modifiedBy.lastName"),'readonly -> "readonly")
+			<dl class=" " id="accuateAt_field">
+                <dt><label for="accuateAt">@Messages("accurateAt")</label></dt>
+                <dd>
+                    <input type="text" id="accurateAt" name="accurateAt" value="@theDateTime" readonly />
+                </dd>
+            </dl>
 			<br />
         	<input type="submit" value="Submit"></input>
 		} <!-- /.form -->	
