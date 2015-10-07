@@ -58,6 +58,7 @@
 package com.thespidernet.scalablog.models
 
 import org.scalatest._
+import com.thespidernet.IntegrationSpec
 
 //Inherit from the "base" IntegrationSpec.
 class CategoryIntegrationSuite extends IntegrationSpec with Matchers {

@@ -57,6 +57,7 @@
 package com.thespidernet.scalablog.models
 
 import org.scalatest._
+import com.thespidernet.UnitSpec
 
 /**
  * Inherit from the "base" UnitSpec and Mixin the Matchers trait.

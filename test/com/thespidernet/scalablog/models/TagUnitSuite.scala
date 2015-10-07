@@ -57,6 +57,7 @@
 package com.thespidernet.scalablog.models
 
 import org.scalatest._
+import com.thespidernet.UnitSpec
 
 
 /**

@@ -46,19 +46,25 @@
  * jQuery 2.1.4 - JavaScript Library
  * Bootstrap 3.3.4 - JavaScript Library
  *
- * This is the "base" Integration Testing abstract class.
+ * This is a trait to mixin to tests of Akka Messaging system.
  *
- * It is specifically setup for Integration (database / SOAP / REST etc. Testing
- * 	using the FunSuite Testing Style.
- *     FunSuite is MOST like xUnit testing - with extra Scala goodies!
+ * It is used to ensure that the Akka system is correctly shutdown before and after testing.
  *
  * ***************************************************************************
  */
 
 
 
-package com.thespidernet.scalablog.models
+package com.thespidernet
 
-import org.scalatest._
+import org.scalatest.{ Suite, BeforeAndAfterAll }
+import akka.testkit.TestKit
 
-abstract class IntegrationSpec extends FunSuite
+trait StopSystemAfterAll extends BeforeAndAfterAll {
+
+	this: TestKit with Suite =>
+	override protected def afterAll() {
+		super.afterAll()
+		system.shutdown()
+	}
+}

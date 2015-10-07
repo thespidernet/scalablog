@@ -46,25 +46,18 @@
  * jQuery 2.1.4 - JavaScript Library
  * Bootstrap 3.3.4 - JavaScript Library
  *
- * This is a trait to mixin to tests of Akka Messaging system.
+ * This is the "base" UNIT Testing abstract class.
  *
- * It is used to ensure that the Akka system is correctly shutdown before and after testing.
+ * It is specifically setup for Unit Testing using the FunSuite Testing Style.
+ *     FunSuite is MOST like xUnit testing - with extra Scala goodies!
  *
  * ***************************************************************************
  */
 
 
 
-package com.thespidernet.scalablog.models
+package com.thespidernet
 
-import org.scalatest.{ Suite, BeforeAndAfterAll }
-import akka.testkit.TestKit
+import org.scalatest._
 
-trait StopSystemAfterAll extends BeforeAndAfterAll {
-
-	this: TestKit with Suite =>
-	override protected def afterAll() {
-		super.afterAll()
-		system.shutdown()
-	}
-}
+abstract class UnitSpec extends FunSuite

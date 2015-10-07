@@ -61,6 +61,7 @@ import org.scalatest.WordSpecLike
 import org.scalatest.MustMatchers
 import akka.testkit.{ TestActorRef, TestKit }
 import akka.actor._
+import com.thespidernet.StopSystemAfterAll
 
 package silentactor02 {
 
