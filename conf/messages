@@ -55,11 +55,11 @@
 # 
 ################################################################################
  
-blogtitle = Blog Title
-blogtagline = Blog Tag Line
-blogtitleimage = Blog Title Image
-blogurl = Blog URL
-modifiedBy = Modified By
-modifiedBy.firstName = Modified By: First Name
-modifiedBy.lastName = Modified By: Last Name
-accurateAt = Last Modified
+blogtitle               = Blog Title
+blogtagline             = Blog Tag Line
+blogtitleimage          = Blog Title Image
+blogurl                 = Blog URL
+modifiedBy              = Modified By
+modifiedBy.firstName    = Modified By: First Name
+modifiedBy.lastName     = Modified By: Last Name
+accurateAt              = Last Modified
