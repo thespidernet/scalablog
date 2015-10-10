@@ -70,9 +70,9 @@ import java.time.format.DateTimeFormatter
 class Utilities {
 
   /**
-    * Format the current date and time to an Australian format that people expect to see (with 24 hour time).
+    * Format the current date and time to an Australian format (with 24 hour time).
     */
-  def dtFormat_now(): String = {
+  def dateTimeFormat_now(): String = {
 
     /**
       * The body of this function could be JUST the following single line.
@@ -84,6 +84,30 @@ class Utilities {
 
     val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm")
     val timeNow = java.time.LocalDateTime.now()
+    val formattedDateTime = timeNow.format(formatter)
+
+    return formattedDateTime
+  }
+
+  /**
+    * Format the current date to an Australian format
+    */
+  def dateFormat_now(): String = {
+
+    val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy")
+    val dateNow = java.time.LocalDate.now()
+    val formattedDate = dateNow.format(formatter)
+
+    return formattedDate
+  }
+
+  /**
+    * Format the current date to an Australian format
+    */
+  def timeFormat_now(): String = {
+
+    val formatter = DateTimeFormatter.ofPattern("HH:mm")
+    val timeNow = java.time.LocalDate.now()
     val formattedTime = timeNow.format(formatter)
 
     return formattedTime
