@@ -1,6 +1,4 @@
-@(User: com.thespidernet.scalablog.models.NormalUser)
-@import java.text.DateFormat
-
+@(UserConfigData: Form[com.thespidernet.scalablog.controllers.CreateUserConfigForm], theDateTime: String)(implicit messages: Messages)
 @*****************************************************************************
  * ScalaBlog. 
  * Copyright 2014-2015 Gavin Baumanis
@@ -50,6 +48,10 @@
  * 
  *****************************************************************************@
  
+@import helper._
+@import play.api.i18n.Messages 
+@import com.thespidernet.Utilities 
+ 
  @* 
    * main() is a function used to "hold" the MAIN content of the page requested.
    * It is passed into /views/main.scala.html which is a Layout template.
@@ -64,63 +66,45 @@
     </div><!--  /.blog-header -->
       
     <div class="blog-post">
-        <form name="AppSettings" action="/userconfig/submit" method="post">
-            <fieldset>
-				<label for="username">User Name : </label>
-				<input id="username" name="username" length="50" size="25" value="@User.username"></input><br />
-				<inout id="avatar" name="avatar" length = "50" size="25" value="@User.avatar"></input><br />
-				<!-- TODO: Correct this with a working "de"  -->
-				<label for="active">Active : </label>
-                <input id="active" name="active" type="checkbox" checked="@User.active"></input><br />
-				<br />  
-				<label for="password1">Reset Password : </label>
-				<input id="password1" name="password1" type="password" length="50" size="25"></input><br />
-				<label for="password2">Repeat Password : </label>
-                <input id="password2" name="password2" type="password" length="50" size="25"></input><br />
-				<hr />
-				<label for="emailAddress">Email Address : </label>
-				<input id="emailAddress" name="emailAddress" length="50" size="25" value="@User.emailAddress"></input><br />
-				<label for="twitter">Twitter : </label>
-				<input id="twitter" name="twitter" length="50" size="25" value="@User.twitter"></input><br />
-				<label for="gitHub">GitHub  : </label>
-				<input id="gitHub" name="gitHub" length="50" size="25" value="@User.gitHub"></input><br />
-				<label for="websiteURL">Website : </label>
-				<input id="websiteURL" name="websiteURL" length="50" size="25" value="@User.websiteURL"></input><br />
-				<hr />
-				<label for="Firstname">First Name : </label>
-				<input id="FirstName" name="FirstName" length="50" size="25" value="@User.firstName"></input><br />
-				<label for="lastname">Last Name : </label>
-				<input id="lastname" name="lastname" length="50" size="25" value="@User.lastName"></input><br />
-				<label for="displayname">Display Name : </label>
-				<input id="displayname" name="displayname" length="50" size="25" value="@User.displayName"></input><br />
-				<hr />
-				<label for="address1">Address : </label>
-				<input id="address1" name="address1" length="50" size="25" value="@User.address1"></input><br />
-				<label for="address2">Address 2 : </label>
-				<input id="address2" name="address2" length="50" size="25" value="@User.address2"></input><br />
-				<label for="suburb">Suburb : </label>
-				<input id="suburb" name="suburb" length="50" size="25" value="@User.suburb"></input><br />
-				<label for="state">State : </label>
-				<input id="state" name="state" length="50" size="25" value="@User.state"></input><br />
-				<label for="postCode">Post Code : </label>
-				<input id="postCode" name="postCode" length="50" size="25" value="@User.postCode"></input><br />
-				<label for="country">country : </label>
-				<input id="country" name="country" length="50" size="25" value="@User.country"></input><br />
-				<hr />
-				<label for="homePhone">Home Phone : </label>
-				<input id="homePhone" name="homePhone" length="50" size="25" value="@User.homePhone"></input><br />
-				<label for="mobilePhone">Mobile     : </label>
-				<input id="mobilePhone" name="mobilePhone" length="50" size="25" value="@User.mobilePhone"></input><br />
-				<label for="workPhone">Work Phone : </label>
-				<input id="workPhone" name="workPhone" length="50" size="25" value="@User.workPhone"></input><br />
-				<hr />
-				@*  Because MODIFIED BY is a user id - Use the helper method; getFullnameByID() *@
-				@* TODO: Work out how to use this property. it is causing a circular reference issue. *@
-                @* <label for="modifiedBy">Last Modified By : </label>@User.modifiedBy<br /> *@
-				<label for="modifiedDateTime">Last Modified DateTime : </label>@User.modifiedDateTime
-				<hr />
-				<input type="submit" value="Submit"></input>
-           </fieldset>
-       </form>
-    </div><!--End form -->    
+        @form(com.thespidernet.scalablog.controllers.routes.User.userconfigsubmit()) {
+            @inputText(UserConfigData("username"))
+            @inputText(UserConfigData("avatar"))
+            @inputText(UserConfigData("active"))
+            @inputText(UserConfigData("username"))
+            <br />
+            @inputText(UserConfigData("password1"), 'type ->"password")
+            @inputText(UserConfigData("password2"), 'type ->"password")
+            <hr />
+            @inputText(UserConfigData("emailAddress"))
+            @inputText(UserConfigData("twitter"))
+            @inputText(UserConfigData("gitHub"))
+            @inputText(UserConfigData("websiteURL"))
+            <hr />
+            @inputText(UserConfigData("firstName"))
+            @inputText(UserConfigData("lastName"))
+            @inputText(UserConfigData("displayName"))
+            <hr />
+            @inputText(UserConfigData("address1"))
+            @inputText(UserConfigData("address2"))
+            @inputText(UserConfigData("suburb"))
+            @inputText(UserConfigData("state"))
+            @inputText(UserConfigData("postCode"))
+            @inputText(UserConfigData("country"))
+		    <hr />
+		    @inputText(UserConfigData("homePhone"))
+		    @inputText(UserConfigData("mobilePhone"))
+		    @inputText(UserConfigData("workPhone"))
+			<hr />
+			@inputText(UserConfigData("modifiedBy.firstName"),'readonly -> "readonly")
+            @inputText(UserConfigData("modifiedBy.lastName"),'readonly -> "readonly")
+            <dl class=" " id="accuateAt_field">
+                <dt><label for="accuateAt">@Messages("accurateAt")</label></dt>
+                <dd>
+                    <input type="text" id="accurateAt" name="accurateAt" value="@theDateTime" readonly />
+                </dd>
+            </dl>
+            <br />
+            <input type="submit" value="Submit"></input>
+           } <!-- /.form -->    
+    </div><!-- /.blog-post -->
 }

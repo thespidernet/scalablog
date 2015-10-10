@@ -59,7 +59,34 @@ blogtitle               = Blog Title
 blogtagline             = Blog Tag Line
 blogtitleimage          = Blog Title Image
 blogurl                 = Blog URL
+
 modifiedBy              = Modified By
 modifiedBy.firstName    = Modified By: First Name
 modifiedBy.lastName     = Modified By: Last Name
 accurateAt              = Last Modified
+
+username                = User Name
+password                = Password
+password1               = Password
+password2               = Confirm Password
+avatar                  = Avatar
+emailAddress            = Email Address
+twitter                 = Twitter
+gitHub                  = Git Hub
+websiteURL              = Website URI
+
+firstName               = First Name 
+lastName                = Last Name
+displayName             = Display Name
+address1                = Address 1
+address2                = Address 2
+suburb                  = Suburb
+state                   = State
+postCode                = Post Code
+country                 = Country
+
+homePhone               = Home Phone
+mobilePhone             = Mobile Phone
+workPhone               = Work Phone
+
+active                  = Active
