@@ -100,6 +100,10 @@ class Application @Inject() (val messagesApi: MessagesApi)(implicit ec: Executio
       * The Forms object defines the mapping method. This method takes the names
       * and constraints of the form, and also takes two functions: an apply function
       * and an unapply function.
+      *
+      * Normally we would also create a "full name" from the first and last
+      * name. But we have left them separated here - to show how to used Nested
+      * values in Play forms.
       */
 
     val AppConfigForm: Form[CreateAppConfigForm] = Form {
@@ -133,7 +137,7 @@ class Application @Inject() (val messagesApi: MessagesApi)(implicit ec: Executio
       * prototype. When we start retrieving real data this will go away.
       */
     val utilities = new com.thespidernet.Utilities()
-    val theDateTime = utilities.dtFormat_now
+    val theDateTime = utilities.dateTimeFormat_now
 
     // Display the HTML form for THIS Application's System Configuration
     Ok(com.thespidernet.scalablog.views.html.appconfig(AppConfigData, theDateTime.toString))
