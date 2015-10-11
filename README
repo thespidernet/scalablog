@@ -1,8 +1,8 @@
- ScalaBlog. 
+ScalaBlog. 
 
- Copyright 2014-2015 Gavin Baumanis
- gavinb@thespidernet.com 
- http://www.thespidernet.com/scalablog
+Copyright 2014-2015 Gavin Baumanis
+gavinb@thespidernet.com 
+http://www.thespidernet.com/scalablog
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -10,23 +10,22 @@ You may obtain a copy of the License at
 
 http://www.apache.org/licenses/LICENSE-2.0
 
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+Unless required by applicable law or agreed to in writing, software distributed 
+under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR 
+CONDITIONS OF ANY KIND, either express or implied. See the License for the 
+specific language governing permissions and limitations under the License.
 
 The ScalaBlog is a fully functioning Blog.
-It was originally written as a training tool for Scala and the TypeSafe
+It was originally written as a training tool for Scala and the TypeSafe 
 technology stack; http://typesafe.com/products/typesafe-reactive-platform
 
-It is subsequently written with verbose comments and with readability
-always in focus. Thus we have not always used the most concise / terse
-code that we could have. Which is a real strength of Scala.
+It is subsequently written with verbose comments and with readability always in 
+focus. Thus we have not always used the most concise / terse code that we could 
+have. Which is a real strength of Scala.
  
-The ScalaBlog also became the training ground for our efforts to 
-better understand "BIG DATA". Subsequently it uses Hadoop and some related
-technologies that simply just aren't a requirement for a blog application.
+The ScalaBlog also became the training ground for our efforts to  better 
+understand "BIG DATA". Subsequently it uses Hadoop and some related technologies
+that simply just aren't a requirement for a blog application.
 Nonetheless - they are used here!
 
 The ScalaBlog application is free to use.
@@ -38,44 +37,51 @@ The blog utilises the following technology;
 ** Scala 2.11.7 **
 ******************
  
-Scala is an acronym for “Scalable Language”. This means that Scala grows with you. 
-You can play with it by typing one-line expressions and observing the results. 
-But you can also rely on it for large mission critical systems, as many companies, including Twitter, LinkedIn, or Intel do.
+Scala is an acronym for “Scalable Language”. This means that Scala grows with 
+you. You can play with it by typing one-line expressions and observing the 
+results. But you can also rely on it for large mission critical systems, as many 
+companies, including Twitter, LinkedIn, or Intel do.
 
-To some, Scala feels like a scripting language. Its syntax is concise and low ceremony; 
-its types get out of the way because the compiler can infer them. There’s a REPL and IDE worksheets 
-for quick feedback. Developers like it so much that Scala won the ScriptBowl contest 
-at the 2012 JavaOne conference.
+To some, Scala feels like a scripting language. Its syntax is concise and low 
+ceremony; 
+* Its types get out of the way because the compiler can infer them. 
+* There’s a REPL and IDE worksheets for quick feedback. Developers like it so 
+    much that Scala won the ScriptBowl contest at the 2012 JavaOne conference.
 
-At the same time, Scala is the preferred workhorse language for many mission critical server systems. 
-The generated code is on a par with Java’s and its precise typing means that many problems are caught 
-at compile-time rather than after deployment.
+At the same time, Scala is the preferred workhorse language for many mission 
+critical server systems.  The generated code is on a par with Java’s and its 
+precise typing means that many problems are caught at compile-time rather than 
+after deployment.
 
-At the root, the language’s scalability is the result of a careful integration of 
-object-oriented and functional language concepts.
+At the root, the language’s scalability is the result of a careful integration 
+of object-oriented and functional language concepts.
 
 
 *******************************************     
 ** Scala Test 2.2.5 - Testing Framework  **
 *******************************************
 
-With ScalaTest, you can test either Scala or Java code. By offering deep integration with 
-tools such as JUnit, TestNG, Ant, Maven, sbt, ScalaCheck, JMock, EasyMock, Mockito, ScalaMock, 
-Selenium, Eclipse, NetBeans, and IntelliJ, ScalaTest makes it easy to take your testing to a higher, 
-more productive level in new or existing Scala or Java projects.
+With ScalaTest, you can test either Scala or Java code. By offering deep 
+integration with tools such as JUnit, TestNG, Ant, Maven, sbt, ScalaCheck, 
+JMock, EasyMock, Mockito, ScalaMock, Selenium, Eclipse, NetBeans, and IntelliJ, 
+ScalaTest makes it easy to take your testing to a higher,  more productive level
+in new or existing Scala or Java projects.
 
-Like the Scala language on which it is built, ScalaTest is designed to grow with the demands of its users: 
-You can easily extend and compose ScalaTest's core components to address just about any special requirements 
-you may have. As a result, ScalaTest can scale to projects of all sizes, from an individual exploring a new 
-idea to large teams collaborating on mission-critical software.
+Like the Scala language on which it is built, ScalaTest is designed to grow with
+the demands of its users:  You can easily extend and compose ScalaTest's core 
+components to address just about any special requirements you may have. As a 
+result, ScalaTest can scale to projects of all sizes, from an individual 
+exploring a new idea to large teams collaborating on mission-critical software.
 
-One way ScalaTest scales down is that despite its rich feature set, ScalaTest is easy to get into. Building on 
-what you already know from experience with other test frameworks, you can become productive with ScalaTest very quickly.
+One way ScalaTest scales down is that despite its rich feature set, ScalaTest is
+easy to get into. Building on what you already know from experience with other 
+test frameworks, you can become productive with ScalaTest very quickly.
 
-To maximize your productivity, ScalaTest uses its own extension points to support several styles of testing 
-out of the box. You can select whatever style best fits your team's experience and culture. For instance, the 
-above example uses FlatSpec, a good choice for teams wishing to move from XUnit to BDD. When you run it, you get
-an informal specification of the software being tested:
+To maximize your productivity, ScalaTest uses its own extension points to 
+support several styles of testing out of the box. You can select whatever style 
+best fits your team's experience and culture. For instance, the above example 
+uses FlatSpec, a good choice for teams wishing to move from XUnit to BDD. When 
+you run it, you get an informal specification of the software being tested:
 
 
 *****************
@@ -85,84 +91,99 @@ an informal specification of the software being tested:
 What is Akka?
 Scalable real-time transaction processing
 
-We believe that writing correct concurrent, fault-tolerant and scalable applications is too hard. 
-Most of the time it's because we are using the wrong tools and the wrong level of abstraction. 
-Akka is here to change that. Using the Actor Model we raise the abstraction level and provide a better 
-platform to build scalable, resilient and responsive applications—see the Reactive Manifesto 
+We believe that writing correct concurrent, fault-tolerant and scalable 
+applications is too hard. Most of the time it's because we are using the wrong 
+tools and the wrong level of abstraction. Akka is here to change that. Using the
+Actor Model we raise the abstraction level and provide a better platform to 
+build scalable, resilient and responsive applications—see the Reactive Manifesto 
 (http://reactivemanifesto.org/) for more details. 
 
-For fault-tolerance we adopt the "let it crash" model which the telecom industry has used with great success to 
-build applications that self-heal and systems that never stop. Actors also provide the abstraction for 
-transparent distribution and the basis for truly scalable and fault-tolerant applications.
+For fault-tolerance we adopt the "let it crash" model which the telecom industry
+has used with great success to build applications that self-heal and systems 
+that never stop. Actors also provide the abstraction for transparent 
+distribution and the basis for truly scalable and fault-tolerant applications.
 
 Akka is Open Source and available under the Apache 2 License.
 Download from http://akka.io/downloads.
 
-Please note that all code samples compile, so if you want direct access to the sources, have a look over 
-at the Akka Docs subproject on github: for Java and Scala.
+Please note that all code samples compile, so if you want direct access to the 
+sources, have a look over at the Akka Docs subproject on github: for Java and 
+Scala.
 
  
 *********************************
 ** Play 2.4.3 - MVC Framework **
 *********************************
  
-Play is a high-productivity Java and Scala web application framework that integrates the components 
-and APIs you need for modern web application development.
+Play is a high-productivity Java and Scala web application framework that 
+integrates the components and APIs you need for modern web application 
+development.
 
-Play is based on a lightweight, stateless, web-friendly architecture and features predictable and 
-minimal resource consumption (CPU, memory, threads) for highly-scalable applications thanks to its 
-reactive model, based on Iteratee IO.
+Play is based on a lightweight, stateless, web-friendly architecture and 
+features predictable and minimal resource consumption (CPU, memory, threads) for
+highly-scalable applications thanks to its reactive model, based on Iteratee IO.
 
 
 *****************
 ** spray 2.3.3 **
 *****************
 
-spray is a suite of lightweight Scala libraries providing client- and server-side REST/HTTP support on top Akka.
+spray is a suite of lightweight Scala libraries providing client- and 
+server-side REST/HTTP support on top Akka.
 
-We believe that, having chosen Scala (and possibly Akka) as primary tools for building software, you’ll want to 
-rely on their power not only in your application layer but throughout the full (JVM-level) network stack. Spray
-provides just that: a set of integrated components for all your REST/HTTP needs that let you work with idiomatic 
-Scala (and Akka) APIs at the stack level of your choice, all implemented without any wrapping layers around 
-“legacy” Java libraries.
+We believe that, having chosen Scala (and possibly Akka) as primary tools for 
+building software, you’ll want to rely on their power not only in your 
+application layer but throughout the full (JVM-level) network stack. Spray 
+provides just that: a set of integrated components for all your REST/HTTP needs 
+that let you work with idiomatic Scala (and Akka) APIs at the stack level of 
+your choice, all implemented without any wrapping layers around “legacy” Java 
+libraries.
 
 
 ******************************
 ** Cassandra Database 2.1.8 **
 ******************************
 
-Apache Cassandra, a top level Apache project born at Facebook and built on Amazon’s Dynamo and Google’s BigTable, 
-is a distributed database for managing large amounts of structured data across many commodity servers, while 
-providing highly available service and no single point of failure.  Cassandra offers capabilities that relational 
-databases and other NoSQL databases simply cannot match such as: continuous availability, linear scale performance, 
-operational simplicity and easy data distribution across multiple data centers and cloud availability zones.
+Apache Cassandra, a top level Apache project born at Facebook and built on 
+Amazon’s Dynamo and Google’s BigTable, is a distributed database for managing 
+large amounts of structured data across many commodity servers, while  providing
+highly available service and no single point of failure.  Cassandra offers 
+capabilities that relational databases and other NoSQL databases simply cannot 
+match such as: continuous availability, linear scale performance, operational 
+simplicity and easy data distribution across multiple data centers and cloud 
+availability zones.
 
 
 ***************************************
 ** Hadoop / Hadoop File System 2.7.1 **
 ***************************************
 
-Apache Hadoop is a framework for running applications on large cluster built of commodity hardware. The Hadoop 
-framework transparently provides applications both reliability and data motion. Hadoop implements a computational 
-paradigm named Map/Reduce, where the application is divided into many small fragments of work, each of which may be 
-executed or re-executed on any node in the cluster. In addition, it provides a distributed file system (HDFS) that 
-stores data on the compute nodes, providing very high aggregate bandwidth across the cluster. Both MapReduce and the 
-Hadoop Distributed File System are designed so that node failures are automatically handled by the framework.
+Apache Hadoop is a framework for running applications on large cluster built of 
+commodity hardware. The Hadoop framework transparently provides applications 
+both reliability and data motion. Hadoop implements a computational paradigm 
+named Map/Reduce, where the application is divided into many small fragments of 
+work, each of which may be executed or re-executed on any node in the cluster. 
+In addition, it provides a distributed file system (HDFS) that stores data on 
+the compute nodes, providing very high aggregate bandwidth across the cluster. 
+Both MapReduce and the Hadoop Distributed File System are designed so that node 
+failures are automatically handled by the framework.
 
 
 ******************
 ** jQuery 2.1.4 **
 ******************
 
-jQuery is a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and 
-manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude 
-of browsers. With a combination of versatility and extensibility, jQuery has changed the way that millions of
-people write JavaScript.
+jQuery is a fast, small, and feature-rich JavaScript library. It makes things 
+like HTML document traversal and manipulation, event handling, animation, and 
+Ajax much simpler with an easy-to-use API that works across a multitude of 
+browsers. With a combination of versatility and extensibility, jQuery has 
+changed the way that millions of people write JavaScript.
 
 
 *******************
 * Bootstrap 3.3.4 *
 *******************
-Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web.
-Bootstrap makes front-end web development faster and easier. It's made for folks of all skill levels, devices of all 
-shapes, and projects of all sizes.
+Bootstrap is the most popular HTML, CSS, and JS framework for developing 
+responsive, mobile first projects on the web. Bootstrap makes front-end web 
+development faster and easier. It's made for folks of all skill levels, devices 
+of all shapes, and projects of all sizes.
