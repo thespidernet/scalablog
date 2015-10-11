@@ -207,7 +207,7 @@ class User @Inject() (val messagesApi: MessagesApi)(implicit ec: ExecutionContex
   * interfacing code.
   */
 
-case class CreateUserConfigForm(username: String, password: String, avatar: String, emailAddress: String, twitte: String, gitHub: String, websiteURL: String,
+case class CreateUserConfigForm(userName: String, password: String, avatar: String, emailAddress: String, twitter: String, gitHub: String, websiteURL: String,
                                 firstName: String, lastName: String, displayName: String, address1: String, address2: String, suburb: String, state: String, postCode: String, country: String,
                                 homePhone: String, mobilePhone: String, workPhone: String,
                                 active: Boolean,

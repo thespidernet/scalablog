@@ -67,12 +67,11 @@
         <p class="lead blog-description">User Administration</p>
     </div><!--  /.blog-header -->
       
-    <div class="blog-post">
+    <div class="blog-admin">
         @form(com.thespidernet.scalablog.controllers.routes.User.userconfigsubmit()) {
-            @inputText(UserConfigData("username"))
+            @inputText(UserConfigData("userName"))
             @inputText(UserConfigData("avatar"))
             @inputText(UserConfigData("active"))
-            @inputText(UserConfigData("username"))
             <br />
             @inputText(UserConfigData("password1"), 'type ->"password")
             @inputText(UserConfigData("password2"), 'type ->"password")
@@ -108,5 +107,5 @@
             <br />
             <input type="submit" value="Submit"></input>
            } <!-- /.form -->    
-    </div><!-- /.blog-post -->
+    </div><!-- /.blog-admin -->
 }
