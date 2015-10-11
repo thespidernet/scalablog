@@ -169,6 +169,26 @@ h6, .h6 {
 
 
 /*
+ * Admin Forms
+ */
+.blog-admin dl {
+  clear: both;
+  padding: 10px;	
+}
+
+.blog-admin dt {
+  float: left;
+  width: 120px;
+  font-weight: bold;
+}
+
+.blog-admin dd {
+  float: left;
+  margin-left: 10px;
+}
+
+
+/*
  * Footer
  */
 
