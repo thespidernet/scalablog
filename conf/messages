@@ -48,13 +48,19 @@
 # This is the default MESSAGES file.
 # It is used for providing internationalisation of your application.
 #
-# THIS file is used when a key is not found in a message file for a specific language.
+# THIS file is used when a key is not found in a message file for a specific 
+# language.
 #     Eg. If there is a missing key in messages.es (Spanish message file)
 # Or if indeed there is a missing locale's message file, entirely.
 #     Eg. There is no messages file for Japanese users (messages.jp)  
 # 
 ################################################################################
- 
+
+# Fix a bug where there is no helper text defined for a checkbox.
+# Set it to a blank string.
+format.boolean =  
+
+
 blogtitle               = Blog Title
 blogtagline             = Blog Tag Line
 blogtitleimage          = Blog Title Image
