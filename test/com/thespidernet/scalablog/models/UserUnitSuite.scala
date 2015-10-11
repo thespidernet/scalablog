@@ -48,7 +48,8 @@
   *
   * This is the User Unit Testing Object
   * It inherits from a base UNIT testing class "UnitSpec"
-  *   Which is specifically setup for Unit Testing using the FunSuite Testing Style.
+  *   Which is specifically setup for Unit Testing using the FunSuite
+  *     Testing Style.
   *     FunSuite is MOST like xUnit testing - with extra Scala goodies!
   *
   * ***************************************************************************

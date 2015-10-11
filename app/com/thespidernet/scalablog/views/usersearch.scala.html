@@ -47,10 +47,12 @@
  * 
  *****************************************************************************@
  
- @* 
-   * main() is a function used to "hold" the MAIN content of the page requested.
+ @** 
+   * main() is a function used to "hold" the MAIN content of the page 
+   * requested.
    * It is passed into /views/main.scala.html which is a Layout template.
-   *@
+   *
+   **@
    
 @main("ScalaBlog - User Search") {
 
@@ -60,11 +62,12 @@
         <p class="lead blog-description">User Search</p>
     </div>
     
-    @*
-     * 1. Iterate through the collection and display the contents.
-     * 2. Use the username (it is unique) as the hyperlink and "key" to pass to the userconfig action.
-     * 		
-     *@
+    @**
+      * 1. Iterate through the collection and display the contents.
+      * 2. Use the username (it is unique) as the hyperlink and "key" to pass 
+      * to the userconfig action.
+      * 		
+      **@
     
     <div class="blog-post">
         <ol>

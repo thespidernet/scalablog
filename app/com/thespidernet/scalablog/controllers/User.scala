@@ -47,17 +47,19 @@
   * Bootstrap 3.3.4 - JavaScript Library
   * A controller can come in two flavours. Thin and fat.
   *
-  * This is a "thin" Controller. It only contains the steps required in clean straight lines.
+  * This is a "thin" Controller. It only contains the steps required in clean
+  * straight lines. There is no / little business logic contained within the
+  * controller.
   *
-  * there is no / little business logic contained within the controller.
-  * The application is responsible for the business logic and the appropriate event handler (here in the controller).
+  * The application is responsible for the business logic and the appropriate
+  * event handler (here in the controller).
   *
-  * In contrast a "fat" controller tends to contain a lot of the business logic along with the required steps.
-  *
+  * In contrast a "fat" controller tends to contain a lot of the business logic
+  * along with the required steps.
   *
   * This is the Users Controller.
-  * It provides the process of steps that are required based on "User" events that occur that within the application.
-  *
+  * It provides the process of steps that are required based on "User" events
+  * that occur that within the application.
   * ***************************************************************************
   */
 
@@ -94,8 +96,8 @@ class User @Inject() (val messagesApi: MessagesApi)(implicit ec: ExecutionContex
     // Individual User Administration main page
     /**
       * The Forms object defines the mapping method. This method takes the names
-      * and constraints of the form, and also takes two functions: an apply function
-      * and an unapply function.
+      * and constraints of the form, and also takes two functions: an apply
+      * function and an unapply function.
       *
       * Normally we would also create a "full name" from the first and last
       * name. But we have left them separated here - to show how to used Nested
@@ -141,7 +143,10 @@ class User @Inject() (val messagesApi: MessagesApi)(implicit ec: ExecutionContex
       * the above mapping.
       */
 
-    //TODO: get data from data source Then replace handwritten values with those retrieved
+    /**
+      * TODO: get data from data source Then replace handwritten values with
+      * those retrieved
+      */
     val UserConfigData = UserConfigForm.fill(CreateUserConfigForm("GavinB",
       "True",
       "AVATAR - BLUE Dudes",
@@ -179,12 +184,6 @@ class User @Inject() (val messagesApi: MessagesApi)(implicit ec: ExecutionContex
 
     // Display the HTML form for THIS Application's System Configuration
     Ok(com.thespidernet.scalablog.views.html.userconfig(UserConfigData, theDateTime.toString))
-
-    // val selectedUser: NormalUser = NormalUser(
-
-    // Display the EDIT USER form, passing into the view the "selected" user object,
-    //   with their filled-in properties.
-    // Ok(com.thespidernet.scalablog.views.html.userconfig(selectedUser))
   }
 
   //Save the contents of a User Record
@@ -202,8 +201,10 @@ class User @Inject() (val messagesApi: MessagesApi)(implicit ec: ExecutionContex
   * Case classes
   *
   * The following case classes are used "here" within the controller only.
-  * It is quite often the case that the model representation and that which is needed within a view are different.
-  * So we can use the controller as an appropriate place to hold this interfacing code.
+  * It is quite often the case that the model representation and that which is
+  * needed within a view are different.
+  * So we can use the controller as an appropriate place to hold this
+  * interfacing code.
   */
 
 case class CreateUserConfigForm(username: String, password: String, avatar: String, emailAddress: String, twitte: String, gitHub: String, websiteURL: String,

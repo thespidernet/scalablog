@@ -19,7 +19,6 @@ libraryDependencies ++= Seq(
 
 // Play provides two styles of routers, one expects its actions to be injected, the
 // other, legacy style, accesses its actions statically.
-//
 routesGenerator := InjectedRoutesGenerator
 
 // Dependencies required by THIS application.
@@ -34,11 +33,14 @@ libraryDependencies ++= {
 }
 
 // To speed up compilation you can disable documentation generation:
-// The first line will disable documentation generation and the second one will avoid to publish the documentation artifact.
+// The first line will disable documentation generation and the second one 
+//     will avoid to publish the documentation artifact.
 sources in (Compile, doc) := Seq.empty
 publishArtifact in (Compile, packageDoc) := false
 
-// By default parallel execution is disabled and fork is enabled. You can change this behavior by setting parallelExecution in Test and/or fork in Test:
+// By default parallel execution is disabled and fork is enabled. You can 
+//    change this behavior by setting parallelExecution in Test and/or fork 
+//    in Test:
 parallelExecution in Test := true
 fork in Test := false
 fork in run := true

@@ -57,20 +57,24 @@
   * The ModifiedBy User ALSO has a modifiedBy property that is a User.
   * So now you have to load another User, that has a modifiedBy property.
   *
-  * In and of itself it isn't a big problem - but for - what happens when you get to the very first user?
+  * In and of itself it isn't a big problem - but for - what happens when you
+  * get to the very first user?
+  *
   * It doesn't have a value for the modifiedBy property.
   *
   * There are two options.
-  * Have the first User created by None or have the first User created by itself.
+  * Have the first User created by None or have the first User created by
+  * itself.
   *
-  * I'd actually recommend the second case, and I'd recommend modelling the modifiedBy as a function for lazy
-  * evaluation rather than a property that is evaluated at construction time.
+  * I'd actually recommend the second case, and I'd recommend modelling the
+  * modifiedBy as a function for lazy evaluation rather than a property that
+  * is evaluated at construction time.
   *
   * To accomplish this we will use a TRAIT.
   *
   * A trait is a Scala costruct that is much like a Java interface.
-  * But in Scala - a trait can be partially completed and provide default implementations of some methods
-  * to the classes that extend it.
+  * But in Scala - a trait can be partially completed and provide default
+  * implementations of some methods to the classes that extend it.
   *
   * ***************************************************************************
   */

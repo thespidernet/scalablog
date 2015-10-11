@@ -50,7 +50,8 @@
  The controllers folder is used to contain all the application-flow logic for
  the application.
 
- The controller dictates the steps required to "action" a user's input or application event.
+ The controller dictates the steps required to "action" a user's input or 
+ application event.
  You can also think of them as "script / batch files".
  
  Eg.
@@ -64,9 +65,12 @@
  All these rules and the required steps to get from one state to another are 
  contained within the controllers.  
   
- The controllers folder forms part of the Model View Controller (MVC) design pattern.
+ The controllers folder forms part of the Model View Controller (MVC) design 
+ pattern.
  
  MVC has become a standard for building web applications and allows 
- developers to cleanly separate different areas of concern in their applications.
- Which allows for better collaboration, easier troubleshooting, simpler code maintenance.
+ developers to cleanly separate different areas of concern in their 
+ applications.
+ Which allows for better collaboration, easier troubleshooting, simpler code 
+ maintenance.
  

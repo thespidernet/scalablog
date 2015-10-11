@@ -48,16 +48,20 @@
   *
   * A controller can come in two flavours. Thin and fat.
   *
-  * This is a "thin" Controller. it only contains the steps required in clean straight lines.
-  * there is no / little business logic contained within the controller.
-  * The application is responsible for the business logic and the appropriate event handler (here in the controller).
+  * This is a "thin" Controller. it only contains the steps required in clean
+  * straight lines. There is no / little business logic contained within the
+  * controller.
+  * The application is responsible for the business logic and the appropriate
+  * event handler (here in the controller).
   *
-  * In contrast a "fat" controller tends to contain a lot of the business logic along with the required steps.
+  * In contrast a "fat" controller tends to contain a lot of the business logic
+  * along with the required steps.
   *
   *
   * This is the Application "General" Controller.
-  * It provides the process of steps that are required based on events that occur that within the application,
-  * that don't fit in a controller for specific TYPE, E.g. Users controller.
+  * It provides the process of steps that are required based on events that
+  * occur that within the application, that don't fit in a controller for
+  * specific TYPE, E.g. Users controller.
   *
   * ***************************************************************************
   */
@@ -70,7 +74,8 @@ import java.time.format.DateTimeFormatter
 class Utilities {
 
   /**
-    * Format the current date and time to an Australian format (with 24 hour time).
+    * Format the current date and time to an Australian format
+    * (with 24 hour time).
     */
   def dateTimeFormat_now(): String = {
 
@@ -78,8 +83,11 @@ class Utilities {
       * The body of this function could be JUST the following single line.
       * java.time.LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm"))
       *
-      * No RETURN is required in Scala - the last value is returned automatically
-      * But as this application is a tutorial, I have expanded it to be more readable;
+      * No RETURN is required in Scala - the last value is returned
+      * automatically
+      *
+      * But as this application is a tutorial, I have expanded it to be more
+      * readable;
       */
 
     val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm")

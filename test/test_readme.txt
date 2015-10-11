@@ -47,7 +47,9 @@
  * 
  *****************************************************************************@
  
- The "test" folder is identically structured to match the Application source code.
+ The "test" folder is identically structured to match the Application 
+ source code.
+ 
  It contains tests for the ScalBlog.
  Eg.
   * Unit tests.

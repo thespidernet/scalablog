@@ -50,13 +50,15 @@
  The views folder is used to contain all the HTML / Scala (Play) template files 
  that are used by the application to show content to the end-user.
  
- The state of the individual views, and indeed which view to display is controlled by the controllers.
+ The state of the individual views, and indeed which view to display is 
+ controlled by the controllers.
  
  The views folder forms part of the Model View Controller (MVC) design pattern.
  
  MVC has become a standard for building web applications and allows 
- developers to cleanly separate different areas of concern in their applications.
- Which allows for better collaboration, easier troubleshooting, simpler code maintenance.
+ developers to cleanly separate different areas of concern in their 
+ applications. Which allows for better collaboration, easier troubleshooting, 
+ simpler code maintenance.
  
  The Views make extensive use of the Scala Play framework.
  We use the framework's "helper" methods for form / form field creation.

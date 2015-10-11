@@ -48,16 +48,20 @@
   *
   * A controller can come in two flavours. Thin and fat.
   *
-  * This is a "thin" Controller. it only contains the steps required in clean straight lines.
-  * there is no / little business logic contained within the controller.
-  * The application is responsible for the business logic and the appropriate event handler (here in the controller).
+  * This is a "thin" Controller. it only contains the steps required in clean
+  * straight lines. there is no / little business logic contained within the
+  * controller.
   *
-  * In contrast a "fat" controller tends to contain a lot of the business logic along with the required steps.
+  * The application is responsible for the business logic and the appropriate
+  * event handler (here in the controller).
   *
+  * In contrast a "fat" controller tends to contain a lot of the business logic
+  * along with the required steps.
   *
   * This is the Application "General" Controller.
-  * It provides the process of steps that are required based on events that occur that within the application,
-  * that don't fit in a controller for specific TYPE, E.g. Users controller.
+  * It provides the process of steps that are required based on events that
+  * occur that within the application, that don't fit in a controller for
+  * specific TYPE, E.g. Users controller.
   *
   * ***************************************************************************
   */
@@ -98,8 +102,8 @@ class Application @Inject() (val messagesApi: MessagesApi)(implicit ec: Executio
 
     /**
       * The Forms object defines the mapping method. This method takes the names
-      * and constraints of the form, and also takes two functions: an apply function
-      * and an unapply function.
+      * and constraints of the form, and also takes two functions: an apply
+      * functioncand an unapply function.
       *
       * Normally we would also create a "full name" from the first and last
       * name. But we have left them separated here - to show how to used Nested
@@ -125,7 +129,11 @@ class Application @Inject() (val messagesApi: MessagesApi)(implicit ec: Executio
       * the above mapping.
       */
 
-    //TODO: get data from data source Then replace handwritten values with those retrieved
+    /**
+      * TODO: get data from data source Then replace handwritten values with
+      * those retrieved
+      */
+
     val AppConfigData = AppConfigForm.fill(CreateAppConfigForm("BlogTitle1",
       "BlogTagLine1",
       "BlogTitleImage1",
@@ -159,8 +167,11 @@ class Application @Inject() (val messagesApi: MessagesApi)(implicit ec: Executio
   * Case classes
   *
   * The following case classes are used "here" within the controller only.
-  * It is quite often the case that the model representation and that which is needed within a view are different.
-  * So we can use the controller as an appropriate place to hold this interfacing code.
+  * It is quite often the case that the model representation and that which is
+  * needed within a view are different.
+  *
+  * So we can use the controller as an appropriate place to hold this
+  * interfacing code.
   */
 
 case class ModifiedByForm(userName: String, firstName: String, lastName: String)

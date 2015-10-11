@@ -47,20 +47,24 @@
  * 
  *****************************************************************************@
  
- The models folder is used to contain all the model segments of your application. 
- The model is what is used to programmatically interface between the application
- and the data storage for the application.
+ The models folder is used to contain all the model segments of your 
+ application. 
+ The model is what is used to programmatically interface between the 
+ application and the data storage for the application.
  
- It contains all the code that maps object properties to database columns and also
- contains all the required code for Creating / Reading / Updating and Deleting (CRUD)
- records to or from the database.
+ It contains all the code that maps object properties to database columns and 
+ also contains all the required code for Creating / Reading / Updating and 
+ Deleting (CRUD) records to or from the database.
  
- Typical items in here are "Service Layers / Object Managers", Data Access Objects (DAOs) 
- and the objects themselves,too - reside here.
+ Typical items in here are "Service Layers / Object Managers", Data Access 
+ Objects (DAOs) and the objects themselves,too - reside here.
  
- The models folder forms part of the Model View Controller (MVC) design pattern.
+ The models folder forms part of the Model View Controller (MVC) design 
+ pattern.
  
  MVC has become a standard for building web applications and allows 
- developers to cleanly separate different areas of concern in their applications.
- Which allows for better collaboration, easier troubleshooting, simpler code maintenance.
+ developers to cleanly separate different areas of concern in their 
+ applications.
+ Which allows for better collaboration, easier troubleshooting, simpler code 
+ maintenance.
  
