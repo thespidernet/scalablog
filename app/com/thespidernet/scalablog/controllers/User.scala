@@ -104,7 +104,7 @@ class User @Inject() (val messagesApi: MessagesApi)(implicit ec: ExecutionContex
 
     val UserConfigForm: Form[CreateUserConfigForm] = Form {
       mapping(
-        "username" -> nonEmptyText,
+        "userName" -> nonEmptyText,
         "password" -> nonEmptyText,
         "avatar" -> text,
         "emailAddress" -> nonEmptyText,
@@ -129,6 +129,7 @@ class User @Inject() (val messagesApi: MessagesApi)(implicit ec: ExecutionContex
         "active" -> boolean,
 
         "modifiedBy" -> mapping(
+          "userName" -> text,
           "firstName" -> text,
           "lastName" -> text
         )(ModifiedByForm.apply)(ModifiedByForm.unapply)
@@ -165,7 +166,8 @@ class User @Inject() (val messagesApi: MessagesApi)(implicit ec: ExecutionContex
 
       true,
 
-      ModifiedByForm("Gavin",
+      ModifiedByForm("GavinB",
+        "Gavin",
         "Baumanis")))
 
     /**
@@ -204,7 +206,6 @@ class User @Inject() (val messagesApi: MessagesApi)(implicit ec: ExecutionContex
   * So we can use the controller as an appropriate place to hold this interfacing code.
   */
 
-// case class ModifiedByForm(firstName: String, lastName: String)
 case class CreateUserConfigForm(username: String, password: String, avatar: String, emailAddress: String, twitte: String, gitHub: String, websiteURL: String,
                                 firstName: String, lastName: String, displayName: String, address1: String, address2: String, suburb: String, state: String, postCode: String, country: String,
                                 homePhone: String, mobilePhone: String, workPhone: String,

@@ -65,7 +65,7 @@ modifiedBy.firstName    = Modified By: First Name
 modifiedBy.lastName     = Modified By: Last Name
 accurateAt              = Last Modified
 
-username                = User Name
+userName                = User Name
 password                = Password
 password1               = Password
 password2               = Confirm Password

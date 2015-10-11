@@ -113,6 +113,7 @@ class Application @Inject() (val messagesApi: MessagesApi)(implicit ec: Executio
         "blogtitleimage" -> nonEmptyText,
         "blogurl" -> nonEmptyText,
         "modifiedBy" -> mapping(
+          "userName" -> text,
           "firstName" -> text,
           "lastName" -> text
         )(ModifiedByForm.apply)(ModifiedByForm.unapply)
@@ -129,7 +130,8 @@ class Application @Inject() (val messagesApi: MessagesApi)(implicit ec: Executio
       "BlogTagLine1",
       "BlogTitleImage1",
       "BlogUrl1",
-      ModifiedByForm("Gavin",
+      ModifiedByForm("GavinB",
+        "Gavin",
         "Baumanis")))
 
     /**
@@ -161,5 +163,5 @@ class Application @Inject() (val messagesApi: MessagesApi)(implicit ec: Executio
   * So we can use the controller as an appropriate place to hold this interfacing code.
   */
 
-case class ModifiedByForm(firstName: String, lastName: String)
+case class ModifiedByForm(userName: String, firstName: String, lastName: String)
 case class CreateAppConfigForm(blogtitle: String, blogtagline: String, blogtitleimage: String, blogurl: String, modifiedBy: ModifiedByForm)
