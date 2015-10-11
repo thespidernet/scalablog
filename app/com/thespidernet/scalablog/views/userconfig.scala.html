@@ -71,10 +71,10 @@
         @form(com.thespidernet.scalablog.controllers.routes.User.userconfigsubmit()) {
             @inputText(UserConfigData("userName"))
             @inputText(UserConfigData("avatar"))
-            @inputText(UserConfigData("active"))
+            @checkbox(UserConfigData("active"))
             <br />
-            @inputText(UserConfigData("password1"), 'type ->"password")
-            @inputText(UserConfigData("password2"), 'type ->"password")
+            @inputText(UserConfigData("password1"), 'type -> "password")
+            @inputText(UserConfigData("password2"), 'type -> "password")
             <hr />
             @inputText(UserConfigData("emailAddress"))
             @inputText(UserConfigData("twitter"))
