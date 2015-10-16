@@ -86,8 +86,7 @@ class Utilities {
       * No RETURN is required in Scala - the last value is returned
       * automatically
       *
-      * But as this application is a tutorial, I have expanded it to be more
-      * readable;
+      * But...I have expanded it to be more readable.
       */
 
     val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm")
@@ -95,7 +94,7 @@ class Utilities {
     val formattedDateTime = timeNow.format(formatter)
 
     return formattedDateTime
-  }
+  } //dateTimeFormat_now
 
   /**
     * Format the current date to an Australian format
@@ -107,18 +106,18 @@ class Utilities {
     val formattedDate = dateNow.format(formatter)
 
     return formattedDate
-  }
+  } //dateFormat_now
 
   /**
-    * Format the current date to an Australian format
+    * Format the current time to 24 Hour Clock
     */
   def timeFormat_now(): String = {
 
     val formatter = DateTimeFormatter.ofPattern("HH:mm")
-    val timeNow = java.time.LocalDate.now()
+    val timeNow = java.time.LocalDateTime.now()
     val formattedTime = timeNow.format(formatter)
 
     return formattedTime
-  }
+  } //timeFormat_now
+} //class Utilities
 
-}
