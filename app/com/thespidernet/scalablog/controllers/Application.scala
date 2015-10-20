@@ -114,8 +114,8 @@ class Application @Inject() (val messagesApi: MessagesApi)(implicit ec: Executio
       mapping(
         "blogtitle" -> nonEmptyText,
         "blogtagline" -> nonEmptyText,
-        "blogtitleimage" -> nonEmptyText,
-        "blogurl" -> nonEmptyText,
+        "blogtitleimage" -> text,
+        "blogurl" -> text,
         "modifiedBy" -> mapping(
           "userName" -> text,
           "firstName" -> text,
