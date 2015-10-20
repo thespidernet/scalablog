@@ -58,7 +58,7 @@ of object-oriented and functional language concepts.
 
 
 *******************************************     
-** Scala Test 2.2.5 - Testing Framework  **
+** Scala Test 3.0.0 - Testing Framework  **
 *******************************************
 
 With ScalaTest, you can test either Scala or Java code. By offering deep 

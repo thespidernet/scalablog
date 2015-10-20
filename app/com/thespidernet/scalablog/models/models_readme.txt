@@ -36,7 +36,7 @@
  * The blog utilises the following technology;
  * 
  * Scala 2.11.7
- * Scala Test 2.2.5 - Testing Framework
+ * Scala Test 3.0.0 - Testing Framework
  * Play 2.4.3 - MVC Framework
  * Akka 2.4.0 - Messaging
  * spray 2.3.3 - http

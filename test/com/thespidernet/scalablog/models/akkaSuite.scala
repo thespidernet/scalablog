@@ -37,7 +37,7 @@
   * The blog utilises the following technology;
   *
   * Scala 2.11.7
-  * Scala Test 2.2.5 - Testing Framework
+  * Scala Test 3.0.0 - Testing Framework
   * Play 2.4.3 - MVC Framework
   * Akka 2.4.0 - Messaging
   * spray 2.3.3 - http
@@ -115,7 +115,7 @@ package silentactor03 {
         silentActor ! SilentMessage("whisper2")
         silentActor ! GetState(testActor) //get state
         expectMsg(Vector("whisper1", "whisper2")) //expectMsg
-        succeed
+        succeed //Needed for ScalaTest 3.0.0
       }
     }
 
